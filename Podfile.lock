@@ -1,0 +1,109 @@
+PODS:
+  - AFNetworking (2.6.3):
+    - AFNetworking/NSURLConnection (= 2.6.3)
+    - AFNetworking/NSURLSession (= 2.6.3)
+    - AFNetworking/Reachability (= 2.6.3)
+    - AFNetworking/Security (= 2.6.3)
+    - AFNetworking/Serialization (= 2.6.3)
+    - AFNetworking/UIKit (= 2.6.3)
+  - AFNetworking-RACExtensions (0.1.6):
+    - AFNetworking (~> 2.0)
+    - ReactiveCocoa (~> 2.0)
+  - AFNetworking/NSURLConnection (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.3)
+  - AFNetworking/Security (2.6.3)
+  - AFNetworking/Serialization (2.6.3)
+  - AFNetworking/UIKit (2.6.3):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - BaiduMapKit (3.2.1)
+  - FLAnimatedImage (1.0.12)
+  - GTSDK (1.6.2.0-noidfa)
+  - iOS-Slide-Menu (1.5)
+  - IQKeyboardManager (3.3.7)
+  - Masonry (1.0.2)
+  - MBProgressHUD (1.0.0)
+  - MJExtension (3.0.13)
+  - pop (1.0.9)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
+  - Realm (0.98.8):
+    - Realm/Headers (= 0.98.8)
+  - Realm/Headers (0.98.8)
+  - SAMKeychain (1.5.2)
+  - SDWebImage/Core (4.0.0)
+  - SDWebImage/GIF (4.0.0):
+    - FLAnimatedImage (~> 1.0)
+    - SDWebImage/Core
+  - UITableView+FDTemplateLayoutCell (1.6.beta)
+  - UMengUShare/Core (6.4.2):
+    - UMengUShare/Network
+  - UMengUShare/Network (6.4.2)
+  - UMengUShare/Social/ReducedQQ (6.4.2):
+    - UMengUShare/Core
+  - UMengUShare/Social/ReducedSina (6.4.2):
+    - UMengUShare/Core
+  - UMengUShare/Social/ReducedWeChat (6.4.2):
+    - UMengUShare/Core
+  - UMengUShare/Social/WeChat (6.4.2):
+    - UMengUShare/Core
+    - UMengUShare/Social/ReducedWeChat
+  - WebViewJavascriptBridge (6.0.2)
+
+DEPENDENCIES:
+  - AFNetworking (~> 2.6.3)
+  - AFNetworking-RACExtensions (~> 0.1.6)
+  - BaiduMapKit (~> 3.2.1)
+  - FLAnimatedImage (~> 1.0)
+  - GTSDK (= 1.6.2.0-noidfa)
+  - iOS-Slide-Menu (~> 1.5)
+  - IQKeyboardManager (~> 3.3.7)
+  - Masonry
+  - MBProgressHUD (~> 1.0.0)
+  - MJExtension
+  - pop
+  - ReactiveCocoa (~> 2.5)
+  - Realm
+  - SAMKeychain
+  - SDWebImage/GIF
+  - UITableView+FDTemplateLayoutCell (~> 1.6.beta)
+  - UMengUShare/Social/ReducedQQ
+  - UMengUShare/Social/ReducedSina
+  - UMengUShare/Social/WeChat
+  - WebViewJavascriptBridge (~> 6.0.2)
+
+SPEC CHECKSUMS:
+  AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  AFNetworking-RACExtensions: 501ab1564f5be65e01fe3017cda7bba25764c20d
+  BaiduMapKit: 9c748785aa3dddfc41dcb70c14b21ce32f680930
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  GTSDK: 994039cd51dd7d65125b18ca42136968ef96a236
+  iOS-Slide-Menu: 40b0cbd8916c42afc755f0869793cd09e7a32102
+  IQKeyboardManager: 249c3946acf61345c18b038eb50863fe2793e3a8
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
+  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  Realm: 0e293bb62999730599efc3048896bbd4f2e43bcd
+  SAMKeychain: 1865333198217411f35327e8da61b43de79b635b
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  UITableView+FDTemplateLayoutCell: 3c326d8535802396c443e2972d990719a211bbed
+  UMengUShare: 740664d1dd5cc2fb2cc3325d61e4b35539aa9c78
+  WebViewJavascriptBridge: 791ee0e26d1bf15efe5fb7fb9666a71a19b89d77
+
+PODFILE CHECKSUM: c2a85ad150507e6dbb9f6d13581bf1ea41280af1
+
+COCOAPODS: 1.2.0

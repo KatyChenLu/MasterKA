@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ProgressView">
+            <rect key="frame" x="0.0" y="0.0" width="314" height="80"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="下一步" translatesAutoresizingMaskIntoConstraints="NO" id="4Ti-Pb-Hca">
+                    <rect key="frame" x="10" y="10" width="10" height="10"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="10" id="6Q0-hV-OZJ"/>
+                        <constraint firstAttribute="height" constant="10" id="UNR-4c-wnk"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(20min)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMg-XD-JNo">
+                    <rect key="frame" x="30" y="5" width="274" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上的看法和手动还是东方路恢复速度发货的师傅还是打款发货方 " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="69P-cg-3SR">
+                    <rect key="frame" x="30" y="28.5" width="274" height="51.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="jMg-XD-JNo" firstAttribute="leading" secondItem="4Ti-Pb-Hca" secondAttribute="trailing" constant="10" id="0C8-oG-8zw"/>
+                <constraint firstItem="69P-cg-3SR" firstAttribute="leading" secondItem="jMg-XD-JNo" secondAttribute="leading" id="1rm-aC-1w6"/>
+                <constraint firstItem="4Ti-Pb-Hca" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="4Nt-S8-7p0"/>
+                <constraint firstItem="4Ti-Pb-Hca" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="8Ng-9s-15g"/>
+                <constraint firstAttribute="bottom" secondItem="69P-cg-3SR" secondAttribute="bottom" id="L5X-I2-OEB"/>
+                <constraint firstAttribute="trailing" secondItem="jMg-XD-JNo" secondAttribute="trailing" constant="10" id="QFM-ZE-Ra6"/>
+                <constraint firstItem="69P-cg-3SR" firstAttribute="top" secondItem="jMg-XD-JNo" secondAttribute="bottom" constant="3" id="dLg-A4-0d8"/>
+                <constraint firstItem="jMg-XD-JNo" firstAttribute="centerY" secondItem="4Ti-Pb-Hca" secondAttribute="centerY" id="g9V-h6-b6s"/>
+                <constraint firstAttribute="trailing" secondItem="69P-cg-3SR" secondAttribute="trailing" constant="10" id="iXL-5S-Gcy"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="contentLabel" destination="69P-cg-3SR" id="GH9-qy-CEQ"/>
+                <outlet property="timeLabel" destination="jMg-XD-JNo" id="0ja-pi-unz"/>
+            </connections>
+            <point key="canvasLocation" x="6" y="26"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="下一步" width="12" height="7"/>
+    </resources>
+</document>

@@ -1,0 +1,51 @@
+//
+//  PrefixHeader.pch
+//  MasterKA
+//
+//  Created by jinghao on 15/12/9.
+//  Copyright © 2015年 jinghao. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+
+#define alertShowMessage(msg) [(UIAlertView*)[[UIAlertView alloc] initWithTitle:nil message:msg delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show];
+
+#ifdef __OBJC__
+#import <Realm/Realm.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import "CategoryMasterHeader.h"
+#import "HttpManagerCenter.h"
+#import "AppConfig.h"
+#import "MJRefresh.h"
+#import "Masonry.h"
+#import "MasterUrlManager.h"
+#import "HttpManagerCenter+Login.h"
+#import "HttpManagerCenter+Course.h"
+#import "HttpManagerCenter+Share.h"
+#import "HttpManagerCenter+User.h"
+#import "HttpManagerCenter+App.h"
+#import "HttpManagerCenter+Home.h"
+#import "HttpManagerCenter+KA.h"
+#import "GCDObjC.h"
+//#import <MobileVLCKit/MobileVLCKit.h>
+#import "ModelHeader.h"
+#import "DBHelper.h"
+#import "BaseViewModel.h"
+#import "BaseViewController.h"
+#import "UserClient.h"
+#import "UMMobClick/MobClick.h"
+#import "ShareTool.h"
+#import "UIView+Toast.h"
+#import "UIDeviceHardware.h"
+
+#import "UILabel+Master.h"
+
+#import <BaiduMapAPI_Map/BMKMapComponent.h>
+#import <BaiduMapAPI_Location/BMKLocationComponent.h>
+#endif
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */

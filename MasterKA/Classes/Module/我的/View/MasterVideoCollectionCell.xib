@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MasterVideoCollectionCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="257"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="257"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wig-Dh-jn5">
+                        <rect key="frame" x="11" y="221" width="298" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Zt-A0-OTx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="206"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PXd-km-etX">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="206"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="206" id="C6R-Uo-Dg1"/>
+                            <constraint firstAttribute="bottom" secondItem="PXd-km-etX" secondAttribute="bottom" id="Gv9-GR-Duw"/>
+                            <constraint firstItem="PXd-km-etX" firstAttribute="top" secondItem="9Zt-A0-OTx" secondAttribute="top" id="RHK-0r-76B"/>
+                            <constraint firstItem="PXd-km-etX" firstAttribute="leading" secondItem="9Zt-A0-OTx" secondAttribute="leading" id="RxL-4g-kJO"/>
+                            <constraint firstAttribute="trailing" secondItem="PXd-km-etX" secondAttribute="trailing" id="hHD-9y-lSO"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="9Zt-A0-OTx" secondAttribute="trailing" id="7Ng-rS-NHA"/>
+                <constraint firstItem="9Zt-A0-OTx" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="9ew-0L-0BL"/>
+                <constraint firstItem="wig-Dh-jn5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="11" id="BA1-bO-GGI"/>
+                <constraint firstItem="9Zt-A0-OTx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Sdo-ut-SDh"/>
+                <constraint firstItem="wig-Dh-jn5" firstAttribute="top" secondItem="9Zt-A0-OTx" secondAttribute="bottom" constant="15" id="T9h-Wl-R5S"/>
+                <constraint firstAttribute="trailing" secondItem="wig-Dh-jn5" secondAttribute="trailing" constant="11" id="XsG-yJ-m3r"/>
+            </constraints>
+            <size key="customSize" width="320" height="257"/>
+            <connections>
+                <outlet property="videoImg" destination="9Zt-A0-OTx" id="H59-zy-eFn"/>
+                <outlet property="videoImgView" destination="PXd-km-etX" id="kIj-z6-CEy"/>
+                <outlet property="videoIntro" destination="wig-Dh-jn5" id="wRc-eZ-I1k"/>
+            </connections>
+            <point key="canvasLocation" x="509" y="455.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

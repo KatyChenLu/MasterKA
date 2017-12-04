@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="226" id="KGk-i7-Jjw" customClass="AskQuestionsCell">
+            <rect key="frame" x="0.0" y="0.0" width="443" height="140"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="443" height="139.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="初学者能学到什么讷讷呢" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5a4-px-IUt">
+                        <rect key="frame" x="46" y="19" width="157.5" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.36078431372549019" green="0.36078431372549019" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3个回答" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCb-bO-rm4">
+                        <rect key="frame" x="46" y="44" width="48" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.36078431370000003" green="0.36078431370000003" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="老师很专业有耐心" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffo-Ll-a23">
+                        <rect key="frame" x="46" y="67" width="114.5" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.36078431370000003" green="0.36078431370000003" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ask" translatesAutoresizingMaskIntoConstraints="NO" id="BU1-8Y-x3u">
+                        <rect key="frame" x="13" y="17" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="fT2-m3-2ux"/>
+                            <constraint firstAttribute="height" constant="20" id="mmA-4w-Xeq"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="answer" translatesAutoresizingMaskIntoConstraints="NO" id="oN7-HN-5tg">
+                        <rect key="frame" x="13" y="65" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="gCU-G5-yVN"/>
+                            <constraint firstAttribute="width" constant="20" id="kJo-GS-PE6"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUh-Qe-jdS">
+                        <rect key="frame" x="174" y="101.5" width="95" height="28"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="28" id="soT-hF-rGH"/>
+                            <constraint firstAttribute="width" constant="95" id="uFS-PT-SJK"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <state key="normal" title="查看全部问题">
+                            <color key="titleColor" red="1" green="0.3529411764705882" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="showAllAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="xhd-Zs-7o5"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="sUh-Qe-jdS" firstAttribute="top" secondItem="ffo-Ll-a23" secondAttribute="bottom" constant="18" id="248-dX-TF5"/>
+                    <constraint firstItem="BU1-8Y-x3u" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="13" id="431-bS-9Zc"/>
+                    <constraint firstItem="ffo-Ll-a23" firstAttribute="leading" secondItem="5a4-px-IUt" secondAttribute="leading" id="DQD-oK-B60"/>
+                    <constraint firstAttribute="bottom" secondItem="sUh-Qe-jdS" secondAttribute="bottom" constant="10" id="FTt-Nn-BIJ"/>
+                    <constraint firstItem="sUh-Qe-jdS" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="JQ9-Wq-ppU"/>
+                    <constraint firstItem="oN7-HN-5tg" firstAttribute="leading" secondItem="BU1-8Y-x3u" secondAttribute="leading" id="KE6-W4-sAE"/>
+                    <constraint firstItem="oN7-HN-5tg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="65" id="Nwf-cI-0GR"/>
+                    <constraint firstItem="5a4-px-IUt" firstAttribute="leading" secondItem="BU1-8Y-x3u" secondAttribute="trailing" constant="13" id="URG-Ar-TSu"/>
+                    <constraint firstItem="5a4-px-IUt" firstAttribute="centerY" secondItem="BU1-8Y-x3u" secondAttribute="centerY" id="WfV-gG-8MO"/>
+                    <constraint firstItem="ffo-Ll-a23" firstAttribute="centerY" secondItem="oN7-HN-5tg" secondAttribute="centerY" id="XF4-K9-iNJ"/>
+                    <constraint firstItem="WCb-bO-rm4" firstAttribute="top" secondItem="5a4-px-IUt" secondAttribute="bottom" constant="8" id="lUC-G4-rbL"/>
+                    <constraint firstItem="WCb-bO-rm4" firstAttribute="leading" secondItem="5a4-px-IUt" secondAttribute="leading" id="r6f-go-BZe"/>
+                    <constraint firstItem="BU1-8Y-x3u" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="sEk-Tm-L7A"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="answerLabel" destination="ffo-Ll-a23" id="tI0-o1-pBt"/>
+                <outlet property="askLabel" destination="5a4-px-IUt" id="UWw-2Q-vnz"/>
+                <outlet property="askNumLabel" destination="WCb-bO-rm4" id="I4G-XW-wJe"/>
+                <outlet property="showAllButton" destination="sUh-Qe-jdS" id="Bsk-2Y-dHs"/>
+            </connections>
+            <point key="canvasLocation" x="-399" y="3"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="answer" width="13" height="13"/>
+        <image name="ask" width="13" height="13"/>
+    </resources>
+</document>

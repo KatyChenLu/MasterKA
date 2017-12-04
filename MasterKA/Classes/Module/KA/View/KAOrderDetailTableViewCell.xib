@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="98" id="KGk-i7-Jjw" customClass="KAOrderDetailTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="469" height="98"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="469" height="97.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="支付成功，订单已完成。如有任何问题，可通过官方微信“Master达人”或123456789联系我们哦" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DrN-UK-TqI">
+                        <rect key="frame" x="34" y="25" width="415" height="33.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KA已执行" translatesAutoresizingMaskIntoConstraints="NO" id="mXi-Oi-zKS">
+                        <rect key="frame" x="10" y="25" width="13" height="13"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="13" id="aaF-hN-O0J"/>
+                            <constraint firstAttribute="width" constant="13" id="tXv-xA-a8Z"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="32X-SD-pcN">
+                        <rect key="frame" x="16" y="38" width="1" height="59.5"/>
+                        <color key="backgroundColor" red="1" green="0.89019607840000003" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="1" id="e1Z-dF-Idv"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BwV-7q-ghd">
+                        <rect key="frame" x="16" y="0.0" width="1" height="25"/>
+                        <color key="backgroundColor" red="1" green="0.8901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="1" id="9sJ-fQ-stw"/>
+                            <constraint firstAttribute="height" constant="25" id="QFz-7N-rTg"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017-11-21 09:29:0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PbX-H6-tcT">
+                        <rect key="frame" x="34" y="66.5" width="94.5" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" white="0.0" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="mXi-Oi-zKS" firstAttribute="centerX" secondItem="BwV-7q-ghd" secondAttribute="centerX" id="2TI-e7-yRk"/>
+                    <constraint firstItem="BwV-7q-ghd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="2iN-3G-oZQ"/>
+                    <constraint firstItem="DrN-UK-TqI" firstAttribute="top" secondItem="mXi-Oi-zKS" secondAttribute="top" id="9lv-jn-SSy"/>
+                    <constraint firstItem="32X-SD-pcN" firstAttribute="centerX" secondItem="mXi-Oi-zKS" secondAttribute="centerX" id="Kku-60-GR8"/>
+                    <constraint firstAttribute="bottom" secondItem="32X-SD-pcN" secondAttribute="bottom" id="L2H-PG-vid"/>
+                    <constraint firstItem="PbX-H6-tcT" firstAttribute="leading" secondItem="DrN-UK-TqI" secondAttribute="leading" id="VGU-fs-0rV"/>
+                    <constraint firstItem="mXi-Oi-zKS" firstAttribute="top" secondItem="BwV-7q-ghd" secondAttribute="bottom" id="Vr9-By-Jq3"/>
+                    <constraint firstItem="DrN-UK-TqI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="34" id="aqF-v7-Cns"/>
+                    <constraint firstItem="BwV-7q-ghd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="mcU-P3-GBn"/>
+                    <constraint firstAttribute="bottom" secondItem="PbX-H6-tcT" secondAttribute="bottom" constant="19" id="rZJ-3s-fgj"/>
+                    <constraint firstAttribute="trailing" secondItem="DrN-UK-TqI" secondAttribute="trailing" constant="20" id="u5d-hl-SS6"/>
+                    <constraint firstItem="32X-SD-pcN" firstAttribute="top" secondItem="mXi-Oi-zKS" secondAttribute="bottom" id="vG3-Ld-HOT"/>
+                    <constraint firstItem="PbX-H6-tcT" firstAttribute="top" secondItem="DrN-UK-TqI" secondAttribute="bottom" constant="8" id="y9r-XE-hwU"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="bottomLine" destination="32X-SD-pcN" id="Yle-XF-Jc9"/>
+                <outlet property="lineImgV" destination="mXi-Oi-zKS" id="P6N-DG-tT5"/>
+                <outlet property="stateLabel" destination="DrN-UK-TqI" id="Oar-zs-b7o"/>
+                <outlet property="timeLabel" destination="PbX-H6-tcT" id="PYm-TL-pkw"/>
+                <outlet property="topLine" destination="BwV-7q-ghd" id="Ysn-hq-6Iq"/>
+            </connections>
+            <point key="canvasLocation" x="-342.5" y="66"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="KA已执行" width="20" height="20"/>
+    </resources>
+</document>

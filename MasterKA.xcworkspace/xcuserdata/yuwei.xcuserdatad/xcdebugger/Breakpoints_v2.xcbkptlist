@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HiMaster3/AppDelegate.mm"
+            timestampString = "494388620.728172"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "295"
+            endingLineNumber = "295"
+            landmarkName = "-openApplicationWithURL:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HiMaster3/AppDelegate.mm"
+            timestampString = "494388805.399967"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "292"
+            endingLineNumber = "292"
+            landmarkName = "-openApplicationWithURL:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HiMaster3/Classes/Module/&#x6211;&#x7684;/ViewController/MineOrdersViewController.m"
+            timestampString = "494389987.55126"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HiMaster3/Classes/Module/&#x6211;&#x7684;/ViewModel/MyOrderModel.m"
+            timestampString = "494391026.970578"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "-requestRemoteDataSignalWithPage:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HiMaster3/Classes/Module/&#x6211;&#x7684;/ViewModel/MyOrderModel.m"
+            timestampString = "494391049.675093"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "-requestRemoteDataSignalWithPage:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[MyOrderModel requestRemoteDataSignalWithPage:]"
+                  moduleName = "HiMaster3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yuwei/GoMaster/IOS/HiMaster3/HiMaster3/Classes/Module/%E6%88%91%E7%9A%84/ViewModel/MyOrderModel.m"
+                  timestampString = "494394023.314005"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "480">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__48-[MyOrderModel requestRemoteDataSignalWithPage:]_block_invoke"
+                  moduleName = "HiMaster3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yuwei/GoMaster/IOS/HiMaster3/HiMaster3/Classes/Module/%E6%88%91%E7%9A%84/ViewModel/MyOrderModel.m"
+                  timestampString = "494394023.314159"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "628">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__copy_helper_block_.94"
+                  moduleName = "HiMaster3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yuwei/GoMaster/IOS/HiMaster3/HiMaster3/Classes/Module/%E6%88%91%E7%9A%84/ViewModel/MyOrderModel.m"
+                  timestampString = "494394023.31429"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_.95"
+                  moduleName = "HiMaster3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yuwei/GoMaster/IOS/HiMaster3/HiMaster3/Classes/Module/%E6%88%91%E7%9A%84/ViewModel/MyOrderModel.m"
+                  timestampString = "494394023.314442"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__48-[MyOrderModel requestRemoteDataSignalWithPage:]_block_invoke.100"
+                  moduleName = "HiMaster3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yuwei/GoMaster/IOS/HiMaster3/HiMaster3/Classes/Module/%E6%88%91%E7%9A%84/ViewModel/MyOrderModel.m"
+                  timestampString = "494394023.314566"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "76">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HiMaster3/Classes/Module/&#x6211;&#x7684;/ViewModel/MyOrderModel.m"
+            timestampString = "494391148.268839"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "-requestRemoteDataSignalWithPage:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HiMaster3/Classes/Module/&#x8d2d;&#x4e70;&#x8bfe;&#x7a0b;/viewModel/CoursePayViewModel.m"
+            timestampString = "494394021.899969"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "465"
+            endingLineNumber = "465"
+            landmarkName = "-showZhifuSuccess"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HiMaster3/Classes/Module/&#x6211;&#x7684;/View/OrderDetailCell.m"
+            timestampString = "494392793.098201"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "-prepareView:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HiMaster3/Classes/Module/&#x6211;&#x7684;/ViewModel/MyOrderDetailmodel.m"
+            timestampString = "494392898.740092"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "-configureCell:atIndexPath:withObject:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HiMaster3/Classes/Module/&#x6211;&#x7684;/ViewModel/MyOrderDetailmodel.m"
+            timestampString = "494392910.273172"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "-configureCell:atIndexPath:withObject:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HiMaster3/Classes/Module/&#x6211;&#x7684;/ViewModel/MyOrderDetailmodel.m"
+            timestampString = "494393371.973393"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "-requestRemoteDataSignalWithPage:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[MyOrderDetailmodel requestRemoteDataSignalWithPage:]"
+                  moduleName = "HiMaster3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yuwei/GoMaster/IOS/HiMaster3/HiMaster3/Classes/Module/%E6%88%91%E7%9A%84/ViewModel/MyOrderDetailmodel.m"
+                  timestampString = "494394023.320182"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "192">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__54-[MyOrderDetailmodel requestRemoteDataSignalWithPage:]_block_invoke"
+                  moduleName = "HiMaster3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yuwei/GoMaster/IOS/HiMaster3/HiMaster3/Classes/Module/%E6%88%91%E7%9A%84/ViewModel/MyOrderDetailmodel.m"
+                  timestampString = "494394023.320328"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HiMaster3/Classes/Module/&#x6211;&#x7684;/ViewController/MyOrderDetailController.m"
+            timestampString = "494393470.692558"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

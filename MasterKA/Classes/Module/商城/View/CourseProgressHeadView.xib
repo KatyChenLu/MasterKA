@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CourseProgressHeadView">
+            <rect key="frame" x="0.0" y="0.0" width="290" height="40"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="流程" translatesAutoresizingMaskIntoConstraints="NO" id="73g-O4-C6X">
+                    <rect key="frame" x="2" y="18" width="286" height="3"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="课程流程" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gp-yc-7Ss">
+                    <rect key="frame" x="112.5" y="10.5" width="65.5" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="7gp-yc-7Ss" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1TC-1b-DNO"/>
+                <constraint firstItem="7gp-yc-7Ss" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="JuU-lY-Qya"/>
+                <constraint firstItem="73g-O4-C6X" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="2" id="QvV-oN-10L"/>
+                <constraint firstItem="73g-O4-C6X" firstAttribute="centerY" secondItem="7gp-yc-7Ss" secondAttribute="centerY" id="f0y-cl-GWT"/>
+                <constraint firstAttribute="trailing" secondItem="73g-O4-C6X" secondAttribute="trailing" constant="2" id="tjO-YA-fcY"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-18" y="263"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="流程" width="250" height="3"/>
+    </resources>
+</document>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="142" id="KGk-i7-Jjw" customClass="KAMineHeadTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="345" height="142"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="345" height="141.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" tag="300" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="图层-2-拷贝" translatesAutoresizingMaskIntoConstraints="NO" id="v38-UX-fkW" userLabel="userLogo">
+                        <rect key="frame" x="29" y="38" width="62" height="62"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="62" id="DAa-mC-384"/>
+                            <constraint firstAttribute="width" constant="62" id="Frr-Bh-99j"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="31"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRT-Rb-b0b">
+                        <rect key="frame" x="101" y="42" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.1333333333" green="0.090196078430000007" blue="0.078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oz9-LP-RJI" userLabel="changeInfo">
+                        <rect key="frame" x="29" y="38" width="62" height="62"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="62" id="lgd-yn-DAq"/>
+                            <constraint firstAttribute="width" constant="62" id="m57-GE-5Tr"/>
+                        </constraints>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9RX-YE-khO">
+                        <rect key="frame" x="94" y="68" width="57" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="AHl-te-akK"/>
+                            <constraint firstAttribute="width" constant="57" id="EWK-QM-fhb"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title="粉丝  4">
+                            <color key="titleColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZfJ-t6-IMs">
+                        <rect key="frame" x="160" y="68" width="57" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="08b-QY-RZr"/>
+                            <constraint firstAttribute="width" constant="57" id="Ud8-xm-1Ju"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title="关注：0">
+                            <color key="titleColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="您还没有登录哦！" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ga0-P1-89w">
+                        <rect key="frame" x="101" y="58" width="125" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="7hE-aJ-iFa"/>
+                            <constraint firstAttribute="width" constant="125" id="GYr-4u-LaF"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="roG-XO-nsj">
+                        <rect key="frame" x="223" y="55" width="86" height="30"/>
+                        <color key="backgroundColor" red="1" green="0.88209641279999995" blue="0.2367855365" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="86" id="AaD-0d-hMy"/>
+                            <constraint firstAttribute="height" constant="30" id="eVb-D1-3mL"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <state key="normal" title="马上登录">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ZfJ-t6-IMs" firstAttribute="leading" secondItem="9RX-YE-khO" secondAttribute="trailing" constant="9" id="2gv-jP-eSZ"/>
+                    <constraint firstItem="9RX-YE-khO" firstAttribute="top" secondItem="cRT-Rb-b0b" secondAttribute="bottom" constant="5" id="3bF-Qr-qSG"/>
+                    <constraint firstItem="9RX-YE-khO" firstAttribute="leading" secondItem="oz9-LP-RJI" secondAttribute="trailing" constant="3" id="5h2-mx-GxE"/>
+                    <constraint firstItem="Ga0-P1-89w" firstAttribute="leading" secondItem="oz9-LP-RJI" secondAttribute="trailing" constant="10" id="VqM-gD-adR"/>
+                    <constraint firstItem="ZfJ-t6-IMs" firstAttribute="top" secondItem="cRT-Rb-b0b" secondAttribute="bottom" constant="5" id="lWB-t6-PnF"/>
+                    <constraint firstItem="cRT-Rb-b0b" firstAttribute="leading" secondItem="v38-UX-fkW" secondAttribute="trailing" constant="10" id="xBs-AD-ejX"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="-10" y="-21"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="图层-2-拷贝" width="62" height="62"/>
+    </resources>
+</document>
