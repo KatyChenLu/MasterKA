@@ -9,7 +9,7 @@
 #import "UserClient.h"
 #import "MJExtension.h"
 
-#define MASTER_SERVICE_NAME         @"com.shishiTec.HiMaster"
+#define MASTER_SERVICE_NAME         @"com.shishiTec.MasterKA"
 #define MASTER_RAW_LOGIN            @"RawLogin"
 #define MASTER_LOGIN_Type           @"LoginType"
 #define MASTER_LOGIN_Info           @"LoginInfo"
@@ -37,6 +37,15 @@
 
 #define LocationLng                 @"LocationLng"
 #define LocationLat                  @"LocationLat"
+
+#define KA_PRICE_MIN                @"course_price_min"
+#define KA_PRICE_MAX                @"course_price_max"
+#define KA_PEOPLE_NUMMIN            @"people_num_min"
+#define KA_PEOPLE_NUMMAX            @"people_num_max"
+#define KA_COURSE_TIME              @"course_time"
+#define KA_SENCE                    @"sence"
+#define KA_REQUIREMENT              @"requirement"
+
 
 
 @interface UserClient ()
@@ -340,22 +349,79 @@ _userId = @"0";
     return [[NSUserDefaults standardUserDefaults] objectForKey:Master_Pic_Url];
 }
 
-
-
-
-
-
+////////KA
+- (NSString *)course_price_min {
+    return [[NSUserDefaults standardUserDefaults] objectForKey:KA_PRICE_MIN];
+}
+- (void)setCourse_price_min:(NSString *)course_price_min {
+    [[NSUserDefaults standardUserDefaults] setValue:course_price_min forKey:KA_PRICE_MIN];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+- (NSString *)course_price_max {
+    return [[NSUserDefaults standardUserDefaults] objectForKey:KA_PRICE_MAX];
+}
+- (void)setCourse_price_max:(NSString *)course_price_max {
+    [[NSUserDefaults standardUserDefaults] setValue:course_price_max forKey:KA_PRICE_MAX];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+-(NSString *)people_num_min {
+    return [[NSUserDefaults standardUserDefaults] objectForKey:KA_PEOPLE_NUMMIN];
+}
+- (void)setPeople_num_min:(NSString *)people_num_min {
+    [[NSUserDefaults standardUserDefaults] setValue:people_num_min forKey:KA_PEOPLE_NUMMIN];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+- (NSString *)people_num_max {
+     return [[NSUserDefaults standardUserDefaults] objectForKey:KA_PEOPLE_NUMMAX];
+}
+- (void)setPeople_num_max:(NSString *)people_num_max {
+    [[NSUserDefaults standardUserDefaults] setValue:people_num_max forKey:KA_PEOPLE_NUMMAX];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+-(NSArray *)course_time {
+    return [[NSUserDefaults standardUserDefaults] objectForKey:KA_COURSE_TIME];
+}
+-(void)setCourse_time:(NSArray *)course_time {
+    [[NSUserDefaults standardUserDefaults] setValue:course_time forKey:KA_COURSE_TIME];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+- (NSDictionary *)requirement {
+    return [[NSUserDefaults standardUserDefaults] objectForKey:KA_REQUIREMENT];
+}
+- (void)setRequirement:(NSDictionary *)requirement {
+    [[NSUserDefaults standardUserDefaults] setValue:requirement forKey:KA_REQUIREMENT];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+- (NSArray *)sence {
+     return [[NSUserDefaults standardUserDefaults] objectForKey:KA_SENCE];
+}
+-(void)setSence:(NSArray *)sence {
+    [[NSUserDefaults standardUserDefaults] setValue:sence forKey:KA_SENCE];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
 
 - (void)setAppConfigUrl:(AppConfigModel*)conf{
     if(conf){
-        self.order_refund_msg = conf.order_refund_msg;
-        self.enterprise_course_url = conf.enterprise_course_url;
-        self.master_enter_url = conf.master_enter_url;
-        self.financial_data_url = conf.financial_data_url;
         self.about_us_url = conf.about_us_url;
-        self.about_card_url = conf.about_card_url;
         self.agree_url = conf.agree_url;
-        self.activity_url = conf.activity_url;
+        
+        self.course_price_min = conf.course_price_min;
+        self.course_price_max = conf.course_price_max;
+        self.people_num_min = conf.people_num_min;
+        self.people_num_max = conf.people_num_max;
+        self.course_time = conf.course_time;
+        self.requirement = conf.requirement;
+        self.sence = conf.sence;
+        
+        
+//        self.order_refund_msg = conf.order_refund_msg;
+//        self.enterprise_course_url = conf.enterprise_course_url;
+//        self.master_enter_url = conf.master_enter_url;
+//        self.financial_data_url = conf.financial_data_url;
+//
+//        self.about_card_url = conf.about_card_url;
+//
+//        self.activity_url = conf.activity_url;
         
     }
 }

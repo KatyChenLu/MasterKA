@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseTableViewCell.h"
-#import "CourseModel.h"
+#import "KAHomeListModel.h"
 
 @interface KAHomeTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *topImgview;
@@ -20,8 +20,17 @@
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UIButton *voteBtn;
 @property (weak, nonatomic) IBOutlet UIView *tipView;
+@property(nonatomic ,strong)UILabel * label;
 
-@property (nonatomic, copy) void(^joinClick)(UIImageView *joinImgView);
+@property(nonatomic ,strong)UILabel * commentLabel;
+@property(nonatomic ,strong)NSMutableArray * commentLabelArr;
+@property (nonatomic, strong)NSArray *tagsArr;
+
+@property (nonatomic, strong)NSString *ka_course_id;
+@property (nonatomic, copy) void(^joinClick)(UIImageView *joinImgView,NSString *ka_course_id);
+@property (nonatomic, copy) void(^canceljoinClick)(NSString *ka_course_id);
+@property (nonatomic, copy) void(^todoLogin)();
 @property (nonatomic,strong) UIBezierPath *path;
-@property (nonatomic, strong) CourseModel *kaHomeModel;
+@property (nonatomic, strong) NSDictionary *kaHomeModel;
+
 @end

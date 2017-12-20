@@ -54,28 +54,21 @@
     
     _shareView.backgroundColor = [UIColor colorWithHex:0xf7f7f7];
     
-    _shareNum = 4;
+    _shareNum = 2;
     
     if (![WXApi isWXAppInstalled]) {
         
         _shareNum = _shareNum - 2;
         
     }
-    if (![[[UMSocialManager defaultManager] platformProviderWithPlatformType:UMSocialPlatformType_QQ] umSocial_isInstall]) {
-        _shareNum = _shareNum - 1;
-    }
-    if (_shareNum == 3) {
-        [self createShareFrom:0 TO:3];
-    }else if (_shareNum == 2){
-        [self createShareFrom:2 TO:4];
-    }else if (_shareNum == 1){
-        [self createShareFrom:2 TO:3];
-    }else{
-        [self createShareFrom:0 TO:4];
-    }
-    
     
   
+    if (_shareNum == 2){
+        [self createShareFrom:0 TO:2];
+    }else{
+//        [self createShareFrom:0 TO:4];
+    }
+    
     
     UIButton * cancleBtn = [[UIButton alloc]initWithFrame:CGRectMake(0,  _shareView.bounds.size.height-50, [UIScreen mainScreen].bounds.size.width, 50)];
     
@@ -101,7 +94,7 @@
 
 - (void)createShareFrom:(int)fromNum TO:(int)toNum{
     
-    NSMutableArray * btnArr = [NSMutableArray arrayWithCapacity:4];
+    NSMutableArray * btnArr = [NSMutableArray arrayWithCapacity:2];
     
     for (int i = fromNum ; i < toNum; i++) {
         
@@ -136,17 +129,7 @@
                 [shareBtn setImage: [UIImage imageNamed:@"朋友圈"] forState:UIControlStateNormal];
                 break;
                 
-            case 2:
-                
-                [shareBtn setTitle:@"微博" forState:UIControlStateNormal];
-                [shareBtn setImage: [UIImage imageNamed:@"微博"] forState:UIControlStateNormal];
-                break;
-                
-            case 3:
-                
-                [shareBtn setTitle:@"QQ" forState:UIControlStateNormal];
-                [shareBtn setImage: [UIImage imageNamed:@"qq"] forState:UIControlStateNormal];
-                break;
+            
                 
             default:
                 break;
@@ -161,16 +144,21 @@
 
 -(void)cancelClick:(UIButton *)sender
 {
-    [self removeFromSuperview];
-    
+  
+    [self cancelAction];
 }
 
 
 
 -(void)tap:(UIGestureRecognizer *)recognizer
 {
-    [self removeFromSuperview];
+    [self cancelAction];
     
+}
+- (void)cancelAction{
+     [self removeFromSuperview];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"cancelShare" object:nil];
+
 }
 
 

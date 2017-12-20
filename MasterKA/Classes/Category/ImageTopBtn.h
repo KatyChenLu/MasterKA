@@ -9,5 +9,8 @@
 #import "ShopTopImageBtn.h"
 #import "UIButton+Master.h"
 @interface ImageTopBtn : ShopTopImageBtn
-
+//场景ID
+@property (nonatomic, strong)NSString *scenesID;
+//标题
+@property (nonatomic, strong)NSString *titleName;
 @end

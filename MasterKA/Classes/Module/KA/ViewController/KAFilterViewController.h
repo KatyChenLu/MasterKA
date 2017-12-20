@@ -10,6 +10,6 @@
 
 @interface KAFilterViewController : BaseViewController
 
-
+@property (nonatomic, strong)NSString *scenesID;
 
 @end

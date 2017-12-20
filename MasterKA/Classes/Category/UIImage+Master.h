@@ -86,4 +86,5 @@
 - (UIImage *)imageWithTintColor:(UIColor *)color;
 
 - (CGSize)imageScaleWithWidth:(CGFloat)width;
++ (UIImage *)placeholderImageWithSize:(CGSize)size;
 @end

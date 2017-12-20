@@ -39,8 +39,12 @@
 #import "ShareTool.h"
 #import "UIView+Toast.h"
 #import "UIDeviceHardware.h"
-
+#import "UserClient.h"
 #import "UILabel+Master.h"
+#import "UIButton+Master.h"
+
+#import "MasterTableHeaderView.h"
+#import "MasterTableFooterView.h"
 
 #import <BaiduMapAPI_Map/BMKMapComponent.h>
 #import <BaiduMapAPI_Location/BMKLocationComponent.h>

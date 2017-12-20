@@ -83,42 +83,24 @@
 //    [self showHUDWithString:@"提交中..."];
     HttpManagerCenter *httpService = [HttpManagerCenter sharedHttpManager];
     [[httpService logout:nil] subscribeNext:^(BaseModel *model) {
-        
-        
-        NSMutableDictionary* loginInfo = [NSMutableDictionary dictionary];
-        [loginInfo setObject:@"1" forKey:@"type"];
-        
+        if (model.code ==200) {
+            
+            [[UserClient sharedUserClient] outLogin];
+            [[UserClient sharedUserClient] outChanegeUid];
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"RefurbishMyInfo" object:nil];
+        }
         
     } error:^(NSError *error) {
         
         
         
     } completed:^{
-//         [self hiddenHUDWithString:nil error:NO];
+        
     }];
     
 
-    [[UserClient sharedUserClient] outLogin];
-    [[UserClient sharedUserClient] outChanegeUid];
- 
-    
-    MainTabBarController * tabBar = (MainTabBarController *)self.tabBarController;
-    
-    
-    
-    tabBar.selectedIndex = 0;
-    
-    UIButton * btn =   tabBar.tabBarBtn[4];
-    
-    btn.selected = NO;
-    
-    
-    btn = tabBar.tabBarBtn[0];
-    
-    btn.selected = YES;
-    
-    
-    [self.navigationController popViewControllerAnimated:NO];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

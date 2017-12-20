@@ -37,11 +37,11 @@
         placeholder = [UIImage imageNamed:@"LoadingDefault"];
     }
     url = [url masterFullImageUrl];
-    
-    
+//    self.contentMode =UIViewContentModeScaleAspectFit;
     [self sd_setImageWithURL:[NSURL URLWithString:url]
             placeholderImage:placeholder
                    completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+//                      placeholder =  [UIImage placeholderImageWithSize:image.size];
                        if (image && cacheType == SDImageCacheTypeNone) {
                            CATransition *transition = [CATransition animation];
                            transition.type = kCATransitionFade;
@@ -51,7 +51,7 @@
                        }
                    }];
     
-
+    
 }
 
 - (void)layersMakesToBoundsWithRadius:(CGFloat)radius {

@@ -52,13 +52,36 @@ typedef NS_ENUM(NSInteger, MasterLoginType) {
 @property (nonatomic,strong)NSString *enterprise_course_url;//企业课链接
 @property (nonatomic,strong)NSString *master_enter_url;//达人入驻链接
 @property (nonatomic,strong)NSString *financial_data_url;//财务统计链接
-@property (nonatomic,strong)NSString *about_us_url;//关于我们链接
+
 @property (nonatomic,strong)NSString *about_card_url;//酱油卡说明链接
-@property (nonatomic,strong)NSString *agree_url;//使用协议链接
+
 @property (nonatomic,strong)NSString *activity_url;//活动链接
 
-@property (nonatomic,assign)NSInteger voteNum;
 
+
+
+
+////////////////////FOR KA
+
+@property (nonatomic, assign)NSInteger voteNum;
+//最小团建价格
+@property (nonatomic, strong)NSString *course_price_min;
+//最大团建价格
+@property (nonatomic, strong)NSString *course_price_max;
+//最小团建人数
+@property (nonatomic, strong)NSString *people_num_min;
+//最大团建人数
+@property (nonatomic, strong)NSString *people_num_max;
+//团建上课时间
+@property (nonatomic, strong)NSArray *course_time;
+//关于我们链接
+@property (nonatomic,strong)NSString *about_us_url;
+//使用协议链接
+@property (nonatomic,strong)NSString *agree_url;
+//
+@property (nonatomic, strong)NSArray *sence;
+//定制需求信息
+@property (nonatomic,strong)NSDictionary *requirement;
 
 
 
@@ -72,6 +95,7 @@ typedef NS_ENUM(NSInteger, MasterLoginType) {
 
 - (void)outLogin;
 -(void)outChanegeUid;
+
 - (void)setAppConfigUrl:(AppConfigModel*)conf;
 
 

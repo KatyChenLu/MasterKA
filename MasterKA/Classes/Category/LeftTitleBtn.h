@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface LeftTitleBtn : UIButton
-
+@property (nonatomic, strong)NSString *typeStr;
 @end

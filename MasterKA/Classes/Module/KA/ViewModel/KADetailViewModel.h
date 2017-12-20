@@ -10,7 +10,7 @@
 
 @interface KADetailViewModel : TableViewModel
 
-@property (strong , nonatomic) NSString *course_id;
+@property (strong , nonatomic) NSString *ka_course_id;
 @property(nonatomic, strong) NSDictionary *info;
 @property(nonatomic, strong) NSMutableArray *detailSection;
 @property (nonatomic,strong,readonly)RACCommand *courseCommand;

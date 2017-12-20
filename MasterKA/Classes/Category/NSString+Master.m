@@ -11,7 +11,7 @@
 #import <CommonCrypto/CommonCryptor.h>
 
 static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
-NSString *const SERVICE = @"com.shishiTec.HiMaster";
+NSString *const SERVICE = @"com.shishiTec.MasterKA";
 
 @implementation NSString (Master)
 - (NSString *)md5HexDigest{
@@ -34,7 +34,14 @@ NSString *const SERVICE = @"com.shishiTec.HiMaster";
     url = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     return url;
 }
-
+- (NSString*)ClipImageUrl:(NSString *)wide {
+    NSString *url = self;
+    NSString *clipStr = self;
+    if ([url containsString:@"."]) {
+       clipStr = [NSString stringWithFormat:@"%@_%@.%@",[[url componentsSeparatedByString:@"."] firstObject],wide,[[url componentsSeparatedByString:@"."] lastObject]];
+    }
+    return clipStr;
+}
 #pragma mark -- base64  加密解密
 
 - (NSString *)base64StringFromText{
@@ -234,8 +241,9 @@ NSString *const SERVICE = @"com.shishiTec.HiMaster";
         CFUUIDRef deviceId = CFUUIDCreate(NULL);
         assert(deviceId != NULL);
         CFStringRef deviceIdStr = CFUUIDCreateString(NULL, deviceId);
+         UUID = [NSString stringWithFormat:@"%@", deviceIdStr];
         [SAMKeychain setPassword:UUID forService:SERVICE account:@"UUID"];
-        UUID = [NSString stringWithFormat:@"%@", deviceIdStr];
+       
     }
     
     return UUID;

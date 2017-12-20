@@ -24,4 +24,6 @@
 
 +(NSString *)UUID;
 
+- (NSString*)ClipImageUrl:(NSString *)wide;
+
 @end

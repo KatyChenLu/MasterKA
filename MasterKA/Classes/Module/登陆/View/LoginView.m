@@ -273,76 +273,79 @@
             make.right.equalTo(self.LoginBtn.mas_right).with.offset(-1);
         }];
         
-        qqBtn = [[UIButton alloc]init];
-        [qqBtn setImage:[UIImage imageNamed:@"icon_qq_logo"] forState:UIControlStateNormal];
-        qqBtn.tag = 1;
-        [qqBtn addTarget:self action:@selector(qqClicked:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:qqBtn];
+//        qqBtn = [[UIButton alloc]init];
+//        [qqBtn setImage:[UIImage imageNamed:@"icon_qq_logo"] forState:UIControlStateNormal];
+//        qqBtn.tag = 1;
+//        [qqBtn addTarget:self action:@selector(qqClicked:) forControlEvents:UIControlEventTouchUpInside];
+//        [self addSubview:qqBtn];
         
         weixinBtn = [[UIButton alloc]init];
+//        weixinBtn.frame = CGRectMake(0, 0, 50, 50);
+//        weixinBtn.centerX = self.centerX;
+//        weixinBtn.centerY = ScreenHeight - 60;
         [weixinBtn setImage:[UIImage imageNamed:@"icon_wx_logo"] forState:UIControlStateNormal];
         weixinBtn.tag =2;
         [weixinBtn addTarget:self action:@selector(qqClicked:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:weixinBtn];
         
-        xinlangBtn = [[UIButton alloc]init];
-        [xinlangBtn setImage:[UIImage imageNamed:@"icon_weibo_logo"] forState:UIControlStateNormal];
-        xinlangBtn.tag =3;
-        [xinlangBtn addTarget:self action:@selector(qqClicked:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:xinlangBtn];
+//        xinlangBtn = [[UIButton alloc]init];
+//        [xinlangBtn setImage:[UIImage imageNamed:@"icon_weibo_logo"] forState:UIControlStateNormal];
+//        xinlangBtn.tag =3;
+//        [xinlangBtn addTarget:self action:@selector(qqClicked:) forControlEvents:UIControlEventTouchUpInside];
+//        [self addSubview:xinlangBtn];
         
       
         
         
-        CGFloat x = ([UIScreen mainScreen].bounds.size.width-150)/4.0;
+        CGFloat x = ([UIScreen mainScreen].bounds.size.width)/2.0 -25;
         
         [weixinBtn mas_updateConstraints:^(MASConstraintMaker *make) {
-            
+
             make.left.equalTo(self).with.offset(x);
             make.height.width.mas_equalTo(50);
             make.bottom.equalTo(self).with.offset(-35);
         }];
         
-        [xinlangBtn mas_updateConstraints:^(MASConstraintMaker *make) {
-            
-            make.left.equalTo(weixinBtn.mas_right).with.offset(x);
-            make.height.width.mas_equalTo(50);
-            make.bottom.equalTo(self).with.offset(-35);
-        }];
-        [qqBtn mas_updateConstraints:^(MASConstraintMaker *make) {
-            
-            make.left.equalTo(xinlangBtn.mas_right).with.offset(x);
-            make.height.width.mas_equalTo(50);
-            make.bottom.equalTo(self).with.offset(-35);
-        }];
+//        [xinlangBtn mas_updateConstraints:^(MASConstraintMaker *make) {
+//            
+//            make.left.equalTo(weixinBtn.mas_right).with.offset(x);
+//            make.height.width.mas_equalTo(50);
+//            make.bottom.equalTo(self).with.offset(-35);
+//        }];
+//        [qqBtn mas_updateConstraints:^(MASConstraintMaker *make) {
+//
+//            make.left.equalTo(xinlangBtn.mas_right).with.offset(x);
+//            make.height.width.mas_equalTo(50);
+//            make.bottom.equalTo(self).with.offset(-35);
+//        }];
         
         if (![WXApi isWXAppInstalled]) {
             NSLog(@"没安装微信");
             weixinBtn.hidden = YES;
-            [xinlangBtn mas_updateConstraints:^(MASConstraintMaker *make) {
-                
-                make.left.top.right.bottom.equalTo(weixinBtn);
-            }];
-            [qqBtn mas_updateConstraints:^(MASConstraintMaker *make) {
-                
-                make.left.equalTo(xinlangBtn.mas_right).with.offset(2*x +50);
-                make.height.width.mas_equalTo(50);
-                make.bottom.equalTo(self).with.offset(-35);
-            }];
+//            [xinlangBtn mas_updateConstraints:^(MASConstraintMaker *make) {
+//
+//                make.left.top.right.bottom.equalTo(weixinBtn);
+//            }];
+//            [qqBtn mas_updateConstraints:^(MASConstraintMaker *make) {
+//
+//                make.left.equalTo(xinlangBtn.mas_right).with.offset(2*x +50);
+//                make.height.width.mas_equalTo(50);
+//                make.bottom.equalTo(self).with.offset(-35);
+//            }];
             
         }
         
         
         UILabel *orlabel = [[UILabel alloc]init];
-        orlabel.text = @"or";
+        orlabel.text = @"其他登录方式";
         orlabel.textColor = RGBFromHexadecimal(0x6e6e6e);
         orlabel.font = [UIFont systemFontOfSize:15];
         orlabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:orlabel];
         
         [orlabel mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.bottom.equalTo(qqBtn.mas_top).with.offset(-20);
-            make.height.width.mas_equalTo(20);
+            make.bottom.equalTo(weixinBtn.mas_top).with.offset(-20);
+            make.width.mas_equalTo(100);
             make.centerX.mas_equalTo(self);
         }];
         
@@ -353,7 +356,7 @@
             make.left.equalTo(self).with.offset(60);
             make.height.mas_equalTo(1);
             make.right.equalTo(orlabel.mas_left).with.offset(-8);
-            make.bottom.equalTo(qqBtn.mas_top).with.offset(-27);
+            make.bottom.equalTo(weixinBtn.mas_top).with.offset(-27);
         }];
         
         UIView* line2 = [[UIView alloc]init];
@@ -363,7 +366,7 @@
             make.right.equalTo(self).with.offset(-60);
             make.height.mas_equalTo(1);
             make.left.equalTo(orlabel.mas_right).with.offset(8);
-            make.bottom.equalTo(qqBtn.mas_top).with.offset(-27);
+            make.bottom.equalTo(weixinBtn.mas_top).with.offset(-27);
         }];
     }
     return self;

@@ -29,7 +29,8 @@
 #define APP_GetuiToken_Key @"app_getuiToken_Key"
 
 //友盟AppKey
-#define UMENG_APPKEY @"55482f9b67e58e8f9400c1bf"
+//#define UMENG_APPKEY @"55482f9b67e58e8f9400c1bf"
+#define UMENG_APPKEY @"5a17b300a40fa32895000260"
 //支付宝
 #define AlipayScheme @"MasterAlipay"
 //银联 Scheme
@@ -45,8 +46,10 @@
 #define Weibo_Callback @"3789703762"
 
 //微信以
-#define WeixinScheme @"wx00d2ac16fd629e08"
-#define Weixin_APPSECRET @"f7ac824dce38e6936ef4579beb0eb81e"
+//#define WeixinScheme @"wx00d2ac16fd629e08"
+#define WeixinScheme @"wxa094413f8976fb27"
+//#define Weixin_APPSECRET @"f7ac824dce38e6936ef4579beb0eb81e"
+#define Weixin_APPSECRET @"ef9ffdbd2921a456ec1e67953ca3c331"
 //QQ分享
 #define QQShareScheme @"QQ41C44DB0"
 #define QQLoginScheme @"tencent1103383984"
@@ -139,7 +142,7 @@
 #define RatioBase6s(x) 1.0f*ScreenWidth*x/414
 
 
-////com.shishiTec.HiMaster
+////com.shishiTec.MasterKA
 //#define API_DOMAIN @"https://rest3.gomaster.cn/index.php"
 //#define WEB_DOMAIN @"https://www.gomaster.cn"
 //#define IMAGE_DOMAIN @"https://resx.gomaster.cn/attms"

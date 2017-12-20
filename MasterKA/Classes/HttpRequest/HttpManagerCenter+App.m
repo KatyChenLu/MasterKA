@@ -15,7 +15,7 @@
     [params setObjectNotNull:[NSUserDefaults arcObjectForKey:APP_DeviceToken_Key] forKey:@"deviceToken"];
     [params setObjectNotNull:[NSUserDefaults arcObjectForKey:APP_GetuiToken_Key] forKey:@"clientId"];
     
-    return [self doRacPost:@"c=ipublic&a=init_conf" parameters:params resultClass:resultClass];
+    return [self doRacPost:@"c=ika&a=init_conf" parameters:params resultClass:resultClass];
 }
 
 //多图上传

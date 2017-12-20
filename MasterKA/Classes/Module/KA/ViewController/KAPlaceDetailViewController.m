@@ -44,6 +44,7 @@
     UIButton * moreBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     moreBtn.frame = CGRectMake(0, 0, 30, 30);
     [moreBtn setImage:[UIImage imageNamed:@"更多"] forState:UIControlStateNormal];
+     [moreBtn addTarget:self action:@selector(shareAction) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *fetchItem = [[UIBarButtonItem alloc] initWithCustomView:moreBtn];
     
     self.navigationItem.rightBarButtonItem = fetchItem;
@@ -214,6 +215,7 @@
             _beforeView.frame = self.topLabel.frame;
             NSDictionary *titleDIC=self.array[0];
             _headView.frame = CGRectMake(0, 0, ScreenWidth, self.topLabel.height+24+[titleDIC[@"bottom"] floatValue]/2);
+       
         }
      
     }completed:^{
@@ -248,7 +250,7 @@
         MapViewController *myView = [story instantiateViewControllerWithIdentifier:@"MapViewController"];
         
         myView.info=self.info;
-        //            myView.orderId=[[self.dataSource objectAtIndex:indexPath.section] objectAtIndex:indexPath.row][@"orderId"];
+        
         [self.navigationController pushViewController:myView animated:YES];
     }
 }
@@ -383,7 +385,9 @@
     cell.alpha = 1;
 }
 
-
+- (void)shareAction {
+    [self shareContentOfApp:self.info[@"share_data"]];
+}
 
 
 

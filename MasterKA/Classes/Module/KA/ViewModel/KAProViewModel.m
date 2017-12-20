@@ -8,10 +8,11 @@
 
 #import "KAProViewModel.h"
 #import "KAPreVoteTableViewCell.h"
+#import "KADetailViewController.h"
 
 @interface KAProViewModel ()<UITableViewDelegate,UITableViewDataSource>
-@property (nonatomic, strong)NSMutableArray *info;
-@property (nonatomic, strong)NSMutableArray *nomorArr;
+
+
 
 @end
 
@@ -19,11 +20,16 @@
 - (void)initialize {
     [super initialize];
     self.nomorArr = [NSMutableArray array];
+    self.selectVoteArr = [NSMutableArray array];
+    self.info = [NSMutableArray array];
     
 }
 - (void)bindTableView:(UITableView *)tableView {
     [super bindTableView:tableView];
     [self.mTableView registerCellWithReuseIdentifier:@"KAPreVoteTableViewCell"];
+    self.shouldMoreToRefresh = YES;
+    self.shouldPullToRefresh = YES;
+    self.pageSize = @(10);
 }
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath withObject:(id)object {
     KAPreVoteTableViewCell *mcell = (KAPreVoteTableViewCell *)cell;
@@ -36,10 +42,11 @@
     }];
     [mcell setDisselectClick:^(NSString *kaid) {
         @strongify(self);
-        [self.nomorArr removeLastObject];
+        
+        [self.nomorArr removeObject:kaid];
         self.selectVoteArr = self.nomorArr;
     }];
-    [mcell showKAPreVoteDetail:object[0]];
+    [mcell setKaProVoteDic:object];
 }
 
 -(NSString *)getReuseIdentifierWithIndexPath:(NSIndexPath *)indexPath {
@@ -50,51 +57,89 @@
     @weakify(self);
     return [[[fetchSignal collect] doNext:^(NSArray *pageSize) {
         @strongify(self);
-//        if(self.mTableView.mj_footer.isRefreshing ){
-//            [self.mTableView.mj_footer endRefreshing];
-//        }
-//        if (self.mTableView.mj_header.isRefreshing) {
-//            [self.mTableView.mj_header endRefreshing];
-//        }
+        if(self.mTableView.mj_footer.isRefreshing ){
+            [self.mTableView.mj_footer endRefreshing];
+        }
+        if (self.mTableView.mj_header.isRefreshing) {
+            [self.mTableView.mj_header endRefreshing];
+        }
         
     }] map:^id(NSArray *responses) {
         BaseModel *model = responses.firstObject;
         @strongify(self);
+        NSArray * array = [NSArray new];
         if (model.code==200) {
+            if (![model.data  isEqual:@""]) array = model.data;
+         
+                if([self.curPage intValue] > 1){
+                    NSMutableArray *indexPaths = [[NSMutableArray alloc] initWithArray:self.dataSource[0]];
+                    [indexPaths addObjectsFromArray:array];
+                    
+                    self.dataSource = @[ indexPaths ];
+                    self.info = self.dataSource[0];
+                }else{
+                                if (![model.data isEqual:[NSNull null]]) {
+//                                    for (NSDictionary *dataDic in model.data) {
+//                                        [self.nomorArr addObject:dataDic[@"ka_course_id"]];
+//                                    }
+                                    self.dataSource = @[model.data];
+                                    self.info = self.dataSource[0];
+                                }else {
+                    
+                                    self.dataSource = @[];
+                                }
+                    
+                    
+                                self.selectVoteArr = self.nomorArr ;
+                    
+                }
+                [self.mTableView reloadData];
+                
+        
             
-           
-//
-            NSDictionary *dic = model.data;
-//
-            NSMutableArray*data =[NSMutableArray array];
-//            self.detailSection=[NSMutableArray array];
+        }else{
             
-//            [data addObject:[self getNameAndMoney:self.info]];
-//
-            [data addObjectsFromArray:[self getDetail:model.data]];
-            self.info = data;
-            self.dataSource = data;
-            self.selectVoteArr = [NSMutableArray arrayWithArray:data];
-            self.nomorArr = self.selectVoteArr;
-            [self.mTableView reloadData];
-            
+            [self showRequestErrorMessage:model];
         }
+        
         return self.dataSource;
+//        if (model.code==200) {
+//
+//            self.info = model.data;
+//
+//
+//            if (![model.data isEqual:[NSNull null]]) {
+//                for (NSDictionary *dataDic in model.data) {
+//                    [self.nomorArr addObject:dataDic[@"ka_course_id"]];
+//                }
+//                self.dataSource = @[model.data];
+//            }else {
+//
+//                self.dataSource = @[];
+//            }
+//
+//
+//            self.selectVoteArr = self.nomorArr ;
+//            [self.mTableView reloadData];
+//
+//        }
+//        return self.dataSource;
     }];
     
 }
-- (NSMutableArray *)getDetail:(NSDictionary *)info {
-    NSMutableArray *detailArr = [NSMutableArray array];
-    NSArray *arr = info[@"guess_like"];
-    
-    for (NSDictionary * dic in arr) {
-        [detailArr addObject:@[dic]];
-//        [self.detailSection addObject:@"内容"];
-    }
-    return detailArr;
-}
+
 #pragma mark --
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+        NSDictionary *votePeopleData =  self.dataSource[indexPath.section][indexPath.row];
+        
+        KADetailViewController *kaDetailVC = [[KADetailViewController alloc] init];
+        
+        kaDetailVC.ka_course_id = votePeopleData[@"ka_course_id"];
+        kaDetailVC.headViewUrl = votePeopleData[@"course_cover"];
+        
+        [self.viewController pushViewController:kaDetailVC animated:YES];
+    
     
 }
 //设cell可编辑
@@ -124,8 +169,12 @@
         [self.mTableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         KAPreVoteTableViewCell *cell = [self.mTableView cellForRowAtIndexPath:indexPath];
         if (cell.KApreVoteBtn.isSelected) {
+            for (NSString *selectID in self.nomorArr) {
+                if ([cell.ka_course_id isEqualToString:selectID]) {
+                    [self.nomorArr removeObject:selectID];
+                }
+            }
             
-            [self.nomorArr removeLastObject];
             self.selectVoteArr = self.nomorArr;
         }
     }

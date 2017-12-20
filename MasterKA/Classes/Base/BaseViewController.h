@@ -74,4 +74,10 @@
 
 
 - (void)showRequestErrorMessage:(BaseModel*)model;
+
+//- (void)addVoteAction;
+- (void)deleteVoteActionWithKaCourseId:(NSString *)ka_course_id;
+- (void)reloadCntLabel;
+
+- (void)addVoteActionWithJoinImgView:(UIImageView *)joinImgView KaCourseId:(NSString *)ka_course_id Animation:(BOOL)isAnimation;
 @end

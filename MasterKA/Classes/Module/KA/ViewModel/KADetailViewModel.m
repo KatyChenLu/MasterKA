@@ -20,6 +20,8 @@
 
 #import "KATitleTableViewCell.h"
 #import "KADetailTableViewCell.h"
+#import "KADingzhiTableViewCell.h"
+#import "KAImageTableViewCell.h"
 
 @interface KADetailViewModel()<UITableViewDelegate,UITableViewDataSource,UIWebViewDelegate>
 @property (nonatomic,strong,readwrite)RACCommand *courseCommand;
@@ -48,7 +50,7 @@
     self.fresh=YES;
     self.courseCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(NSDictionary *model) {
         @strongify(self)
-        self.course_id=model[@"course_id"];
+        self.ka_course_id=model[@"ka_course_id"];
         [self first];
         return [RACSignal empty];
     }];
@@ -107,67 +109,31 @@
     [super bindTableView:tableView];
     self.cellReuseIdentifier = @"CouseDetailCell";
     [self.mTableView registerCellWithReuseIdentifier:@"KADetailTableViewCell"];
-//    [self.mTableView registerCellWithReuseIdentifier:@"UserShareListCell"];
-//    [self.mTableView registerCellWithReuseIdentifier:@"MasterShareTableViewCell"];
-//    [self.mTableView registerCellWithReuseIdentifier:@"CourseTableViewCell"];
-//    [self.mTableView registerCellWithReuseIdentifier:@"GuessLikeCell"];
-//    [self.mTableView registerCellWithReuseIdentifier:@"TimeAndStoreCell"];
-//    [self.mTableView registerCellWithReuseIdentifier:@"LeaderDetailCell"];
-//    [self.mTableView registerCellWithReuseIdentifier:@"StudentCell"];
     [self.mTableView registerCellWithReuseIdentifier:@"KATitleTableViewCell"];
+    [self.mTableView registerCellWithReuseIdentifier:@"KAImageTableViewCell"];
+    [self.mTableView registerCellWithReuseIdentifier:@"KADingzhiTableViewCell"];
     
 }
 - (NSString*)getReuseIdentifierWithIndexPath:(NSIndexPath *)indexPath
 {
     
-//    return @"KADetailTableViewCell";
-//    if([self haveShare:indexPath]){
-//        NSLog(@"%@",[[[self.dataSource objectAtIndex:indexPath.section]objectAtIndex:indexPath.row] objectForKey:@"master"]);
-//        if ([[[[self.dataSource objectAtIndex:indexPath.section]objectAtIndex:indexPath.row] objectForKey:@"master"] isEqual:@"user"]) {
-//            return  @"UserShareListCell";
-//        }else{
-//            return @"MasterShareTableViewCell";
-//        }
-//    }
-//    else if ([[_detailSection objectAtIndex:indexPath.section]isEqual:@"进阶课程"]){
-//        return @"CourseTableViewCell";
-//    }
-////    else if ([[_detailSection objectAtIndex:indexPath.section]isEqual:@"相关推荐"]){
-////        return @"GuessLikeCell";
-////    }
-//    else if ([[_detailSection objectAtIndex:indexPath.section]isEqual:@"时间地点"]){
-//        return @"TimeAndStoreCell";
-//
-//    }else if ([[_detailSection objectAtIndex:indexPath.section]isEqual:@"秒杀价格"]){
-//        return @"SeckillTableViewCell";
-//    }
-//
-//    else if ([[_detailSection objectAtIndex:indexPath.section]isEqual:@"详细"]){
-//        return @"LeaderDetailCell";
-//    }else if ([[_detailSection objectAtIndex:indexPath.section]isEqual:@"课程流程"]){
-//        return @"CourseProgressCell";
-//    }else if ([[_detailSection objectAtIndex:indexPath.section]isEqual:@"他们也喜欢"]){
-//        return @"StudentCell";
-//    }else if ([[_detailSection objectAtIndex:indexPath.section]isEqual:@"套餐"]){
-//        return @"CoursePackageCell";
-//    }else if ([[_detailSection objectAtIndex:indexPath.section]isEqualToString:@"问大家"]){
-//        return @"AskQuestionsCell";
-//    }else if ([[_detailSection objectAtIndex:indexPath.section]isEqualToString:@"提问题"]){
-//        return @"NoneQuestionCell";
-//    }else if ([[_detailSection objectAtIndex:indexPath.section]isEqual:@"masters"]){
-//        return @"MasterMsgCell";
-//    }else
-    if([[_detailSection objectAtIndex:indexPath.section]isEqual:@"标题"]){//标题、金额和酱油卡
+    if([[_detailSection objectAtIndex:indexPath.section]isEqual:@"标题"]){//标题
         return @"KATitleTableViewCell";
-    }
-        else{
+    }else if([[_detailSection objectAtIndex:indexPath.section]isEqual:@"课程介绍"]||[[_detailSection objectAtIndex:indexPath.section]isEqual:@"产品内容"]||[[_detailSection objectAtIndex:indexPath.section]isEqual:@"活动内容"]) {
         return @"KADetailTableViewCell";
+    }else if([[_detailSection objectAtIndex:indexPath.section]isEqual:@"图片列表"]){
+        return @"KAImageTableViewCell";
+    }else if ([[_detailSection objectAtIndex:indexPath.section]isEqual:@"定制流程"]) {
+        return @"KADingzhiTableViewCell";
+    }
+    else{
+        return nil;
     }
     
 }
 - (RACSignal*)requestRemoteDataSignalWithPage:(NSUInteger)page
 {
-    RACSignal *fetchSignal = [self.httpService getCourseDetail:@"4747" resultClass:nil];
+    RACSignal *fetchSignal = [self.httpService kaCourseDetail:self.ka_course_id resultClass:nil];
     @weakify(self);
     return [[[fetchSignal collect] doNext:^(NSArray *pageSize) {
         @strongify(self);
@@ -183,45 +149,79 @@
         @strongify(self);
         if (model.code==200) {
             
-             self.info = model.data;
-            
-            NSDictionary *dic = model.data;
+            self.info = model.data;
             
             NSMutableArray*data =[NSMutableArray array];
-              self.detailSection=[NSMutableArray array];
+            self.detailSection=[NSMutableArray array];
             
-            [data addObject:[self getNameAndMoney:self.info]];
-          
-            [data addObjectsFromArray:[self getDetail:self.info]];
+            [data addObject:[self getTitleView:self.info]];
+            [data addObject:[self getDesc:self.info[@"cousre_desc"]]];
+            [data addObject:[self getDescImgList:self.info[@"cousre_desc_img_lists"]]];
+            [data addObject:[self getContent:self.info[@"course_content"]]];
+            [data addObject:[self getProduct:self.info[@"course_product"]]];
+            [data addObject:[self getflowImg]];
             
             self.dataSource=data;
             
             [self.mTableView reloadData];
-
+            
         }
         return self.dataSource;
     }];
     
 }
-
-- (NSMutableArray *)getDetail:(NSDictionary *)info {
-    NSMutableArray *detailArr = [NSMutableArray array];
-    NSArray *arr = info[@"guess_like"];
+- (NSArray *)getflowImg {
+    NSMutableDictionary *contentDic = [NSMutableDictionary dictionary];
+    [contentDic setObject:@"定制流程" forKey:@"flowImg"];
+    [self.detailSection addObject:@"定制流程"];
+    return @[contentDic];
+}
+- (NSArray *)getDescImgList:(NSArray *)cousre_desc_img_lists {
     
-    for (NSDictionary * dic in arr) {
-        [detailArr addObject:@[dic]];
-        [self.detailSection addObject:@"内容"];
-    }
-    return detailArr;
+    [self.detailSection addObject:@"图片列表"];
+    return cousre_desc_img_lists;
 }
 
-- (NSMutableArray *)getNameAndMoney:(NSDictionary *)info{//商品名和金额
-    NSMutableArray *nameAndMoney=[NSMutableArray array];//名称金额
-    NSMutableDictionary *name_money=[NSMutableDictionary dictionary];
-    [name_money setObject:info[@"title"] forKey:@"title"];
-      [self.detailSection addObject:@"标题"];
-    [nameAndMoney addObject:name_money];
-    return nameAndMoney;
+
+- (NSArray *)getContent:(NSString *)course_content {
+    
+    NSMutableDictionary *contentDic = [NSMutableDictionary dictionary];
+    [contentDic setObject:course_content forKey:@"course_content"];
+    [contentDic setObject:@"course_content" forKey:@"type"];
+    [self.detailSection addObject:@"活动内容"];
+    return @[contentDic];
+}
+- (NSArray *)getProduct:(NSString *)course_product {
+    
+    NSMutableDictionary *producttDic = [NSMutableDictionary dictionary];
+    [producttDic setObject:course_product forKey:@"course_product"];
+    [producttDic setObject:@"course_product" forKey:@"type"];
+    [self.detailSection addObject:@"产品内容"];
+    return @[producttDic];
+}
+
+- (NSArray *)getDesc:(NSString *)cousre_desc {
+    
+    NSMutableDictionary *descDic = [NSMutableDictionary dictionary];
+    [descDic setObject:cousre_desc forKey:@"cousre_desc"];
+    [descDic setObject:@"cousre_desc" forKey:@"type"];
+    [self.detailSection addObject:@"课程介绍"];
+    return @[descDic];
+}
+
+- (NSArray *)getTitleView:(NSDictionary *)info{//标题View
+    
+    NSMutableDictionary *titleViewDic=[NSMutableDictionary dictionary];
+    [titleViewDic setObject:info[@"course_title"] forKey:@"course_title"];
+    [titleViewDic setObject:info[@"course_sub_title"] forKey:@"course_sub_title"];
+    [titleViewDic setObject:info[@"course_time"] forKey:@"course_time"];
+    [titleViewDic setObject:info[@"people_num"] forKey:@"people_num"];
+    [titleViewDic setObject:info[@"course_price"] forKey:@"course_price"];
+    [titleViewDic setObject:info[@"is_vote_cart"] forKey:@"is_vote_cart"];
+    [titleViewDic setObject:info[@"ka_course_id"] forKey:@"ka_course_id"];
+    [self.detailSection addObject:@"标题"];
+    
+    return @[titleViewDic];
 }
 
 
@@ -231,10 +231,25 @@
     if ([[_detailSection objectAtIndex:indexPath.section]isEqual:@"标题"]) {
         KATitleTableViewCell *_cell=(KATitleTableViewCell *)cell;
         [_cell showTitleCell:object];
+        @weakify(self);
+        [_cell setJoinClick:^(NSString *ka_course_id) {
+            @strongify(self);
+            [self.viewController addVoteActionWithJoinImgView:nil KaCourseId:ka_course_id Animation:NO];
+        }];
+        [_cell setCanceljoinClick:^(NSString *ka_course_id) {
+            @strongify(self);
+            [self.viewController deleteVoteActionWithKaCourseId:ka_course_id];
+        }];
         
-    }else{
+    }else if([[_detailSection objectAtIndex:indexPath.section]isEqual:@"课程介绍"]||[[_detailSection objectAtIndex:indexPath.section]isEqual:@"产品内容"]||[[_detailSection objectAtIndex:indexPath.section]isEqual:@"活动内容"]){
         KADetailTableViewCell *detailCell = (KADetailTableViewCell *)cell;
         [detailCell showDetail:object];
+    }else if([[_detailSection objectAtIndex:indexPath.section]isEqual:@"定制流程"]) {
+        KADingzhiTableViewCell *detailCell = (KADingzhiTableViewCell *)cell;
+        [detailCell showDingzhiDetail:object];
+    }else if ([[_detailSection objectAtIndex:indexPath.section]isEqual:@"图片列表"]) {
+        KAImageTableViewCell *detailCell = (KAImageTableViewCell *)cell;
+        [detailCell showContentImg:object];
     }
     
     
@@ -336,8 +351,8 @@
         [vct setCallbackBlock:^(NSDictionary *callBackData) {
             @strongify(self);
             NSLog(@"%@",callBackData);
-            if(callBackData[@"course_id"]){
-                self.course_id=callBackData[@"course_id"];
+            if(callBackData[@"ka_course_id"]){
+                self.ka_course_id=callBackData[@"ka_course_id"];
                 //                [self.mTableView reloadData];
             }else{
                 [self pushtoCourseDateViewController:callBackData];
@@ -388,8 +403,8 @@
             KADetailViewController * view=(BaseViewController*)self.viewController;
             CGRect rect = view.mineHeadView.frame;
             rect.origin.y =offsetY;
-            rect.size.height = ScreenWidth - offsetY;
             rect.size.width = ScreenWidth-offsetY;
+            rect.size.height = ScreenWidth/375*234 -offsetY;
             rect.origin.x =offsetY/2;
             view.mineHeadView.frame = rect;
         }
@@ -453,14 +468,14 @@
         NSString * gourpId = dic[@"course_cfg_id"];
         //tag = @"1";
         if(isfromordernary == YES){
-            vct.params =@{@"courseId":self.course_id,@"gourpId":gourpId,@"info":self.info};}
+            vct.params =@{@"courseId":self.ka_course_id,@"gourpId":gourpId,@"info":self.info};}
         else{
-            vct.params =@{@"courseId":self.course_id,@"gourpId":gourpId,@"info":self.info,@"tag":tag};
+            vct.params =@{@"courseId":self.ka_course_id,@"gourpId":gourpId,@"info":self.info,@"tag":tag};
         }
         isfromordernary = NO;
     }else{
         vct = [UIViewController viewControllerWithName:@"CoursePayViewController"];
-        vct.params =@{@"courseId":self.course_id ,@"info":self.info,@"tag":tag};
+        vct.params =@{@"courseId":self.ka_course_id ,@"info":self.info,@"tag":tag};
         
     }
     [self.viewController pushViewController:vct animated:YES];
@@ -487,7 +502,7 @@
 -(void)showShare{
     UIStoryboard *story = [UIStoryboard storyboardWithName:@"Mine" bundle:[NSBundle mainBundle]];
     UIViewController* vct= [story instantiateViewControllerWithIdentifier:@"MyShareViewController"];
-    vct.params =@{@"course_id":self.course_id,@"title":@"课程分享"};
+    vct.params =@{@"course_id":self.ka_course_id,@"title":@"课程分享"};
     [self.viewController pushViewController:vct animated:YES];
     
 }

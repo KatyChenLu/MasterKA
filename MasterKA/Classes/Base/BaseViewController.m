@@ -13,7 +13,6 @@
 #import "TableViewModel.h"
 #import "GoodsHomeViewController.h"
 #import "DBHelper.h"
-#import "AppConfigModel.h"
 #import "UIButton+Master.h"
 #import "ShopBaseViewController.h"
 //#import "NewSearchViewController.h"
@@ -21,15 +20,18 @@
 //#import "MasterShareSearchViewController.h"
 #import "KAVoteViewController.h"
 #import "KAHomeViewController.h"
+#import "HomeTextField.h"
 
 @interface BaseViewController ()<UINavigationControllerDelegate,UIGestureRecognizerDelegate>
 @property (nonatomic,strong)UIScrollView *freshScrollView;
 @property (nonatomic,strong)LoadingFailView *loadingFailView;
 @property (nonatomic, strong, readwrite) BaseViewModel *viewModel;
 @property (nonatomic, strong, readwrite) UserClient *userClient;
-@property (nonatomic,strong,readwrite)UITextField *searchTitleView;
+@property (nonatomic,strong,readwrite)HomeTextField *searchTitleView;
 @property (nonatomic,strong)NSDictionary *requestAlert;
 @property (nonatomic,strong)NSDictionary *userInfo;
+@property (nonatomic,strong)CALayer     *layer;
+@property (nonatomic,strong) UIBezierPath *path;
 @end
 
 @implementation BaseViewController
@@ -195,17 +197,13 @@
 #pragma mark -- 私有方法
 
 
-- (UITextField*)searchTitleView{
+- (HomeTextField*)searchTitleView{
     
     if (!_searchTitleView) {
         
-        _searchTitleView = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth-60, 30)];
+        _searchTitleView = [[HomeTextField alloc] initWithFrame:CGRectMake(100, 0, ScreenWidth-60, 30)];
         
-        [_searchTitleView setBackgroundColor:[UIColor colorWithHex:0xffffff]];
-        
-        [_searchTitleView setCornerRadius:15];
-        
-        _searchTitleView.font = [UIFont systemFontOfSize:13.0f];
+        [_searchTitleView setBackgroundColor:[UIColor clearColor]];
         
         _searchTitleView.returnKeyType  = UIReturnKeySearch;
         
@@ -214,14 +212,23 @@
         UIImageView *leftView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"search"]];
 
         _searchTitleView.leftView =leftView;
+        
+        _searchTitleView.leftView.frame = CGRectMake(0, 0, 16, 16);
 
         _searchTitleView.leftViewMode = UITextFieldViewModeAlways;
         
-        _searchTitleView.placeholder =@"搜索分享、达人、课程";
+        _searchTitleView.placeholder =@"   搜索你感兴趣的活动";
         
         [_searchTitleView setValue:[UIColor lightGrayColor] forKeyPath:@"_placeholderLabel.textColor"];
         
-        _searchTitleView.tintColor = [UIColor colorWithHex:0xe2b910];
+        [_searchTitleView setValue:[UIFont systemFontOfSize:12] forKeyPath:@"_placeholderLabel.font"];
+        
+        _searchTitleView.font = [UIFont systemFontOfSize:12];
+        
+//        [_searchTitleView setValue:[UIColor lightGrayColor] forKeyPath:@"_placeholderLabel.textColor"];
+//             _searchTitleView.font = [UIFont systemFontOfSize:12.0f];
+//        _searchTitleView.tintColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
+//         _searchTitleView.font = [UIFont systemFontOfSize:12.0f];
         
     }
     
@@ -376,13 +383,13 @@
 }
 - (UIView *)voteNavView {
     if (!_voteNavView) {
-        _voteNavView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+        _voteNavView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
       
         [_voteNavView addSubview:self.voteBtn];
         [_voteNavView addSubview:self.cntLabel];
-        self.cntLabel.center = CGPointMake(30, 0);
+        self.cntLabel.center = CGPointMake(20, 0);
         
-        self.cntLabel.hidden = [UserClient sharedUserClient].voteNum?NO:YES;
+//        self.cntLabel.hidden = [UserClient sharedUserClient].voteNum?NO:YES;
         
     }
     return _voteNavView;
@@ -392,7 +399,7 @@
     if (!_voteBtn) {
         _voteBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_voteBtn setImage:[UIImage imageNamed:@"投票箱"] forState:UIControlStateNormal];
-        _voteBtn.frame = CGRectMake(0, 5, 30, 30);
+        _voteBtn.frame = CGRectMake(0, 0, 20, 20);
       [_voteBtn addTarget:self action:@selector(voteClicked) forControlEvents:UIControlEventTouchUpInside];
     }
     return _voteBtn;
@@ -400,11 +407,11 @@
 
 - (UILabel *)cntLabel {
     if (!_cntLabel) {
-        _cntLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 15, 15)];
+        _cntLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, -6, 12, 12)];
         _cntLabel.textColor = [UIColor whiteColor];
         _cntLabel.textAlignment = NSTextAlignmentCenter;
-        _cntLabel.font = [UIFont boldSystemFontOfSize:13];
-        _cntLabel.backgroundColor =RGBFromHexadecimal(0xfe3600) ;
+        _cntLabel.font = [UIFont boldSystemFontOfSize:8.0f];
+        _cntLabel.backgroundColor =RGBFromHexadecimal(0xf54f2a) ;
         _cntLabel.layer.cornerRadius = CGRectGetHeight(_cntLabel.bounds)/2;
         _cntLabel.layer.masksToBounds = YES;
         
@@ -601,20 +608,155 @@
     }
     [alertView show];
 }
-- (void)seachclicked{
-    
-//    MasterShareSearchViewController *vct = (MasterShareSearchViewController *)[UIStoryboard viewController:@"MasterShare" identifier:@"MasterShareSearchViewController"];
+//- (void)seachclicked{
 //
-//    [self.navigationController pushViewController:vct animated:YES];
-    
-}
+////    MasterShareSearchViewController *vct = (MasterShareSearchViewController *)[UIStoryboard viewController:@"MasterShare" identifier:@"MasterShareSearchViewController"];
+////
+////    [self.navigationController pushViewController:vct animated:YES];
+//
+//}
 
 - (void)voteClicked {
-    KAVoteViewController *vct = (KAVoteViewController *)[UIStoryboard viewController:@"KA" identifier:@"KAVoteViewController"];
+    if ([self doLogin]) {
+        
+        KAVoteViewController *vct = (KAVoteViewController *)[UIStoryboard viewController:@"KA" identifier:@"KAVoteViewController"];
+        
+        [self.navigationController pushViewController:vct animated:YES];
+    }
     
-    [self.navigationController pushViewController:vct animated:YES];
 }
 
+- (void)addVoteAction {
+    [UserClient sharedUserClient].voteNum++;
+    if ([UserClient sharedUserClient].voteNum) {
+        self.cntLabel.hidden = NO;
+    }
+    CATransition *animation = [CATransition animation];
+    animation.duration = 0.25f;
+    self.cntLabel.text = [NSString stringWithFormat:@"%ld",[UserClient sharedUserClient].voteNum];
+    [self.cntLabel.layer addAnimation:animation forKey:nil];
+    
+    CABasicAnimation *shakeAnimation = [CABasicAnimation animationWithKeyPath:@"transform.translation.y"];
+    shakeAnimation.duration = 0.25f;
+    shakeAnimation.fromValue = [NSNumber numberWithFloat:-5];
+    shakeAnimation.toValue = [NSNumber numberWithFloat:5];
+    shakeAnimation.autoreverses = YES;
+    
+    [self.voteNavView.layer addAnimation:shakeAnimation forKey:nil];
+}
+- (void)deleteVoteActionWithKaCourseId:(NSString *)ka_course_id {
+    
+    [[[HttpManagerCenter sharedHttpManager] cancelVoteCart:ka_course_id resultClass:nil] subscribeNext:^(BaseModel *model) {
+        if (model.code==200) {
+            NSLog(@"取消加入成功");
+            
+            [UserClient sharedUserClient].voteNum--;
+            if ([UserClient sharedUserClient].voteNum) {
+                self.cntLabel.text = [NSString stringWithFormat:@"%ld",[UserClient sharedUserClient].voteNum];
+            }else{
+                self.cntLabel.hidden = YES;
+            }
+        }else{
+            
+        }
+    }];
+    
+  
+}
+- (void)reloadCntLabel {
+    if ([UserClient sharedUserClient].voteNum) {
+        self.cntLabel.hidden = NO;
+         self.cntLabel.text = [NSString stringWithFormat:@"%ld",[UserClient sharedUserClient].voteNum];
+    }else{
+          self.cntLabel.hidden = YES;
+    }
+    
+}
+- (void)addVoteActionWithJoinImgView:(UIImageView *)joinImgView KaCourseId:(NSString *)ka_course_id Animation:(BOOL)isAnimation{
+    [[[HttpManagerCenter sharedHttpManager] addVoteCart:ka_course_id resultClass:nil] subscribeNext:^(BaseModel *model) {
+        if (model.code==200) {
+            NSLog(@"加入成功");
+            if (isAnimation) {//有加入动画
+                UIView *view = self.navigationController.view;
+                CGPoint startPoint = [view convertPoint:joinImgView.center fromView:joinImgView];
+                if (!_layer) {
+                    //        _btn.enabled = NO;
+                    _layer = [CALayer layer];
+                    _layer.contents = (__bridge id)joinImgView.image.CGImage;
+                    _layer.contentsGravity = kCAGravityResizeAspectFill;
+                    _layer.bounds = CGRectMake(0, 0, 50, 50);
+                    [_layer setCornerRadius:CGRectGetHeight([_layer bounds]) / 2];
+                    _layer.masksToBounds = YES;
+                    _layer.position =startPoint;
+                    
+                    [self.view.window.layer addSublayer:_layer];
+                }
+                
+                CGPoint endPoint = CGPointMake(ScreenWidth - 30, 50);
+                [self showAddCartAnmationSview:view
+                                     imageView:joinImgView
+                                      starPoin:startPoint
+                                      endPoint:endPoint
+                                   dismissTime:0.55];
+            }else{//不需要动画
+                 [self addVoteAction];
+            }
+        }else{
+            
+        }
+    }];
+    
+}
+
+- (void)showAddCartAnmationSview:(UIView *)sview
+                       imageView:(UIImageView *)imageView
+                        starPoin:(CGPoint)startPoint
+                        endPoint:(CGPoint)endpoint
+                     dismissTime:(float)dismissTime
+{
+    
+    
+    self.path = [UIBezierPath bezierPath];
+    [_path moveToPoint:startPoint];
+    [_path addQuadCurveToPoint:endpoint controlPoint:CGPointMake(150, 20)];
+    
+    CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+    animation.path = _path.CGPath;
+    animation.rotationMode = kCAAnimationRotateAuto;
+    CABasicAnimation *expandAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    expandAnimation.duration = 0.2f;
+    expandAnimation.fromValue = [NSNumber numberWithFloat:1];
+    expandAnimation.toValue = [NSNumber numberWithFloat:2.0f];
+    expandAnimation.timingFunction=[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+    
+    CABasicAnimation *narrowAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    narrowAnimation.beginTime = 0.2;
+    narrowAnimation.fromValue = [NSNumber numberWithFloat:2.0f];
+    narrowAnimation.duration = 0.6f;
+    narrowAnimation.toValue = [NSNumber numberWithFloat:0.5f];
+    
+    narrowAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+    
+    CAAnimationGroup *groups = [CAAnimationGroup animation];
+    groups.animations = @[animation,expandAnimation,narrowAnimation];
+    groups.duration = 0.8f;
+    groups.removedOnCompletion=NO;
+    groups.fillMode=kCAFillModeForwards;
+    groups.delegate = self;
+    [_layer addAnimation:groups forKey:@"group"];
+}
+-(void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
+{
+    if (anim == [_layer animationForKey:@"group"]) {
+        
+//        _btn.enabled = YES;
+        [_layer removeFromSuperlayer];
+        _layer = nil;
+        
+        [self addVoteAction];
+    
+    }
+}
 #pragma mask -- UIGestureRecognizerDelegate
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer;

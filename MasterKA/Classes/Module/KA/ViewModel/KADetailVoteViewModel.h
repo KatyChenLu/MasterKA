@@ -9,5 +9,5 @@
 #import "TableViewModel.h"
 
 @interface KADetailVoteViewModel : TableViewModel
-
+@property (nonatomic, strong)NSString *vote_id;
 @end

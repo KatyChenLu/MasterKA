@@ -12,7 +12,7 @@
 //视频上传
 - (RACSignal*)uploadMovie:(NSString*)upload_data resultClass:(Class)resultClass;
 
-
+//初始化信息接口
 - (RACSignal*)appConfig:(Class)resultClass;
 
 

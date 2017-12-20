@@ -89,7 +89,7 @@
     
     _cycleScrollView.imageURLStringsGroup = urls;
     
-    _cycleScrollView.canBorwser = self.canBorwser;
+//    _cycleScrollView.canBorwser = self.canBorwser;
     
     if(urls.count  <= 1){
         

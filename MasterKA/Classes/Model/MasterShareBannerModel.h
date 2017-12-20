@@ -18,6 +18,4 @@
 @property (nonatomic,strong)NSString *is_open;              //是否原生浏览器打开(1需要,0不需要)
 @property (nonatomic,strong)NSString *pfurl;                //需要跳转的url
 
-
-//@property (nonatomic,strong)NSString *intro;
 @end

@@ -644,7 +644,7 @@ UserClient * _userClient;
             [keywords addObject:desc];
             attributeSet.keywords = keywords;
             NSString *identifiner = [NSString stringWithFormat:@"%@",nid];
-            [searchableItems addObject:[[CSSearchableItem alloc]initWithUniqueIdentifier:identifiner domainIdentifier:@"com.shishiTec.HiMaster" attributeSet:attributeSet]];
+            [searchableItems addObject:[[CSSearchableItem alloc]initWithUniqueIdentifier:identifiner domainIdentifier:@"com.shishiTec.MasterKA" attributeSet:attributeSet]];
         }
         
         [[CSSearchableIndex defaultSearchableIndex]indexSearchableItems:searchableItems completionHandler:^(NSError * __nullable error) {
@@ -745,18 +745,6 @@ UserClient * _userClient;
             AppConfigModel *configModel = model.data;
             [dbHelper deleteClass:[CityModel class]];
             [dbHelper insertModelArray:configModel.city_list];
-            [dbHelper deleteClass:[CategoryModel class]];
-            [dbHelper insertModelArray:configModel.category_list];
-            [dbHelper deleteClass:[SuperscriptModel class]];
-            [dbHelper insertModelArray:configModel.superscript_list];
-            [dbHelper deleteClass:[InterestModel class]];
-            [dbHelper insertModelArray:configModel.interest_list];
-            [dbHelper deleteClass:[OrderTypeModel class]];
-            [dbHelper insertModelArray:configModel.order_type];
-            [dbHelper deleteClass:[SelectTypeModel class]];
-            [dbHelper insertModelArray:configModel.select_type];
-            [dbHelper deleteClass:[CategoryUserModel class]];
-            [dbHelper insertModelArray:configModel.category_user_list];
             
             [[UserClient sharedUserClient] setAppConfigUrl:configModel];
             NSLog(@"*************%s*********",__func__);

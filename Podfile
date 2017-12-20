@@ -1,6 +1,7 @@
 platform :ios, '7.0'
 
 target ‘MasterKA’ do
+
 pod 'ReactiveCocoa', '~> 2.5’
 pod "Realm"
 #pod ‘UMengUShare'
@@ -24,4 +25,6 @@ pod 'SAMKeychain'
 pod 'SDWebImage/GIF'
 pod 'FLAnimatedImage', '~> 1.0’
 pod 'MJExtension'
+pod 'SDCycleScrollView','~> 1.73'
+pod 'NMRangeSlider' 
 end

@@ -9,5 +9,5 @@
 #import "TableViewModel.h"
 
 @interface KAInVIewModel : TableViewModel
-
+@property(nonatomic, strong) NSArray *info;
 @end

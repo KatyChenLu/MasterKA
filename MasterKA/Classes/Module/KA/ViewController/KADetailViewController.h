@@ -11,4 +11,6 @@
 @interface KADetailViewController : BaseViewController
 @property (nonatomic,strong)UIImageView *mineHeadView;
 @property (nonatomic, copy)NSString *headViewUrl;
+@property (strong , nonatomic) NSString *ka_course_id;
+
 @end

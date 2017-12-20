@@ -17,5 +17,7 @@
 @property (nonatomic, copy) NSString *KApeople;
 
 @property (nonatomic, strong)NSMutableArray *selectVoteArr;
+@property (nonatomic, strong)NSMutableArray *nomorArr;
 @property (nonatomic, assign)BOOL isHideSelect;
+@property (nonatomic, strong)NSMutableArray *info;
 @end

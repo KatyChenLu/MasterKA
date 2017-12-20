@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 #import "SlideNavigationController.h"
 @interface KAHomeViewController : BaseViewController<SlideNavigationControllerDelegate>
-@property (nonatomic, assign) NSInteger cnt;
+
 @end

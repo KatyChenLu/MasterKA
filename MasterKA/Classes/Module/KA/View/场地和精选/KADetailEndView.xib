@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="KADetailEndView" id="iN0-l3-epB" customClass="KADetailEndView">
+            <rect key="frame" x="0.0" y="0.0" width="336" height="222"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="THE END" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCo-wn-q1l">
+                    <rect key="frame" x="132.5" y="44" width="71" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                    <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q7u-aX-m8n">
+                    <rect key="frame" x="104.5" y="54" width="20" height="1"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="NAg-1Q-av1"/>
+                        <constraint firstAttribute="height" constant="1" id="jEa-xe-e4F"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mse-N6-SNd">
+                    <rect key="frame" x="211.5" y="54" width="20" height="1"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="gdq-Id-8ml"/>
+                        <constraint firstAttribute="width" constant="20" id="mNc-DJ-L79"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ST0-6I-pqq">
+                    <rect key="frame" x="12" y="108" width="312" height="1"/>
+                    <color key="backgroundColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="dsb-ZX-uGs"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ST0-6I-pqq" firstAttribute="top" secondItem="KCo-wn-q1l" secondAttribute="bottom" constant="43" id="2WB-PQ-J3u"/>
+                <constraint firstItem="KCo-wn-q1l" firstAttribute="leading" secondItem="Q7u-aX-m8n" secondAttribute="trailing" constant="8" id="FU6-Q6-6qy"/>
+                <constraint firstItem="ST0-6I-pqq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="12" id="GpL-q9-Lqw"/>
+                <constraint firstItem="mse-N6-SNd" firstAttribute="leading" secondItem="KCo-wn-q1l" secondAttribute="trailing" constant="8" id="JOT-Uj-6Y7"/>
+                <constraint firstItem="KCo-wn-q1l" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="44" id="PMA-PD-kwF"/>
+                <constraint firstItem="mse-N6-SNd" firstAttribute="centerY" secondItem="KCo-wn-q1l" secondAttribute="centerY" id="PdA-bl-MFc"/>
+                <constraint firstItem="Q7u-aX-m8n" firstAttribute="centerY" secondItem="KCo-wn-q1l" secondAttribute="centerY" id="aHi-Zr-d59"/>
+                <constraint firstAttribute="trailing" secondItem="ST0-6I-pqq" secondAttribute="trailing" constant="12" id="hsB-bn-ahJ"/>
+                <constraint firstItem="KCo-wn-q1l" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="loE-3i-U84"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="endLabel" destination="KCo-wn-q1l" id="VIw-qo-DMs"/>
+            </connections>
+            <point key="canvasLocation" x="37" y="87"/>
+        </view>
+    </objects>
+</document>

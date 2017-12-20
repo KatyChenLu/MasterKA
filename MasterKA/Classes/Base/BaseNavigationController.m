@@ -19,6 +19,8 @@
     self.delegate = self;
 //    self.navigationBar.shadowImageColor = MasterDefaultColor;
 //    self.navigationBar.backgroundImageColor = MasterDefaultColor;
+        self.navigationBar.shadowImageColor = [UIColor whiteColor];
+        self.navigationBar.backgroundImageColor = [UIColor whiteColor];
     self.navigationBar.translucent = NO;
     self.navigationBar.tintColor = [UIColor blackColor];
 }

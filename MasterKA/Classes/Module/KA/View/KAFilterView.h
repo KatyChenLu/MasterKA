@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TTRangeSlider.h"
+
 
 
 
@@ -25,9 +25,15 @@ typedef NS_ENUM(NSInteger,filterType){
 
 
 
-@property(nonatomic , copy)void(^filter)(id ID);
+@property(nonatomic , copy)void(^filterSendBlock)(CGFloat min,CGFloat max);
 @property(nonatomic, copy)void(^touchBlock)();
 @property (nonatomic, assign) filterType type;
 
-- (instancetype)initWithFrame:(CGRect)frame withType:(filterType)type;
+@property (nonatomic, strong)NSString *filerMin;
+@property (nonatomic, strong)NSString *filerMax;
+
+@property (nonatomic, strong)NSArray *sliderArr;
+
+
+- (instancetype)initWithFrame:(CGRect)frame withFilerMin:(CGFloat )filerMin filerMax:(CGFloat )filerMax selectMin:(CGFloat )selectMin selectMax:(CGFloat )selectMax sliderArr:(NSArray *)sliderArr;
 @end

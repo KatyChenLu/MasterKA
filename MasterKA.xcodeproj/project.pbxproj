@@ -683,13 +683,6 @@
 		CCE043AD1CC8609E009E7181 /* UIScrollView+ty_swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE043A81CC8609E009E7181 /* UIScrollView+ty_swizzle.m */; };
 		CCE043B31CC8953D009E7181 /* MasterShareBannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE043B21CC8953D009E7181 /* MasterShareBannerModel.m */; };
 		CCE043B61CC8A5F9009E7181 /* TYScrollPageTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE043B51CC8A5F9009E7181 /* TYScrollPageTabBar.m */; };
-		CCE043DF1CC8B228009E7181 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE043D21CC8B228009E7181 /* TAAbstractDotView.m */; };
-		CCE043E01CC8B228009E7181 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE043D41CC8B228009E7181 /* TAAnimatedDotView.m */; };
-		CCE043E11CC8B228009E7181 /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE043D61CC8B228009E7181 /* TADotView.m */; };
-		CCE043E21CC8B228009E7181 /* TAPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE043D81CC8B228009E7181 /* TAPageControl.m */; };
-		CCE043E31CC8B228009E7181 /* SDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE043DA1CC8B228009E7181 /* SDCollectionViewCell.m */; };
-		CCE043E41CC8B228009E7181 /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE043DC1CC8B228009E7181 /* SDCycleScrollView.m */; };
-		CCE043E51CC8B228009E7181 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE043DE1CC8B228009E7181 /* UIView+SDExtension.m */; };
 		CCE043E81CC8C588009E7181 /* ScrollPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE043E71CC8C588009E7181 /* ScrollPageViewController.m */; };
 		CCE38A521CF2AD5500F4812C /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCE38A511CF2AD5500F4812C /* JavaScriptCore.framework */; };
 		CCE38A541CF2AD7F00F4812C /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCE38A531CF2AD7E00F4812C /* CoreBluetooth.framework */; };
@@ -716,6 +709,7 @@
 		EC0A3F8A1E88F5FC0051FC17 /* PopMenuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0A3F841E88F5FC0051FC17 /* PopMenuModel.m */; };
 		EC0A3F8B1E88F5FC0051FC17 /* PopMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0A3F861E88F5FC0051FC17 /* PopMenuButton.m */; };
 		EC0A3F8C1E88F5FC0051FC17 /* UIColor+ImageGetColor.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0A3F881E88F5FC0051FC17 /* UIColor+ImageGetColor.m */; };
+		EC1B78451FE154CC00B6F6E4 /* YHSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1B78441FE154CC00B6F6E4 /* YHSlider.m */; };
 		EC2CBE4D1ECC55FE0002B12C /* CLPlayerMaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2CBE481ECC55FE0002B12C /* CLPlayerMaskView.m */; };
 		EC2CBE4E1ECC55FE0002B12C /* CLPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2CBE4A1ECC55FE0002B12C /* CLPlayerView.m */; };
 		EC2CBE4F1ECC55FE0002B12C /* CLSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2CBE4C1ECC55FE0002B12C /* CLSlider.m */; };
@@ -723,8 +717,6 @@
 		EC3750D01E7908240067AF0F /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EC3750CE1E7908240067AF0F /* AlipaySDK.bundle */; };
 		EC3750D11E7908240067AF0F /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC3750CF1E7908240067AF0F /* AlipaySDK.framework */; };
 		EC463BB41FCBBC1200FA4AB9 /* KAPlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC463BB31FCBBC1200FA4AB9 /* KAPlaceViewController.m */; };
-		EC463BB81FCBBC3F00FA4AB9 /* KAPlaceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC463BB61FCBBC3F00FA4AB9 /* KAPlaceTableViewCell.m */; };
-		EC463BB91FCBBC3F00FA4AB9 /* KAPlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC463BB71FCBBC3F00FA4AB9 /* KAPlaceTableViewCell.xib */; };
 		EC463BBC1FCBE8D200FA4AB9 /* KAPlaceViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EC463BBB1FCBE8D200FA4AB9 /* KAPlaceViewModel.m */; };
 		EC463BBF1FCC1B2B00FA4AB9 /* KAPlaceDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC463BBE1FCC1B2B00FA4AB9 /* KAPlaceDetailViewController.m */; };
 		EC47FCD41E80D70C007A3EF6 /* DACircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC47FCBC1E80D70C007A3EF6 /* DACircularProgressView.m */; };
@@ -757,7 +749,24 @@
 		EC6CD1EB1EEA7C9A0001CAB6 /* UINavigationController+MasterBack.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6CD1EA1EEA7C9A0001CAB6 /* UINavigationController+MasterBack.m */; };
 		EC6D93A31EA9B8D100F35E10 /* SeckillTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6D93A11EA9B8D100F35E10 /* SeckillTableViewCell.m */; };
 		EC6D93A41EA9B8D100F35E10 /* SeckillTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC6D93A21EA9B8D100F35E10 /* SeckillTableViewCell.xib */; };
+		EC6E27331FDA4DD800D4E300 /* KADingzhiTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6E27311FDA4DD800D4E300 /* KADingzhiTableViewCell.m */; };
+		EC6E27341FDA4DD900D4E300 /* KADingzhiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC6E27321FDA4DD800D4E300 /* KADingzhiTableViewCell.xib */; };
+		EC6E273B1FDA7EE300D4E300 /* KAEditTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6E27391FDA7EE300D4E300 /* KAEditTableViewCell.m */; };
+		EC6E273C1FDA7EE300D4E300 /* KAEditTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC6E273A1FDA7EE300D4E300 /* KAEditTableViewCell.xib */; };
+		EC6E275D1FDA825000D4E300 /* KAEditViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6E275C1FDA825000D4E300 /* KAEditViewModel.m */; };
+		EC6F347D1FD9368D00FD49B6 /* KAImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6F347B1FD9368400FD49B6 /* KAImageTableViewCell.m */; };
+		EC6F347E1FD9368E00FD49B6 /* KAImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC6F347C1FD9368400FD49B6 /* KAImageTableViewCell.xib */; };
 		EC70A7651EC1D06B00426C3C /* CLCountDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC70A7641EC1D06B00426C3C /* CLCountDownView.m */; };
+		EC762B6A1FDF870200241FBE /* KADetailVoteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC762B681FDF870200241FBE /* KADetailVoteTableViewCell.m */; };
+		EC762B6B1FDF870200241FBE /* KADetailVoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC762B691FDF870200241FBE /* KADetailVoteTableViewCell.xib */; };
+		EC762B6E1FDFA27C00241FBE /* KAVotePeopleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC762B6D1FDFA27C00241FBE /* KAVotePeopleViewController.m */; };
+		EC762B721FDFA2A700241FBE /* KAVotePeopleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC762B701FDFA2A700241FBE /* KAVotePeopleTableViewCell.m */; };
+		EC762B731FDFA2A700241FBE /* KAVotePeopleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC762B711FDFA2A700241FBE /* KAVotePeopleTableViewCell.xib */; };
+		EC762B761FDFB20400241FBE /* KASearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC762B751FDFB20400241FBE /* KASearchViewController.m */; };
+		EC762B7C1FDFC32000241FBE /* KASearchTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC762B7B1FDFC32000241FBE /* KASearchTableView.m */; };
+		EC762B7F1FDFDFF500241FBE /* KACollectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC762B7E1FDFDFF500241FBE /* KACollectViewController.m */; };
+		EC762B831FDFE0B400241FBE /* KACollectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC762B811FDFE0B400241FBE /* KACollectTableViewCell.m */; };
+		EC762B841FDFE0B400241FBE /* KACollectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC762B821FDFE0B400241FBE /* KACollectTableViewCell.xib */; };
 		EC77EFEB1F3AF9FB00FADD09 /* AskQuestionsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC77EFE91F3AF9FB00FADD09 /* AskQuestionsCell.m */; };
 		EC77EFF81F3B138D00FADD09 /* AskQuestionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC77EFF71F3B138D00FADD09 /* AskQuestionsCell.xib */; };
 		EC77EFFB1F3B1D0E00FADD09 /* AskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC77EFFA1F3B1D0E00FADD09 /* AskViewController.m */; };
@@ -765,23 +774,28 @@
 		EC7897341F3C3C530024B0AA /* AslListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7897321F3C3C530024B0AA /* AslListTableViewCell.m */; };
 		EC7897351F3C3C530024B0AA /* AslListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC7897331F3C3C530024B0AA /* AslListTableViewCell.xib */; };
 		EC7897381F3C6B290024B0AA /* AskQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7897371F3C6B290024B0AA /* AskQuestionViewController.m */; };
+		EC78BC991FE377BA00D3ADED /* KACollectViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EC78BC981FE377BA00D3ADED /* KACollectViewModel.m */; };
+		EC78BC9C1FE3BACA00D3ADED /* KAVotePeopleViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EC78BC9B1FE3BACA00D3ADED /* KAVotePeopleViewModel.m */; };
 		EC7DDD911EE64E3C007BB0A3 /* CLPaoPaoView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7DDD901EE64E3C007BB0A3 /* CLPaoPaoView.m */; };
 		EC7DDD931EE64E4D007BB0A3 /* CLPaoPaoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC7DDD921EE64E4D007BB0A3 /* CLPaoPaoView.xib */; };
 		EC8080B81FCFAEAA00267A68 /* HttpManagerCenter+KA.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8080B71FCFAEA900267A68 /* HttpManagerCenter+KA.m */; };
 		EC8080BC1FCFE41B00267A68 /* KAPlaceDetailTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8080BA1FCFE41B00267A68 /* KAPlaceDetailTitleTableViewCell.m */; };
 		EC8080BD1FCFE41B00267A68 /* KAPlaceDetailTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8080BB1FCFE41B00267A68 /* KAPlaceDetailTitleTableViewCell.xib */; };
-		EC81D1FB1FB4671E002C4E38 /* TTRangeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = EC81D1F91FB4671D002C4E38 /* TTRangeSlider.m */; };
-		EC81D1FE1FB46913002C4E38 /* JLDoubleSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = EC81D1FD1FB46912002C4E38 /* JLDoubleSlider.m */; };
 		EC81F0A21F95B10500916496 /* MasterTextfield.m in Sources */ = {isa = PBXBuildFile; fileRef = EC81F0A11F95B10500916496 /* MasterTextfield.m */; };
 		EC81F0A91F95ED9F00916496 /* MDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC81F0A81F95ED9F00916496 /* MDatePickerView.m */; };
 		EC81F0AC1F96083900916496 /* MPickerBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC81F0AB1F96083900916496 /* MPickerBaseView.m */; };
 		EC81F0AF1F960D6400916496 /* NSDate+BRAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = EC81F0AD1F960D6300916496 /* NSDate+BRAdd.m */; };
+		EC8256461FD639450000E216 /* ChooseCityController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8256451FD639450000E216 /* ChooseCityController.m */; };
+		EC8256491FD6499B0000E216 /* CityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8256481FD6499A0000E216 /* CityTableViewCell.m */; };
 		EC85C4C41FCCFF75003F31AF /* KAOrdersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC85C4C31FCCFF75003F31AF /* KAOrdersViewController.m */; };
 		EC85C4C71FCD00CC003F31AF /* KAOrdersViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EC85C4C61FCD00CC003F31AF /* KAOrdersViewModel.m */; };
 		EC85C4CA1FCD2C47003F31AF /* KAOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC85C4C91FCD2C47003F31AF /* KAOrderDetailViewController.m */; };
 		EC85C4CE1FCD2D58003F31AF /* KAOrderDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC85C4CC1FCD2D58003F31AF /* KAOrderDetailTableViewCell.m */; };
 		EC85C4CF1FCD2D58003F31AF /* KAOrderDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC85C4CD1FCD2D58003F31AF /* KAOrderDetailTableViewCell.xib */; };
 		EC85C4D21FCD3208003F31AF /* KAOrderDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EC85C4D11FCD3208003F31AF /* KAOrderDetailViewModel.m */; };
+		EC8718DF1FE9FC31005F7C02 /* KAOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8718DD1FE9FC31005F7C02 /* KAOrderTableViewCell.m */; };
+		EC8718E01FE9FC31005F7C02 /* KAOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8718DE1FE9FC31005F7C02 /* KAOrderTableViewCell.xib */; };
+		EC8718E31FEA0926005F7C02 /* KAOrderShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8718E21FEA0926005F7C02 /* KAOrderShareViewController.m */; };
 		EC8841271F8DDD42009DE65A /* KAHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8841261F8DDD42009DE65A /* KAHomeModel.m */; };
 		EC88412A1F8DFE0F009DE65A /* KAFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8841291F8DFE0F009DE65A /* KAFilterViewController.m */; };
 		EC88412D1F8E0939009DE65A /* KAFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC88412C1F8E0939009DE65A /* KAFilterView.m */; };
@@ -810,6 +824,8 @@
 		EC8E36191F8F0FE300C77635 /* KADetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8E36171F8F0FE300C77635 /* KADetailTableViewCell.m */; };
 		EC8E361A1F8F0FE300C77635 /* KADetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8E36181F8F0FE300C77635 /* KADetailTableViewCell.xib */; };
 		EC8E89211FD52D1A0009CE39 /* KAHomeListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8E89201FD52D1A0009CE39 /* KAHomeListModel.m */; };
+		EC8E89251FD5388A0009CE39 /* KAFristHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8E89241FD5388A0009CE39 /* KAFristHomeModel.m */; };
+		EC8E89281FD53D2F0009CE39 /* KABannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8E89271FD53D2F0009CE39 /* KABannerModel.m */; };
 		EC8F65F01F8C68F5004DC535 /* KAHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8F65EF1F8C68F5004DC535 /* KAHomeViewController.m */; };
 		EC8F65F31F8C9A2B004DC535 /* KAHomeTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8F65F21F8C9A2B004DC535 /* KAHomeTableView.m */; };
 		EC8F65F71F8CC766004DC535 /* KAHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8F65F51F8CC766004DC535 /* KAHomeTableViewCell.m */; };
@@ -817,12 +833,14 @@
 		EC8F96F11FA02E18000AC2F1 /* UIDeviceHardware.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8F96F01FA02E17000AC2F1 /* UIDeviceHardware.m */; };
 		EC91AABE1F8F74C7004CA320 /* KATitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC91AABC1F8F74C7004CA320 /* KATitleTableViewCell.m */; };
 		EC91AABF1F8F74C7004CA320 /* KATitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC91AABD1F8F74C7004CA320 /* KATitleTableViewCell.xib */; };
-		EC91C1C61FD11B33002C4DEC /* KAEndView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC91C1C51FD11B33002C4DEC /* KAEndView.m */; };
-		EC91C1C81FD11B50002C4DEC /* KAEndView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC91C1C71FD11B50002C4DEC /* KAEndView.xib */; };
 		EC91C1CB1FD13006002C4DEC /* KAMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC91C1CA1FD13006002C4DEC /* KAMapViewController.m */; };
 		EC91C1CF1FD15B9B002C4DEC /* KAMineHeadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC91C1CD1FD15B9B002C4DEC /* KAMineHeadTableViewCell.m */; };
 		EC91C1D01FD15B9B002C4DEC /* KAMineHeadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC91C1CE1FD15B9B002C4DEC /* KAMineHeadTableViewCell.xib */; };
 		EC930F371ED9613D0042B6B0 /* UIViewController+Debugging.m in Sources */ = {isa = PBXBuildFile; fileRef = EC930F361ED9613C0042B6B0 /* UIViewController+Debugging.m */; };
+		EC9A00C71FD7C93300D44215 /* JFADoubleSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9A00C51FD7C93200D44215 /* JFADoubleSlider.m */; };
+		EC9A00CA1FD7D2C100D44215 /* KAMomentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9A00C91FD7D2C100D44215 /* KAMomentViewController.m */; };
+		EC9A00CD1FD7D36000D44215 /* KAMomentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9A00CC1FD7D36000D44215 /* KAMomentViewModel.m */; };
+		EC9A00D01FD7E76B00D44215 /* KAMomentDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9A00CF1FD7E76B00D44215 /* KAMomentDetailViewController.m */; };
 		EC9AC9BA1FC3BB5200BF74BD /* KAPreVoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9AC9B91FC3BB5200BF74BD /* KAPreVoteViewController.m */; };
 		EC9AC9BD1FC3BBF200BF74BD /* KAInVoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9AC9BC1FC3BBF200BF74BD /* KAInVoteViewController.m */; };
 		EC9AC9C01FC3C13C00BF74BD /* KAProViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9AC9BF1FC3C13C00BF74BD /* KAProViewModel.m */; };
@@ -843,6 +861,17 @@
 		EC9EE3281F2F084A006F8452 /* ZJTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9EE3201F2F084A006F8452 /* ZJTitleView.m */; };
 		EC9FBD331FC2D523004E637C /* KAVoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9FBD321FC2D523004E637C /* KAVoteViewController.m */; };
 		EC9FBD351FC2D570004E637C /* KA.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9FBD341FC2D570004E637C /* KA.storyboard */; };
+		ECABCCB21FE7755200B3209F /* HomeTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = ECABCCB11FE7755200B3209F /* HomeTextField.m */; };
+		ECCE2DA91FDE26A00010F410 /* KAHomeSlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCE2DA81FDE26A00010F410 /* KAHomeSlideView.m */; };
+		ECCE2DAB1FDE27380010F410 /* KAHomeSlideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECCE2DAA1FDE27380010F410 /* KAHomeSlideView.xib */; };
+		ECCE2DC11FDEA0B70010F410 /* KAPlaceAndMomentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCE2DBF1FDEA0B70010F410 /* KAPlaceAndMomentCell.m */; };
+		ECCE2DC21FDEA0B70010F410 /* KAPlaceAndMomentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECCE2DC01FDEA0B70010F410 /* KAPlaceAndMomentCell.xib */; };
+		ECCE2DC51FDEA4420010F410 /* KADetailEndView.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCE2DC41FDEA4420010F410 /* KADetailEndView.m */; };
+		ECCE2DC71FDEA4500010F410 /* KADetailEndView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECCE2DC61FDEA4500010F410 /* KADetailEndView.xib */; };
+		ECCE2DC91FDEA6B10010F410 /* KAMomentHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECCE2DC81FDEA6B10010F410 /* KAMomentHeaderView.xib */; };
+		ECCE2DCC1FDEA6C00010F410 /* KAMomentHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCE2DCB1FDEA6C00010F410 /* KAMomentHeaderView.m */; };
+		ECCE2DCF1FDEAA410010F410 /* KAMomentFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCE2DCE1FDEAA410010F410 /* KAMomentFooterView.m */; };
+		ECCE2DD11FDEAA4D0010F410 /* KAMomentFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECCE2DD01FDEAA4D0010F410 /* KAMomentFooterView.xib */; };
 		ECD0F9FE1F970349004C5C46 /* MStringPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD0F9FD1F970349004C5C46 /* MStringPickerView.m */; };
 		ECF5FE451EE00C7B007963DA /* ESPictureBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = ECF5FE401EE00C7B007963DA /* ESPictureBrowser.m */; };
 		ECF5FE461EE00C7B007963DA /* ESPictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = ECF5FE421EE00C7B007963DA /* ESPictureView.m */; };
@@ -1936,20 +1965,6 @@
 		CCE043B21CC8953D009E7181 /* MasterShareBannerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterShareBannerModel.m; sourceTree = "<group>"; };
 		CCE043B41CC8A5F9009E7181 /* TYScrollPageTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYScrollPageTabBar.h; sourceTree = "<group>"; };
 		CCE043B51CC8A5F9009E7181 /* TYScrollPageTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYScrollPageTabBar.m; sourceTree = "<group>"; };
-		CCE043D11CC8B228009E7181 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
-		CCE043D21CC8B228009E7181 /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
-		CCE043D31CC8B228009E7181 /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
-		CCE043D41CC8B228009E7181 /* TAAnimatedDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAnimatedDotView.m; sourceTree = "<group>"; };
-		CCE043D51CC8B228009E7181 /* TADotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TADotView.h; sourceTree = "<group>"; };
-		CCE043D61CC8B228009E7181 /* TADotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TADotView.m; sourceTree = "<group>"; };
-		CCE043D71CC8B228009E7181 /* TAPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPageControl.h; sourceTree = "<group>"; };
-		CCE043D81CC8B228009E7181 /* TAPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPageControl.m; sourceTree = "<group>"; };
-		CCE043D91CC8B228009E7181 /* SDCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCollectionViewCell.h; sourceTree = "<group>"; };
-		CCE043DA1CC8B228009E7181 /* SDCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCollectionViewCell.m; sourceTree = "<group>"; };
-		CCE043DB1CC8B228009E7181 /* SDCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCycleScrollView.h; sourceTree = "<group>"; };
-		CCE043DC1CC8B228009E7181 /* SDCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCycleScrollView.m; sourceTree = "<group>"; };
-		CCE043DD1CC8B228009E7181 /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDExtension.h"; sourceTree = "<group>"; };
-		CCE043DE1CC8B228009E7181 /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
 		CCE043E61CC8C588009E7181 /* ScrollPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollPageViewController.h; sourceTree = "<group>"; };
 		CCE043E71CC8C588009E7181 /* ScrollPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollPageViewController.m; sourceTree = "<group>"; };
 		CCE38A511CF2AD5500F4812C /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -2005,6 +2020,12 @@
 		EC0A3F861E88F5FC0051FC17 /* PopMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopMenuButton.m; sourceTree = "<group>"; };
 		EC0A3F871E88F5FC0051FC17 /* UIColor+ImageGetColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ImageGetColor.h"; sourceTree = "<group>"; };
 		EC0A3F881E88F5FC0051FC17 /* UIColor+ImageGetColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ImageGetColor.m"; sourceTree = "<group>"; };
+		EC1B783D1FE1416E00B6F6E4 /* UIView+Dimension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Dimension.h"; sourceTree = "<group>"; };
+		EC1B783E1FE1416E00B6F6E4 /* JLDoubleSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLDoubleSlider.h; sourceTree = "<group>"; };
+		EC1B783F1FE1416E00B6F6E4 /* JLDoubleSlider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLDoubleSlider.m; sourceTree = "<group>"; };
+		EC1B78401FE1416F00B6F6E4 /* UIView+Dimension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Dimension.m"; sourceTree = "<group>"; };
+		EC1B78431FE154CB00B6F6E4 /* YHSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHSlider.h; sourceTree = "<group>"; };
+		EC1B78441FE154CC00B6F6E4 /* YHSlider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHSlider.m; sourceTree = "<group>"; };
 		EC2CBE471ECC55FE0002B12C /* CLPlayerMaskView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLPlayerMaskView.h; sourceTree = "<group>"; };
 		EC2CBE481ECC55FE0002B12C /* CLPlayerMaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLPlayerMaskView.m; sourceTree = "<group>"; };
 		EC2CBE491ECC55FE0002B12C /* CLPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLPlayerView.h; sourceTree = "<group>"; };
@@ -2017,9 +2038,6 @@
 		EC3750CF1E7908240067AF0F /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		EC463BB21FCBBC1200FA4AB9 /* KAPlaceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAPlaceViewController.h; sourceTree = "<group>"; };
 		EC463BB31FCBBC1200FA4AB9 /* KAPlaceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAPlaceViewController.m; sourceTree = "<group>"; };
-		EC463BB51FCBBC3F00FA4AB9 /* KAPlaceTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAPlaceTableViewCell.h; sourceTree = "<group>"; };
-		EC463BB61FCBBC3F00FA4AB9 /* KAPlaceTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAPlaceTableViewCell.m; sourceTree = "<group>"; };
-		EC463BB71FCBBC3F00FA4AB9 /* KAPlaceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KAPlaceTableViewCell.xib; sourceTree = "<group>"; };
 		EC463BBA1FCBE8D200FA4AB9 /* KAPlaceViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAPlaceViewModel.h; sourceTree = "<group>"; };
 		EC463BBB1FCBE8D200FA4AB9 /* KAPlaceViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAPlaceViewModel.m; sourceTree = "<group>"; };
 		EC463BBD1FCC1B2B00FA4AB9 /* KAPlaceDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAPlaceDetailViewController.h; sourceTree = "<group>"; };
@@ -2075,6 +2093,7 @@
 		EC69134F1FC5778100F6857D /* YSProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YSProgressView.h; sourceTree = "<group>"; };
 		EC6913511FC57AED00F6857D /* KADetailVoteViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KADetailVoteViewModel.h; sourceTree = "<group>"; };
 		EC6913521FC57AED00F6857D /* KADetailVoteViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KADetailVoteViewModel.m; sourceTree = "<group>"; };
+		EC692D961FE8BA1A00C60491 /* MasterKA.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MasterKA.entitlements; sourceTree = "<group>"; };
 		EC6A40261EE9205A009985CF /* MyOrderHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderHomeViewController.h; sourceTree = "<group>"; };
 		EC6A40271EE9205A009985CF /* MyOrderHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderHomeViewController.m; sourceTree = "<group>"; };
 		EC6AEDD41F209884003371B0 /* SendMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendMessageModel.h; sourceTree = "<group>"; };
@@ -2084,8 +2103,39 @@
 		EC6D93A01EA9B8D100F35E10 /* SeckillTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeckillTableViewCell.h; sourceTree = "<group>"; };
 		EC6D93A11EA9B8D100F35E10 /* SeckillTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeckillTableViewCell.m; sourceTree = "<group>"; };
 		EC6D93A21EA9B8D100F35E10 /* SeckillTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeckillTableViewCell.xib; sourceTree = "<group>"; };
+		EC6E27301FDA4DD800D4E300 /* KADingzhiTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KADingzhiTableViewCell.h; sourceTree = "<group>"; };
+		EC6E27311FDA4DD800D4E300 /* KADingzhiTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KADingzhiTableViewCell.m; sourceTree = "<group>"; };
+		EC6E27321FDA4DD800D4E300 /* KADingzhiTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KADingzhiTableViewCell.xib; sourceTree = "<group>"; };
+		EC6E27381FDA7EE300D4E300 /* KAEditTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAEditTableViewCell.h; sourceTree = "<group>"; };
+		EC6E27391FDA7EE300D4E300 /* KAEditTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAEditTableViewCell.m; sourceTree = "<group>"; };
+		EC6E273A1FDA7EE300D4E300 /* KAEditTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KAEditTableViewCell.xib; sourceTree = "<group>"; };
+		EC6E27491FDA807800D4E300 /* KAPlaceDetailFooderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAPlaceDetailFooderView.h; sourceTree = "<group>"; };
+		EC6E274B1FDA807900D4E300 /* KAPlaceDetailFooderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KAPlaceDetailFooderView.xib; sourceTree = "<group>"; };
+		EC6E274C1FDA807900D4E300 /* KAPlaceDetailFooderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAPlaceDetailFooderView.m; sourceTree = "<group>"; };
+		EC6E275B1FDA825000D4E300 /* KAEditViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAEditViewModel.h; sourceTree = "<group>"; };
+		EC6E275C1FDA825000D4E300 /* KAEditViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAEditViewModel.m; sourceTree = "<group>"; };
+		EC6F347A1FD9368300FD49B6 /* KAImageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAImageTableViewCell.h; sourceTree = "<group>"; };
+		EC6F347B1FD9368400FD49B6 /* KAImageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAImageTableViewCell.m; sourceTree = "<group>"; };
+		EC6F347C1FD9368400FD49B6 /* KAImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KAImageTableViewCell.xib; sourceTree = "<group>"; };
 		EC70A7631EC1D06B00426C3C /* CLCountDownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLCountDownView.h; sourceTree = "<group>"; };
 		EC70A7641EC1D06B00426C3C /* CLCountDownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLCountDownView.m; sourceTree = "<group>"; };
+		EC762B671FDF870200241FBE /* KADetailVoteTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KADetailVoteTableViewCell.h; sourceTree = "<group>"; };
+		EC762B681FDF870200241FBE /* KADetailVoteTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KADetailVoteTableViewCell.m; sourceTree = "<group>"; };
+		EC762B691FDF870200241FBE /* KADetailVoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KADetailVoteTableViewCell.xib; sourceTree = "<group>"; };
+		EC762B6C1FDFA27C00241FBE /* KAVotePeopleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAVotePeopleViewController.h; sourceTree = "<group>"; };
+		EC762B6D1FDFA27C00241FBE /* KAVotePeopleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAVotePeopleViewController.m; sourceTree = "<group>"; };
+		EC762B6F1FDFA2A700241FBE /* KAVotePeopleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAVotePeopleTableViewCell.h; sourceTree = "<group>"; };
+		EC762B701FDFA2A700241FBE /* KAVotePeopleTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAVotePeopleTableViewCell.m; sourceTree = "<group>"; };
+		EC762B711FDFA2A700241FBE /* KAVotePeopleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KAVotePeopleTableViewCell.xib; sourceTree = "<group>"; };
+		EC762B741FDFB20400241FBE /* KASearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KASearchViewController.h; sourceTree = "<group>"; };
+		EC762B751FDFB20400241FBE /* KASearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KASearchViewController.m; sourceTree = "<group>"; };
+		EC762B7A1FDFC32000241FBE /* KASearchTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KASearchTableView.h; sourceTree = "<group>"; };
+		EC762B7B1FDFC32000241FBE /* KASearchTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KASearchTableView.m; sourceTree = "<group>"; };
+		EC762B7D1FDFDFF500241FBE /* KACollectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KACollectViewController.h; sourceTree = "<group>"; };
+		EC762B7E1FDFDFF500241FBE /* KACollectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KACollectViewController.m; sourceTree = "<group>"; };
+		EC762B801FDFE0B400241FBE /* KACollectTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KACollectTableViewCell.h; sourceTree = "<group>"; };
+		EC762B811FDFE0B400241FBE /* KACollectTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KACollectTableViewCell.m; sourceTree = "<group>"; };
+		EC762B821FDFE0B400241FBE /* KACollectTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KACollectTableViewCell.xib; sourceTree = "<group>"; };
 		EC77EFE81F3AF9FB00FADD09 /* AskQuestionsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AskQuestionsCell.h; sourceTree = "<group>"; };
 		EC77EFE91F3AF9FB00FADD09 /* AskQuestionsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AskQuestionsCell.m; sourceTree = "<group>"; };
 		EC77EFF71F3B138D00FADD09 /* AskQuestionsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AskQuestionsCell.xib; sourceTree = "<group>"; };
@@ -2098,6 +2148,10 @@
 		EC7897331F3C3C530024B0AA /* AslListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AslListTableViewCell.xib; sourceTree = "<group>"; };
 		EC7897361F3C6B290024B0AA /* AskQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AskQuestionViewController.h; sourceTree = "<group>"; };
 		EC7897371F3C6B290024B0AA /* AskQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AskQuestionViewController.m; sourceTree = "<group>"; };
+		EC78BC971FE377BA00D3ADED /* KACollectViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KACollectViewModel.h; sourceTree = "<group>"; };
+		EC78BC981FE377BA00D3ADED /* KACollectViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KACollectViewModel.m; sourceTree = "<group>"; };
+		EC78BC9A1FE3BACA00D3ADED /* KAVotePeopleViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAVotePeopleViewModel.h; sourceTree = "<group>"; };
+		EC78BC9B1FE3BACA00D3ADED /* KAVotePeopleViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAVotePeopleViewModel.m; sourceTree = "<group>"; };
 		EC7DDD8F1EE64E3C007BB0A3 /* CLPaoPaoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLPaoPaoView.h; path = "MasterKA/Classes/Module/商城/ViewController/CLPaoPaoView.h"; sourceTree = SOURCE_ROOT; };
 		EC7DDD901EE64E3C007BB0A3 /* CLPaoPaoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLPaoPaoView.m; path = "MasterKA/Classes/Module/商城/ViewController/CLPaoPaoView.m"; sourceTree = SOURCE_ROOT; };
 		EC7DDD921EE64E4D007BB0A3 /* CLPaoPaoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CLPaoPaoView.xib; path = "MasterKA/Classes/Module/商城/ViewController/CLPaoPaoView.xib"; sourceTree = SOURCE_ROOT; };
@@ -2106,11 +2160,6 @@
 		EC8080B91FCFE41B00267A68 /* KAPlaceDetailTitleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAPlaceDetailTitleTableViewCell.h; sourceTree = "<group>"; };
 		EC8080BA1FCFE41B00267A68 /* KAPlaceDetailTitleTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAPlaceDetailTitleTableViewCell.m; sourceTree = "<group>"; };
 		EC8080BB1FCFE41B00267A68 /* KAPlaceDetailTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KAPlaceDetailTitleTableViewCell.xib; sourceTree = "<group>"; };
-		EC81D1F81FB4671D002C4E38 /* TTRangeSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTRangeSlider.h; sourceTree = "<group>"; };
-		EC81D1F91FB4671D002C4E38 /* TTRangeSlider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTRangeSlider.m; sourceTree = "<group>"; };
-		EC81D1FA1FB4671D002C4E38 /* TTRangeSliderDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTRangeSliderDelegate.h; sourceTree = "<group>"; };
-		EC81D1FC1FB4690A002C4E38 /* JLDoubleSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLDoubleSlider.h; sourceTree = "<group>"; };
-		EC81D1FD1FB46912002C4E38 /* JLDoubleSlider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLDoubleSlider.m; sourceTree = "<group>"; };
 		EC81F0A01F95B10500916496 /* MasterTextfield.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterTextfield.h; sourceTree = "<group>"; };
 		EC81F0A11F95B10500916496 /* MasterTextfield.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterTextfield.m; sourceTree = "<group>"; };
 		EC81F0A71F95ED9F00916496 /* MDatePickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDatePickerView.h; sourceTree = "<group>"; };
@@ -2119,6 +2168,10 @@
 		EC81F0AB1F96083900916496 /* MPickerBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPickerBaseView.m; sourceTree = "<group>"; };
 		EC81F0AD1F960D6300916496 /* NSDate+BRAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+BRAdd.m"; sourceTree = "<group>"; };
 		EC81F0AE1F960D6400916496 /* NSDate+BRAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+BRAdd.h"; sourceTree = "<group>"; };
+		EC8256441FD639440000E216 /* ChooseCityController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseCityController.h; sourceTree = "<group>"; };
+		EC8256451FD639450000E216 /* ChooseCityController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseCityController.m; sourceTree = "<group>"; };
+		EC8256471FD649980000E216 /* CityTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CityTableViewCell.h; sourceTree = "<group>"; };
+		EC8256481FD6499A0000E216 /* CityTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityTableViewCell.m; sourceTree = "<group>"; };
 		EC85C4C21FCCFF74003F31AF /* KAOrdersViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAOrdersViewController.h; sourceTree = "<group>"; };
 		EC85C4C31FCCFF75003F31AF /* KAOrdersViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAOrdersViewController.m; sourceTree = "<group>"; };
 		EC85C4C51FCD00CC003F31AF /* KAOrdersViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAOrdersViewModel.h; sourceTree = "<group>"; };
@@ -2130,6 +2183,11 @@
 		EC85C4CD1FCD2D58003F31AF /* KAOrderDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KAOrderDetailTableViewCell.xib; sourceTree = "<group>"; };
 		EC85C4D01FCD3208003F31AF /* KAOrderDetailViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAOrderDetailViewModel.h; sourceTree = "<group>"; };
 		EC85C4D11FCD3208003F31AF /* KAOrderDetailViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAOrderDetailViewModel.m; sourceTree = "<group>"; };
+		EC8718DC1FE9FC31005F7C02 /* KAOrderTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAOrderTableViewCell.h; sourceTree = "<group>"; };
+		EC8718DD1FE9FC31005F7C02 /* KAOrderTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAOrderTableViewCell.m; sourceTree = "<group>"; };
+		EC8718DE1FE9FC31005F7C02 /* KAOrderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KAOrderTableViewCell.xib; sourceTree = "<group>"; };
+		EC8718E11FEA0926005F7C02 /* KAOrderShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAOrderShareViewController.h; sourceTree = "<group>"; };
+		EC8718E21FEA0926005F7C02 /* KAOrderShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAOrderShareViewController.m; sourceTree = "<group>"; };
 		EC8841251F8DDD42009DE65A /* KAHomeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAHomeModel.h; sourceTree = "<group>"; };
 		EC8841261F8DDD42009DE65A /* KAHomeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAHomeModel.m; sourceTree = "<group>"; };
 		EC8841281F8DFE0F009DE65A /* KAFilterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAFilterViewController.h; sourceTree = "<group>"; };
@@ -2181,6 +2239,10 @@
 		EC8E36181F8F0FE300C77635 /* KADetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KADetailTableViewCell.xib; sourceTree = "<group>"; };
 		EC8E891F1FD52D1A0009CE39 /* KAHomeListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAHomeListModel.h; sourceTree = "<group>"; };
 		EC8E89201FD52D1A0009CE39 /* KAHomeListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAHomeListModel.m; sourceTree = "<group>"; };
+		EC8E89231FD5388A0009CE39 /* KAFristHomeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAFristHomeModel.h; sourceTree = "<group>"; };
+		EC8E89241FD5388A0009CE39 /* KAFristHomeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAFristHomeModel.m; sourceTree = "<group>"; };
+		EC8E89261FD53D2F0009CE39 /* KABannerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KABannerModel.h; sourceTree = "<group>"; };
+		EC8E89271FD53D2F0009CE39 /* KABannerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KABannerModel.m; sourceTree = "<group>"; };
 		EC8F65EE1F8C68F5004DC535 /* KAHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAHomeViewController.h; sourceTree = "<group>"; };
 		EC8F65EF1F8C68F5004DC535 /* KAHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAHomeViewController.m; sourceTree = "<group>"; };
 		EC8F65F11F8C9A2B004DC535 /* KAHomeTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAHomeTableView.h; sourceTree = "<group>"; };
@@ -2193,9 +2255,6 @@
 		EC91AABB1F8F74C7004CA320 /* KATitleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KATitleTableViewCell.h; sourceTree = "<group>"; };
 		EC91AABC1F8F74C7004CA320 /* KATitleTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KATitleTableViewCell.m; sourceTree = "<group>"; };
 		EC91AABD1F8F74C7004CA320 /* KATitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KATitleTableViewCell.xib; sourceTree = "<group>"; };
-		EC91C1C41FD11B33002C4DEC /* KAEndView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAEndView.h; sourceTree = "<group>"; };
-		EC91C1C51FD11B33002C4DEC /* KAEndView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAEndView.m; sourceTree = "<group>"; };
-		EC91C1C71FD11B50002C4DEC /* KAEndView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KAEndView.xib; sourceTree = "<group>"; };
 		EC91C1C91FD13006002C4DEC /* KAMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAMapViewController.h; sourceTree = "<group>"; };
 		EC91C1CA1FD13006002C4DEC /* KAMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAMapViewController.m; sourceTree = "<group>"; };
 		EC91C1CC1FD15B9B002C4DEC /* KAMineHeadTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAMineHeadTableViewCell.h; sourceTree = "<group>"; };
@@ -2203,6 +2262,14 @@
 		EC91C1CE1FD15B9B002C4DEC /* KAMineHeadTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KAMineHeadTableViewCell.xib; sourceTree = "<group>"; };
 		EC930F351ED9613C0042B6B0 /* UIViewController+Debugging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Debugging.h"; sourceTree = "<group>"; };
 		EC930F361ED9613C0042B6B0 /* UIViewController+Debugging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Debugging.m"; sourceTree = "<group>"; };
+		EC9A00C51FD7C93200D44215 /* JFADoubleSlider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JFADoubleSlider.m; sourceTree = "<group>"; };
+		EC9A00C61FD7C93300D44215 /* JFADoubleSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JFADoubleSlider.h; sourceTree = "<group>"; };
+		EC9A00C81FD7D2C100D44215 /* KAMomentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAMomentViewController.h; sourceTree = "<group>"; };
+		EC9A00C91FD7D2C100D44215 /* KAMomentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAMomentViewController.m; sourceTree = "<group>"; };
+		EC9A00CB1FD7D36000D44215 /* KAMomentViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAMomentViewModel.h; sourceTree = "<group>"; };
+		EC9A00CC1FD7D36000D44215 /* KAMomentViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAMomentViewModel.m; sourceTree = "<group>"; };
+		EC9A00CE1FD7E76B00D44215 /* KAMomentDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAMomentDetailViewController.h; sourceTree = "<group>"; };
+		EC9A00CF1FD7E76B00D44215 /* KAMomentDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAMomentDetailViewController.m; sourceTree = "<group>"; };
 		EC9AC9B81FC3BB5200BF74BD /* KAPreVoteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAPreVoteViewController.h; sourceTree = "<group>"; };
 		EC9AC9B91FC3BB5200BF74BD /* KAPreVoteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAPreVoteViewController.m; sourceTree = "<group>"; };
 		EC9AC9BB1FC3BBF200BF74BD /* KAInVoteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAInVoteViewController.h; sourceTree = "<group>"; };
@@ -2240,6 +2307,23 @@
 		EC9FBD311FC2D523004E637C /* KAVoteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAVoteViewController.h; sourceTree = "<group>"; };
 		EC9FBD321FC2D523004E637C /* KAVoteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAVoteViewController.m; sourceTree = "<group>"; };
 		EC9FBD341FC2D570004E637C /* KA.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = KA.storyboard; sourceTree = "<group>"; };
+		ECABCCB01FE7755200B3209F /* HomeTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTextField.h; sourceTree = "<group>"; };
+		ECABCCB11FE7755200B3209F /* HomeTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTextField.m; sourceTree = "<group>"; };
+		ECCE2DA71FDE26A00010F410 /* KAHomeSlideView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAHomeSlideView.h; sourceTree = "<group>"; };
+		ECCE2DA81FDE26A00010F410 /* KAHomeSlideView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAHomeSlideView.m; sourceTree = "<group>"; };
+		ECCE2DAA1FDE27380010F410 /* KAHomeSlideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KAHomeSlideView.xib; sourceTree = "<group>"; };
+		ECCE2DBE1FDEA0B70010F410 /* KAPlaceAndMomentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAPlaceAndMomentCell.h; sourceTree = "<group>"; };
+		ECCE2DBF1FDEA0B70010F410 /* KAPlaceAndMomentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAPlaceAndMomentCell.m; sourceTree = "<group>"; };
+		ECCE2DC01FDEA0B70010F410 /* KAPlaceAndMomentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KAPlaceAndMomentCell.xib; sourceTree = "<group>"; };
+		ECCE2DC31FDEA4420010F410 /* KADetailEndView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KADetailEndView.h; sourceTree = "<group>"; };
+		ECCE2DC41FDEA4420010F410 /* KADetailEndView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KADetailEndView.m; sourceTree = "<group>"; };
+		ECCE2DC61FDEA4500010F410 /* KADetailEndView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KADetailEndView.xib; sourceTree = "<group>"; };
+		ECCE2DC81FDEA6B10010F410 /* KAMomentHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KAMomentHeaderView.xib; sourceTree = "<group>"; };
+		ECCE2DCA1FDEA6C00010F410 /* KAMomentHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAMomentHeaderView.h; sourceTree = "<group>"; };
+		ECCE2DCB1FDEA6C00010F410 /* KAMomentHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAMomentHeaderView.m; sourceTree = "<group>"; };
+		ECCE2DCD1FDEAA410010F410 /* KAMomentFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAMomentFooterView.h; sourceTree = "<group>"; };
+		ECCE2DCE1FDEAA410010F410 /* KAMomentFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAMomentFooterView.m; sourceTree = "<group>"; };
+		ECCE2DD01FDEAA4D0010F410 /* KAMomentFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KAMomentFooterView.xib; sourceTree = "<group>"; };
 		ECD0F9FC1F970349004C5C46 /* MStringPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MStringPickerView.h; sourceTree = "<group>"; };
 		ECD0F9FD1F970349004C5C46 /* MStringPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MStringPickerView.m; sourceTree = "<group>"; };
 		ECF5FE3F1EE00C7B007963DA /* ESPictureBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPictureBrowser.h; sourceTree = "<group>"; };
@@ -2496,6 +2580,7 @@
 		CC20051C1C157DFC008E47C0 /* MasterKA */ = {
 			isa = PBXGroup;
 			children = (
+				EC692D961FE8BA1A00C60491 /* MasterKA.entitlements */,
 				CCC2E5C01C16C95F00395CBA /* Classes */,
 				CC2005201C157DFC008E47C0 /* AppDelegate.h */,
 				CC2005211C157DFC008E47C0 /* AppDelegate.mm */,
@@ -3792,6 +3877,8 @@
 				CC70803A1CC750460088F981 /* InterestModel.h */,
 				CC70803B1CC750460088F981 /* InterestModel.m */,
 				CCE043B11CC8953D009E7181 /* MasterShareBannerModel.h */,
+				EC8E89261FD53D2F0009CE39 /* KABannerModel.h */,
+				EC8E89271FD53D2F0009CE39 /* KABannerModel.m */,
 				CCE043B21CC8953D009E7181 /* MasterShareBannerModel.m */,
 				CC4945A81CCDEC8C003B952F /* MasterShareListModel.h */,
 				CC4945A91CCDEC8C003B952F /* MasterShareListModel.m */,
@@ -3801,6 +3888,8 @@
 				CC4945C11CCF384D003B952F /* MasterShareDetailModel.m */,
 				F6FA24DA1CE31F2300084D7E /* CourseListModel.h */,
 				F6FA24DB1CE31F2300084D7E /* CourseListModel.m */,
+				EC8E89231FD5388A0009CE39 /* KAFristHomeModel.h */,
+				EC8E89241FD5388A0009CE39 /* KAFristHomeModel.m */,
 				CCC555A91CE0224900E171C6 /* CourseModel.h */,
 				CCC555AA1CE0224900E171C6 /* CourseModel.m */,
 				4045AE9A1D99166F006CD52F /* ItemCourseModel.h */,
@@ -3889,6 +3978,8 @@
 				CCE043E71CC8C588009E7181 /* ScrollPageViewController.m */,
 				CCFA82811CD9F2DE002E751C /* SplashViewController.h */,
 				CCFA82821CD9F2DE002E751C /* SplashViewController.m */,
+				EC8256441FD639440000E216 /* ChooseCityController.h */,
+				EC8256451FD639450000E216 /* ChooseCityController.m */,
 				CC12C8401D1A51B600DB5458 /* ViewControllerCell.h */,
 				CC12C8411D1A51B600DB5458 /* ViewControllerCell.m */,
 				407544AF1DF8F602008F9F00 /* HobyViewController.h */,
@@ -3969,7 +4060,6 @@
 				CCE38A581CF2F6A000F4812C /* Weixinlib */,
 				CCB45D831CEC6266009EAF0B /* ReactiveViewModel */,
 				CC4B1A9D1CD0B12F00CBA023 /* THProgressView */,
-				CCE043CF1CC8B228009E7181 /* SDCycleScrollView */,
 				CCE0439E1CC8609E009E7181 /* TYSlidePageScrollView */,
 				CCF37C351C58693500D4759A /* GCDObjC */,
 				CCB20C661C4CEFE2004A347D /* MWPhotoBrowser2.1.1 */,
@@ -4105,35 +4195,6 @@
 			path = TYSlidePageScrollView;
 			sourceTree = "<group>";
 		};
-		CCE043CF1CC8B228009E7181 /* SDCycleScrollView */ = {
-			isa = PBXGroup;
-			children = (
-				CCE043D01CC8B228009E7181 /* PageControl */,
-				CCE043D91CC8B228009E7181 /* SDCollectionViewCell.h */,
-				CCE043DA1CC8B228009E7181 /* SDCollectionViewCell.m */,
-				CCE043DB1CC8B228009E7181 /* SDCycleScrollView.h */,
-				CCE043DC1CC8B228009E7181 /* SDCycleScrollView.m */,
-				CCE043DD1CC8B228009E7181 /* UIView+SDExtension.h */,
-				CCE043DE1CC8B228009E7181 /* UIView+SDExtension.m */,
-			);
-			path = SDCycleScrollView;
-			sourceTree = "<group>";
-		};
-		CCE043D01CC8B228009E7181 /* PageControl */ = {
-			isa = PBXGroup;
-			children = (
-				CCE043D11CC8B228009E7181 /* TAAbstractDotView.h */,
-				CCE043D21CC8B228009E7181 /* TAAbstractDotView.m */,
-				CCE043D31CC8B228009E7181 /* TAAnimatedDotView.h */,
-				CCE043D41CC8B228009E7181 /* TAAnimatedDotView.m */,
-				CCE043D51CC8B228009E7181 /* TADotView.h */,
-				CCE043D61CC8B228009E7181 /* TADotView.m */,
-				CCE043D71CC8B228009E7181 /* TAPageControl.h */,
-				CCE043D81CC8B228009E7181 /* TAPageControl.m */,
-			);
-			path = PageControl;
-			sourceTree = "<group>";
-		};
 		CCE38A581CF2F6A000F4812C /* Weixinlib */ = {
 			isa = PBXGroup;
 			children = (
@@ -4214,6 +4275,17 @@
 			name = ppop;
 			sourceTree = "<group>";
 		};
+		EC1B783C1FE1414B00B6F6E4 /* 筛选 */ = {
+			isa = PBXGroup;
+			children = (
+				EC1B783E1FE1416E00B6F6E4 /* JLDoubleSlider.h */,
+				EC1B783F1FE1416E00B6F6E4 /* JLDoubleSlider.m */,
+				EC1B783D1FE1416E00B6F6E4 /* UIView+Dimension.h */,
+				EC1B78401FE1416F00B6F6E4 /* UIView+Dimension.m */,
+			);
+			path = "筛选";
+			sourceTree = "<group>";
+		};
 		EC2CBE461ECC55FE0002B12C /* CLPlayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -4260,6 +4332,81 @@
 			name = ScrollPageView;
 			sourceTree = "<group>";
 		};
+		EC6E27351FDA728800D4E300 /* 场地和精选 */ = {
+			isa = PBXGroup;
+			children = (
+				EC463BB21FCBBC1200FA4AB9 /* KAPlaceViewController.h */,
+				EC463BB31FCBBC1200FA4AB9 /* KAPlaceViewController.m */,
+				EC9A00C81FD7D2C100D44215 /* KAMomentViewController.h */,
+				EC9A00C91FD7D2C100D44215 /* KAMomentViewController.m */,
+				EC463BBD1FCC1B2B00FA4AB9 /* KAPlaceDetailViewController.h */,
+				EC463BBE1FCC1B2B00FA4AB9 /* KAPlaceDetailViewController.m */,
+				EC9A00CE1FD7E76B00D44215 /* KAMomentDetailViewController.h */,
+				EC9A00CF1FD7E76B00D44215 /* KAMomentDetailViewController.m */,
+			);
+			path = "场地和精选";
+			sourceTree = "<group>";
+		};
+		EC6E27361FDA72B400D4E300 /* 投票 */ = {
+			isa = PBXGroup;
+			children = (
+				EC9FBD311FC2D523004E637C /* KAVoteViewController.h */,
+				EC9FBD321FC2D523004E637C /* KAVoteViewController.m */,
+				EC9AC9B81FC3BB5200BF74BD /* KAPreVoteViewController.h */,
+				EC9AC9B91FC3BB5200BF74BD /* KAPreVoteViewController.m */,
+				EC9AC9C61FC43BDE00BF74BD /* KAEditVoteViewController.h */,
+				EC9AC9C71FC43BDE00BF74BD /* KAEditVoteViewController.m */,
+				EC9AC9BB1FC3BBF200BF74BD /* KAInVoteViewController.h */,
+				EC9AC9BC1FC3BBF200BF74BD /* KAInVoteViewController.m */,
+				EC69134B1FC56F0E00F6857D /* KADetailVoteViewController.h */,
+				EC69134C1FC56F0E00F6857D /* KADetailVoteViewController.m */,
+				EC762B6C1FDFA27C00241FBE /* KAVotePeopleViewController.h */,
+				EC762B6D1FDFA27C00241FBE /* KAVotePeopleViewController.m */,
+			);
+			path = "投票";
+			sourceTree = "<group>";
+		};
+		EC6E27371FDA7E8100D4E300 /* 投票 */ = {
+			isa = PBXGroup;
+			children = (
+				EC9AC9C11FC3C8FC00BF74BD /* KAPreVoteTableViewCell.h */,
+				EC9AC9C21FC3C8FC00BF74BD /* KAPreVoteTableViewCell.m */,
+				EC9AC9C31FC3C8FC00BF74BD /* KAPreVoteTableViewCell.xib */,
+				EC6913431FC54D6100F6857D /* KAInVoteTableViewCell.h */,
+				EC6913441FC54D6100F6857D /* KAInVoteTableViewCell.m */,
+				EC6913451FC54D6100F6857D /* KAInVoteTableViewCell.xib */,
+				EC6E27381FDA7EE300D4E300 /* KAEditTableViewCell.h */,
+				EC6E27391FDA7EE300D4E300 /* KAEditTableViewCell.m */,
+				EC6E273A1FDA7EE300D4E300 /* KAEditTableViewCell.xib */,
+				EC762B671FDF870200241FBE /* KADetailVoteTableViewCell.h */,
+				EC762B681FDF870200241FBE /* KADetailVoteTableViewCell.m */,
+				EC762B691FDF870200241FBE /* KADetailVoteTableViewCell.xib */,
+				EC762B6F1FDFA2A700241FBE /* KAVotePeopleTableViewCell.h */,
+				EC762B701FDFA2A700241FBE /* KAVotePeopleTableViewCell.m */,
+				EC762B711FDFA2A700241FBE /* KAVotePeopleTableViewCell.xib */,
+			);
+			path = "投票";
+			sourceTree = "<group>";
+		};
+		EC6F34791FD923FF00FD49B6 /* 课程详情 */ = {
+			isa = PBXGroup;
+			children = (
+				EC6F347A1FD9368300FD49B6 /* KAImageTableViewCell.h */,
+				EC6F347B1FD9368400FD49B6 /* KAImageTableViewCell.m */,
+				EC6F347C1FD9368400FD49B6 /* KAImageTableViewCell.xib */,
+				EC91AABB1F8F74C7004CA320 /* KATitleTableViewCell.h */,
+				EC91AABC1F8F74C7004CA320 /* KATitleTableViewCell.m */,
+				EC91AABD1F8F74C7004CA320 /* KATitleTableViewCell.xib */,
+				EC8E36161F8F0FE300C77635 /* KADetailTableViewCell.h */,
+				EC8E36171F8F0FE300C77635 /* KADetailTableViewCell.m */,
+				EC8E36181F8F0FE300C77635 /* KADetailTableViewCell.xib */,
+				EC6E27301FDA4DD800D4E300 /* KADingzhiTableViewCell.h */,
+				EC6E27311FDA4DD800D4E300 /* KADingzhiTableViewCell.m */,
+				EC6E27321FDA4DD800D4E300 /* KADingzhiTableViewCell.xib */,
+			);
+			path = "课程详情";
+			sourceTree = "<group>";
+		};
 		EC75E7BC1EEE64D5008F83AD /* AttributedLabel */ = {
 			isa = PBXGroup;
 			children = (
@@ -4269,7 +4416,33 @@
 			name = AttributedLabel;
 			sourceTree = "<group>";
 		};
-		EC8AF35E1FCE9870003D68DF /* KAPlaceDetail */ = {
+		EC8718E41FEA2194005F7C02 /* 订单 */ = {
+			isa = PBXGroup;
+			children = (
+				EC85C4C21FCCFF74003F31AF /* KAOrdersViewController.h */,
+				EC85C4C31FCCFF75003F31AF /* KAOrdersViewController.m */,
+				EC85C4C81FCD2C47003F31AF /* KAOrderDetailViewController.h */,
+				EC85C4C91FCD2C47003F31AF /* KAOrderDetailViewController.m */,
+				EC8718E11FEA0926005F7C02 /* KAOrderShareViewController.h */,
+				EC8718E21FEA0926005F7C02 /* KAOrderShareViewController.m */,
+			);
+			path = "订单";
+			sourceTree = "<group>";
+		};
+		EC8718E51FEA21BA005F7C02 /* 订单 */ = {
+			isa = PBXGroup;
+			children = (
+				EC85C4CB1FCD2D58003F31AF /* KAOrderDetailTableViewCell.h */,
+				EC85C4CC1FCD2D58003F31AF /* KAOrderDetailTableViewCell.m */,
+				EC85C4CD1FCD2D58003F31AF /* KAOrderDetailTableViewCell.xib */,
+				EC8718DC1FE9FC31005F7C02 /* KAOrderTableViewCell.h */,
+				EC8718DD1FE9FC31005F7C02 /* KAOrderTableViewCell.m */,
+				EC8718DE1FE9FC31005F7C02 /* KAOrderTableViewCell.xib */,
+			);
+			path = "订单";
+			sourceTree = "<group>";
+		};
+		EC8AF35E1FCE9870003D68DF /* 场地和精选 */ = {
 			isa = PBXGroup;
 			children = (
 				EC8AF3671FCEA8CD003D68DF /* AticleDetailImageCell.h */,
@@ -4280,8 +4453,23 @@
 				EC8AF3611FCE9ECE003D68DF /* KAContentTableViewCell.h */,
 				EC8AF3621FCE9ECE003D68DF /* KAContentTableViewCell.m */,
 				EC8AF3631FCE9ECE003D68DF /* KAContentTableViewCell.xib */,
+				ECCE2DCD1FDEAA410010F410 /* KAMomentFooterView.h */,
+				ECCE2DCE1FDEAA410010F410 /* KAMomentFooterView.m */,
+				ECCE2DD01FDEAA4D0010F410 /* KAMomentFooterView.xib */,
+				EC6E27491FDA807800D4E300 /* KAPlaceDetailFooderView.h */,
+				EC6E274C1FDA807900D4E300 /* KAPlaceDetailFooderView.m */,
+				EC6E274B1FDA807900D4E300 /* KAPlaceDetailFooderView.xib */,
+				ECCE2DCA1FDEA6C00010F410 /* KAMomentHeaderView.h */,
+				ECCE2DCB1FDEA6C00010F410 /* KAMomentHeaderView.m */,
+				ECCE2DC81FDEA6B10010F410 /* KAMomentHeaderView.xib */,
+				ECCE2DC31FDEA4420010F410 /* KADetailEndView.h */,
+				ECCE2DC41FDEA4420010F410 /* KADetailEndView.m */,
+				ECCE2DC61FDEA4500010F410 /* KADetailEndView.xib */,
+				ECCE2DBE1FDEA0B70010F410 /* KAPlaceAndMomentCell.h */,
+				ECCE2DBF1FDEA0B70010F410 /* KAPlaceAndMomentCell.m */,
+				ECCE2DC01FDEA0B70010F410 /* KAPlaceAndMomentCell.xib */,
 			);
-			path = KAPlaceDetail;
+			path = "场地和精选";
 			sourceTree = "<group>";
 		};
 		EC930F341ED961200042B6B0 /* Debug */ = {
@@ -4307,38 +4495,35 @@
 		EC9FBD2D1FC2CFC1004E637C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				EC8AF35E1FCE9870003D68DF /* KAPlaceDetail */,
+				EC8718E51FEA21BA005F7C02 /* 订单 */,
+				EC1B783C1FE1414B00B6F6E4 /* 筛选 */,
+				EC6E27371FDA7E8100D4E300 /* 投票 */,
+				EC8AF35E1FCE9870003D68DF /* 场地和精选 */,
 				EC9FBD301FC2D06E004E637C /* KAPicker */,
+				EC6F34791FD923FF00FD49B6 /* 课程详情 */,
 				EC8F65F41F8CC766004DC535 /* KAHomeTableViewCell.h */,
 				EC8F65F51F8CC766004DC535 /* KAHomeTableViewCell.m */,
 				EC8F65F61F8CC766004DC535 /* KAHomeTableViewCell.xib */,
-				EC8E36161F8F0FE300C77635 /* KADetailTableViewCell.h */,
-				EC8E36171F8F0FE300C77635 /* KADetailTableViewCell.m */,
-				EC8E36181F8F0FE300C77635 /* KADetailTableViewCell.xib */,
 				EC88412B1F8E0939009DE65A /* KAFilterView.h */,
 				EC88412C1F8E0939009DE65A /* KAFilterView.m */,
-				EC91AABB1F8F74C7004CA320 /* KATitleTableViewCell.h */,
-				EC91AABC1F8F74C7004CA320 /* KATitleTableViewCell.m */,
-				EC91AABD1F8F74C7004CA320 /* KATitleTableViewCell.xib */,
+				ECABCCB01FE7755200B3209F /* HomeTextField.h */,
+				ECABCCB11FE7755200B3209F /* HomeTextField.m */,
+				EC9A00C61FD7C93300D44215 /* JFADoubleSlider.h */,
+				EC9A00C51FD7C93200D44215 /* JFADoubleSlider.m */,
 				EC8E36101F8F056700C77635 /* KADetailTableView.h */,
 				EC8E36111F8F056700C77635 /* KADetailTableView.m */,
 				EC8F65F11F8C9A2B004DC535 /* KAHomeTableView.h */,
 				EC8F65F21F8C9A2B004DC535 /* KAHomeTableView.m */,
-				EC9AC9C11FC3C8FC00BF74BD /* KAPreVoteTableViewCell.h */,
-				EC9AC9C21FC3C8FC00BF74BD /* KAPreVoteTableViewCell.m */,
-				EC9AC9C31FC3C8FC00BF74BD /* KAPreVoteTableViewCell.xib */,
-				EC6913431FC54D6100F6857D /* KAInVoteTableViewCell.h */,
-				EC6913441FC54D6100F6857D /* KAInVoteTableViewCell.m */,
-				EC6913451FC54D6100F6857D /* KAInVoteTableViewCell.xib */,
-				EC85C4CB1FCD2D58003F31AF /* KAOrderDetailTableViewCell.h */,
-				EC85C4CC1FCD2D58003F31AF /* KAOrderDetailTableViewCell.m */,
-				EC85C4CD1FCD2D58003F31AF /* KAOrderDetailTableViewCell.xib */,
-				EC463BB51FCBBC3F00FA4AB9 /* KAPlaceTableViewCell.h */,
-				EC463BB61FCBBC3F00FA4AB9 /* KAPlaceTableViewCell.m */,
-				EC463BB71FCBBC3F00FA4AB9 /* KAPlaceTableViewCell.xib */,
-				EC91C1C41FD11B33002C4DEC /* KAEndView.h */,
-				EC91C1C51FD11B33002C4DEC /* KAEndView.m */,
-				EC91C1C71FD11B50002C4DEC /* KAEndView.xib */,
+				EC762B7A1FDFC32000241FBE /* KASearchTableView.h */,
+				EC762B7B1FDFC32000241FBE /* KASearchTableView.m */,
+				EC8256471FD649980000E216 /* CityTableViewCell.h */,
+				EC8256481FD6499A0000E216 /* CityTableViewCell.m */,
+				ECCE2DA71FDE26A00010F410 /* KAHomeSlideView.h */,
+				ECCE2DA81FDE26A00010F410 /* KAHomeSlideView.m */,
+				ECCE2DAA1FDE27380010F410 /* KAHomeSlideView.xib */,
+				EC762B801FDFE0B400241FBE /* KACollectTableViewCell.h */,
+				EC762B811FDFE0B400241FBE /* KACollectTableViewCell.m */,
+				EC762B821FDFE0B400241FBE /* KACollectTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4350,6 +4535,8 @@
 				EC8E36141F8F05B400C77635 /* KADetailViewModel.m */,
 				EC9AC9BE1FC3C13C00BF74BD /* KAProViewModel.h */,
 				EC9AC9BF1FC3C13C00BF74BD /* KAProViewModel.m */,
+				EC6E275B1FDA825000D4E300 /* KAEditViewModel.h */,
+				EC6E275C1FDA825000D4E300 /* KAEditViewModel.m */,
 				EC6913481FC55E4900F6857D /* KAInVIewModel.h */,
 				EC6913491FC55E4900F6857D /* KAInVIewModel.m */,
 				EC6913511FC57AED00F6857D /* KADetailVoteViewModel.h */,
@@ -4360,6 +4547,12 @@
 				EC85C4D11FCD3208003F31AF /* KAOrderDetailViewModel.m */,
 				EC463BBA1FCBE8D200FA4AB9 /* KAPlaceViewModel.h */,
 				EC463BBB1FCBE8D200FA4AB9 /* KAPlaceViewModel.m */,
+				EC9A00CB1FD7D36000D44215 /* KAMomentViewModel.h */,
+				EC9A00CC1FD7D36000D44215 /* KAMomentViewModel.m */,
+				EC78BC971FE377BA00D3ADED /* KACollectViewModel.h */,
+				EC78BC981FE377BA00D3ADED /* KACollectViewModel.m */,
+				EC78BC9A1FE3BACA00D3ADED /* KAVotePeopleViewModel.h */,
+				EC78BC9B1FE3BACA00D3ADED /* KAVotePeopleViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -4367,36 +4560,25 @@
 		EC9FBD2F1FC2CFE6004E637C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				EC463BBD1FCC1B2B00FA4AB9 /* KAPlaceDetailViewController.h */,
-				EC463BBE1FCC1B2B00FA4AB9 /* KAPlaceDetailViewController.m */,
-				EC8F65EE1F8C68F5004DC535 /* KAHomeViewController.h */,
-				EC8F65EF1F8C68F5004DC535 /* KAHomeViewController.m */,
-				EC463BB21FCBBC1200FA4AB9 /* KAPlaceViewController.h */,
-				EC463BB31FCBBC1200FA4AB9 /* KAPlaceViewController.m */,
-				EC9FBD311FC2D523004E637C /* KAVoteViewController.h */,
-				EC9FBD321FC2D523004E637C /* KAVoteViewController.m */,
-				EC9AC9B81FC3BB5200BF74BD /* KAPreVoteViewController.h */,
-				EC9AC9B91FC3BB5200BF74BD /* KAPreVoteViewController.m */,
-				EC9AC9C61FC43BDE00BF74BD /* KAEditVoteViewController.h */,
-				EC9AC9C71FC43BDE00BF74BD /* KAEditVoteViewController.m */,
-				EC9AC9BB1FC3BBF200BF74BD /* KAInVoteViewController.h */,
-				EC9AC9BC1FC3BBF200BF74BD /* KAInVoteViewController.m */,
-				EC69134B1FC56F0E00F6857D /* KADetailVoteViewController.h */,
-				EC69134C1FC56F0E00F6857D /* KADetailVoteViewController.m */,
+				EC8718E41FEA2194005F7C02 /* 订单 */,
+				EC6E27361FDA72B400D4E300 /* 投票 */,
+				EC6E27351FDA728800D4E300 /* 场地和精选 */,
 				EC8E36071F8F041E00C77635 /* KADetailViewController.h */,
 				EC8E36081F8F041E00C77635 /* KADetailViewController.m */,
+				EC8F65EE1F8C68F5004DC535 /* KAHomeViewController.h */,
+				EC8F65EF1F8C68F5004DC535 /* KAHomeViewController.m */,
+				EC762B741FDFB20400241FBE /* KASearchViewController.h */,
+				EC762B751FDFB20400241FBE /* KASearchViewController.m */,
 				EC9DFDE91F90AE9700E69CF1 /* KACustomViewController.h */,
 				EC9DFDEA1F90AE9700E69CF1 /* KACustomViewController.m */,
 				EC8841281F8DFE0F009DE65A /* KAFilterViewController.h */,
 				EC8841291F8DFE0F009DE65A /* KAFilterViewController.m */,
-				EC85C4C21FCCFF74003F31AF /* KAOrdersViewController.h */,
-				EC85C4C31FCCFF75003F31AF /* KAOrdersViewController.m */,
-				EC85C4C81FCD2C47003F31AF /* KAOrderDetailViewController.h */,
-				EC85C4C91FCD2C47003F31AF /* KAOrderDetailViewController.m */,
 				EC91C1C91FD13006002C4DEC /* KAMapViewController.h */,
 				EC91C1CA1FD13006002C4DEC /* KAMapViewController.m */,
 				549151CB1CEC398700AC5C06 /* MapViewController.h */,
 				549151CC1CEC398700AC5C06 /* MapViewController.m */,
+				EC762B7D1FDFDFF500241FBE /* KACollectViewController.h */,
+				EC762B7E1FDFDFF500241FBE /* KACollectViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -4404,8 +4586,8 @@
 		EC9FBD301FC2D06E004E637C /* KAPicker */ = {
 			isa = PBXGroup;
 			children = (
-				EC81D1FD1FB46912002C4E38 /* JLDoubleSlider.m */,
-				EC81D1FC1FB4690A002C4E38 /* JLDoubleSlider.h */,
+				EC1B78431FE154CB00B6F6E4 /* YHSlider.h */,
+				EC1B78441FE154CC00B6F6E4 /* YHSlider.m */,
 				EC81F0AE1F960D6400916496 /* NSDate+BRAdd.h */,
 				EC81F0AD1F960D6300916496 /* NSDate+BRAdd.m */,
 				EC81F0A01F95B10500916496 /* MasterTextfield.h */,
@@ -4416,9 +4598,6 @@
 				ECD0F9FD1F970349004C5C46 /* MStringPickerView.m */,
 				EC81F0A71F95ED9F00916496 /* MDatePickerView.h */,
 				EC81F0A81F95ED9F00916496 /* MDatePickerView.m */,
-				EC81D1F81FB4671D002C4E38 /* TTRangeSlider.h */,
-				EC81D1F91FB4671D002C4E38 /* TTRangeSlider.m */,
-				EC81D1FA1FB4671D002C4E38 /* TTRangeSliderDelegate.h */,
 				EC69134F1FC5778100F6857D /* YSProgressView.h */,
 				EC69134E1FC5778000F6857D /* YSProgressView.m */,
 			);
@@ -4590,7 +4769,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F67E37C51CF69B2E009F163D /* CommonSelectViewController.xib in Resources */,
-				EC91C1C81FD11B50002C4DEC /* KAEndView.xib in Resources */,
 				CC4B19C51CD0AD9300CBA023 /* 098@2x.png in Resources */,
 				CC4B191A1CD0AD9300CBA023 /* 013.png in Resources */,
 				CC4B19131CD0AD9300CBA023 /* 009@2x.png in Resources */,
@@ -4604,6 +4782,7 @@
 				CC4B19621CD0AD9300CBA023 /* 049.png in Resources */,
 				CC4B19611CD0AD9300CBA023 /* 048@2x.png in Resources */,
 				CC4B19BD1CD0AD9300CBA023 /* 094@2x.png in Resources */,
+				EC8718E01FE9FC31005F7C02 /* KAOrderTableViewCell.xib in Resources */,
 				CC4B19951CD0AD9300CBA023 /* 074@2x.png in Resources */,
 				CC4B19801CD0AD9300CBA023 /* 064.png in Resources */,
 				CC4B19731CD0AD9300CBA023 /* 057@2x.png in Resources */,
@@ -4641,6 +4820,7 @@
 				CC4B1A781CD0AEF100CBA023 /* chatBar_more_cameraSelected.png in Resources */,
 				CC4B19491CD0AD9300CBA023 /* 036@2x.png in Resources */,
 				CC4B19AF1CD0AD9300CBA023 /* 087@2x.png in Resources */,
+				EC6E273C1FDA7EE300D4E300 /* KAEditTableViewCell.xib in Resources */,
 				CC4B1A451CD0AEF100CBA023 /* CourseV3CommentImagesTableViewCell.xib in Resources */,
 				CC4B196F1CD0AD9300CBA023 /* 055@2x.png in Resources */,
 				CC4B1A641CD0AEF100CBA023 /* chatBar_moreSelected.png in Resources */,
@@ -4677,6 +4857,7 @@
 				CC4B19451CD0AD9300CBA023 /* 034@2x.png in Resources */,
 				CC4B19071CD0AD9300CBA023 /* 003@2x.png in Resources */,
 				CC54F3A51CFD957900C50CE8 /* Default@2x.png in Resources */,
+				EC6F347E1FD9368E00FD49B6 /* KAImageTableViewCell.xib in Resources */,
 				CC4B198A1CD0AD9300CBA023 /* 069.png in Resources */,
 				CC4B1A6B1CD0AEF100CBA023 /* chatBar_recordSelected@2x.png in Resources */,
 				CC4B1A5F1CD0AEF100CBA023 /* chatBar_keyboard@2x.png in Resources */,
@@ -4734,12 +4915,14 @@
 				EC3750D01E7908240067AF0F /* AlipaySDK.bundle in Resources */,
 				CC135AF01D0F991A000D5CF1 /* QROrderDetail0Cell.xib in Resources */,
 				CCFFC5D61C858437000B090D /* MineTableViewCell.xib in Resources */,
+				EC762B6B1FDF870200241FBE /* KADetailVoteTableViewCell.xib in Resources */,
 				EC91C1D01FD15B9B002C4DEC /* KAMineHeadTableViewCell.xib in Resources */,
 				CC4B1B7F1CD1AFEF00CBA023 /* CommentTableViewCell.xib in Resources */,
 				CC675E9A1CFBDEEE0035556C /* AdvertisementView.xib in Resources */,
 				CC4B1A811CD0AEF100CBA023 /* chatBar_more_photoSelected@2x.png in Resources */,
 				CC4B19A21CD0AD9300CBA023 /* 081.png in Resources */,
 				CC4B19911CD0AD9300CBA023 /* 072@2x.png in Resources */,
+				EC6E27341FDA4DD900D4E300 /* KADingzhiTableViewCell.xib in Resources */,
 				CC4B19C21CD0AD9300CBA023 /* 097.png in Resources */,
 				CC4B19A91CD0AD9300CBA023 /* 084@2x.png in Resources */,
 				CC4B1A5B1CD0AEF100CBA023 /* chatBar_face@2x.png in Resources */,
@@ -4769,6 +4952,7 @@
 				CC4B19461CD0AD9300CBA023 /* 035.png in Resources */,
 				CC4B1A4E1CD0AEF100CBA023 /* chat_sender_bg.png in Resources */,
 				CC4B19921CD0AD9300CBA023 /* 073.png in Resources */,
+				ECCE2DD11FDEAA4D0010F410 /* KAMomentFooterView.xib in Resources */,
 				F6DB19A61CFDA35800C1FE3D /* GoodsSubCell.xib in Resources */,
 				CC4B19331CD0AD9300CBA023 /* 025@2x.png in Resources */,
 				CC4B19311CD0AD9300CBA023 /* 024@2x.png in Resources */,
@@ -4777,6 +4961,7 @@
 				EC9FBD351FC2D570004E637C /* KA.storyboard in Resources */,
 				EC894DDF1EE7EFBB00185E65 /* TZImagePickerController.bundle in Resources */,
 				CC4B199F1CD0AD9300CBA023 /* 079@2x.png in Resources */,
+				EC762B841FDFE0B400241FBE /* KACollectTableViewCell.xib in Resources */,
 				CC4B198E1CD0AD9300CBA023 /* 071.png in Resources */,
 				CC4B19971CD0AD9300CBA023 /* 075@2x.png in Resources */,
 				CC4B19711CD0AD9300CBA023 /* 056@2x.png in Resources */,
@@ -4850,6 +5035,7 @@
 				CC4B19011CD0AD9300CBA023 /* 000@2x.png in Resources */,
 				CC4B1A6C1CD0AEF100CBA023 /* chatBar_recordSelectedBg.png in Resources */,
 				CC4B19BA1CD0AD9300CBA023 /* 093.png in Resources */,
+				ECCE2DC21FDEA0B70010F410 /* KAPlaceAndMomentCell.xib in Resources */,
 				CC4B19421CD0AD9300CBA023 /* 033.png in Resources */,
 				CC4B19111CD0AD9300CBA023 /* 008@2x.png in Resources */,
 				CC4B1A7B1CD0AEF100CBA023 /* chatBar_more_location@2x.png in Resources */,
@@ -4868,6 +5054,7 @@
 				CC4B19A41CD0AD9300CBA023 /* 082.png in Resources */,
 				CC4B19501CD0AD9300CBA023 /* 040.png in Resources */,
 				EC8080BD1FCFE41B00267A68 /* KAPlaceDetailTitleTableViewCell.xib in Resources */,
+				EC762B731FDFA2A700241FBE /* KAVotePeopleTableViewCell.xib in Resources */,
 				EC9B963C1F67EA3600870A35 /* cityJson.plist in Resources */,
 				CC4B190F1CD0AD9300CBA023 /* 007@2x.png in Resources */,
 				CC4B1A651CD0AEF100CBA023 /* chatBar_moreSelected@2x.png in Resources */,
@@ -4889,9 +5076,9 @@
 				CC4B196D1CD0AD9300CBA023 /* 054@2x.png in Resources */,
 				CC4B19791CD0AD9300CBA023 /* 060@2x.png in Resources */,
 				CCC555B01CE0749300E171C6 /* PopControllerToolsView.xib in Resources */,
+				ECCE2DAB1FDE27380010F410 /* KAHomeSlideView.xib in Resources */,
 				CC4B19B61CD0AD9300CBA023 /* 091.png in Resources */,
 				CC4B19171CD0AD9300CBA023 /* 011@2x.png in Resources */,
-				EC463BB91FCBBC3F00FA4AB9 /* KAPlaceTableViewCell.xib in Resources */,
 				CC4B19771CD0AD9300CBA023 /* 059@2x.png in Resources */,
 				CC4B194B1CD0AD9300CBA023 /* 037@2x.png in Resources */,
 				CC4B190B1CD0AD9300CBA023 /* 005@2x.png in Resources */,
@@ -4905,8 +5092,10 @@
 				CC4B19741CD0AD9300CBA023 /* 058.png in Resources */,
 				CC4B19AC1CD0AD9300CBA023 /* 086.png in Resources */,
 				CC4B1A4C1CD0AEF100CBA023 /* chat_receiver_bg.png in Resources */,
+				ECCE2DC91FDEA6B10010F410 /* KAMomentHeaderView.xib in Resources */,
 				CC4B19B51CD0AD9300CBA023 /* 090@2x.png in Resources */,
 				CC4B197C1CD0AD9300CBA023 /* 062.png in Resources */,
+				ECCE2DC71FDEA4500010F410 /* KADetailEndView.xib in Resources */,
 				CC4B199C1CD0AD9300CBA023 /* 078.png in Resources */,
 				40B57A741E248CD800C3780D /* SequenceCell.xib in Resources */,
 				CC4B1A7F1CD0AEF100CBA023 /* chatBar_more_photo@2x.png in Resources */,
@@ -5011,8 +5200,8 @@
 				4045AE9C1D99166F006CD52F /* ItemCourseModel.m in Sources */,
 				EC2CBE4F1ECC55FE0002B12C /* CLSlider.m in Sources */,
 				54D479A81D0FD3A2002A60DE /* MyOrderDetailController.m in Sources */,
-				CCE043E31CC8B228009E7181 /* SDCollectionViewCell.m in Sources */,
 				CCD4E1AF1CFD2A3800E5A9AA /* NSMutableURLRequest+Master.m in Sources */,
+				ECCE2DCC1FDEA6C00010F410 /* KAMomentHeaderView.m in Sources */,
 				541E688B1CE1A9CB009C19F5 /* MyCollectionController.m in Sources */,
 				54CB448A1CD35D8600963848 /* SevenSwitch.m in Sources */,
 				F6F0A06D1CEABFCE005E6B7B /* SelectOrderVC.m in Sources */,
@@ -5035,6 +5224,7 @@
 				F6B1FC611CE41DD800958C6F /* ShareRootModel.m in Sources */,
 				BE3085B11D47628200FD8037 /* JiangyouCourceViewController.m in Sources */,
 				EC6CD1EB1EEA7C9A0001CAB6 /* UINavigationController+MasterBack.m in Sources */,
+				EC6E275D1FDA825000D4E300 /* KAEditViewModel.m in Sources */,
 				5446E1701CD0AF26007DF8D6 /* MyCardViewController.m in Sources */,
 				401BB9FC1D2CC34900B51D86 /* MsgTableView.m in Sources */,
 				CCE043B61CC8A5F9009E7181 /* TYScrollPageTabBar.m in Sources */,
@@ -5049,6 +5239,7 @@
 				4094220D1E03ED15009DE636 /* MapCourseModel.m in Sources */,
 				40B9C07A1DC1AEEC004FFA61 /* ShareBtn.m in Sources */,
 				CCE043AC1CC8609E009E7181 /* TYTitlePageTabBar.m in Sources */,
+				EC8718DF1FE9FC31005F7C02 /* KAOrderTableViewCell.m in Sources */,
 				406F72361D2DF3AF00E4069C /* MsgCell.m in Sources */,
 				EC6913461FC54D6100F6857D /* KAInVoteTableViewCell.m in Sources */,
 				5446E17B1CD1AD7F007DF8D6 /* MyFansViewController.m in Sources */,
@@ -5076,11 +5267,11 @@
 				EC69134D1FC56F0E00F6857D /* KADetailVoteViewController.m in Sources */,
 				CCC2E6DC1C16C96000395CBA /* UIScrollView+MJExtension.m in Sources */,
 				EC463BBF1FCC1B2B00FA4AB9 /* KAPlaceDetailViewController.m in Sources */,
-				EC463BB81FCBBC3F00FA4AB9 /* KAPlaceTableViewCell.m in Sources */,
 				CC308E3D1C44A50400C473DC /* NSURL+URL.m in Sources */,
 				5440466A1CDAF04B008B6E7D /* MineOrdersViewController.m in Sources */,
 				EC9AC9BA1FC3BB5200BF74BD /* KAPreVoteViewController.m in Sources */,
 				54CB447D1CD3309400963848 /* MyCardViewModel.m in Sources */,
+				EC8256491FD6499B0000E216 /* CityTableViewCell.m in Sources */,
 				CC0A13F11CE41A530019E10E /* ChatingViewModel.m in Sources */,
 				F61C8F551CEC77C700807F9D /* MinePrivateListVC.m in Sources */,
 				EC894DC71EE7EFBB00185E65 /* TZPhotoPreviewCell.m in Sources */,
@@ -5088,14 +5279,12 @@
 				EC6AEDD61F209884003371B0 /* SendMessageModel.m in Sources */,
 				CC4B1A4B1CD0AEF100CBA023 /* ConvertToCommonEmoticonsHelper.m in Sources */,
 				407544E71E010AC1008F9F00 /* StartSubCategoryModel.m in Sources */,
-				EC81D1FE1FB46913002C4E38 /* JLDoubleSlider.m in Sources */,
 				EC85C4CE1FCD2D58003F31AF /* KAOrderDetailTableViewCell.m in Sources */,
-				CCE043E01CC8B228009E7181 /* TAAnimatedDotView.m in Sources */,
 				5469DFD91CD9F8A000CA6CBC /* MyOrderCell.m in Sources */,
 				54D2D4AF1CEEB23900683795 /* QuestionView.m in Sources */,
+				EC9A00D01FD7E76B00D44215 /* KAMomentDetailViewController.m in Sources */,
 				CCE38A571CF2D38D00F4812C /* NSUserDefaults+Master.m in Sources */,
 				407544D51DFFCF35008F9F00 /* SequenceView.m in Sources */,
-				CCE043E11CC8B228009E7181 /* TADotView.m in Sources */,
 				CC78A44F1C2A535E006BBB3C /* LaunchScreenViewController.m in Sources */,
 				EC894DCC1EE7EFBB00185E65 /* TZImageCropManager.m in Sources */,
 				CC4B1A8F1CD0AEF100CBA023 /* XHMessageTextView.m in Sources */,
@@ -5103,6 +5292,7 @@
 				CCFF1D871C55C2BC00CD526A /* LoginViewController.m in Sources */,
 				CC382E6B1D1932ED00D3FB88 /* MasterNotificationView.m in Sources */,
 				407544E11DFFFF2B008F9F00 /* SubCategoryModel.m in Sources */,
+				EC9A00CA1FD7D2C100D44215 /* KAMomentViewController.m in Sources */,
 				CCFA82831CD9F2DE002E751C /* SplashViewController.m in Sources */,
 				CC675E981CFBDEB00035556C /* AdvertisementView.m in Sources */,
 				EC47FCD81E80D70C007A3EF6 /* MWGridViewController.m in Sources */,
@@ -5130,11 +5320,13 @@
 				F6F0A0691CEAB136005E6B7B /* SelectTypeModel.m in Sources */,
 				CCE043AA1CC8609E009E7181 /* TYSlidePageScrollView.m in Sources */,
 				CCC2E6D51C16C96000395CBA /* MJRefreshBackNormalFooter.m in Sources */,
+				EC6E27331FDA4DD800D4E300 /* KADingzhiTableViewCell.m in Sources */,
 				CC4B1A841CD0AEF100CBA023 /* EMChatBaseBubbleView.m in Sources */,
 				F61C8F581CEC77ED00807F9D /* MineCourseShare.m in Sources */,
 				CC1BD7361C2BC1D10036E036 /* UIDevice+Master.m in Sources */,
 				F6CAB8B51CF5A43A008CE9C6 /* MasterOrderListModel.m in Sources */,
 				402C12571D348B3500D97AE5 /* BindPhoneModel.m in Sources */,
+				ECCE2DCF1FDEAA410010F410 /* KAMomentFooterView.m in Sources */,
 				CC9E06841CBCC0BE001195BF /* HttpManagerCenter+Login.m in Sources */,
 				CC4B1A531CD0AEF100CBA023 /* DXFaceView.m in Sources */,
 				54D479AB1D0FD3D5002A60DE /* MyOrderDetailmodel.m in Sources */,
@@ -5143,6 +5335,7 @@
 				541E688E1CE1AB3B009C19F5 /* MyCollectionModel.m in Sources */,
 				EC85C4C41FCCFF75003F31AF /* KAOrdersViewController.m in Sources */,
 				5407F20E1CF547B0007FAE0F /* ScoreAccountModel.m in Sources */,
+				EC78BC991FE377BA00D3ADED /* KACollectViewModel.m in Sources */,
 				EC894DC31EE7EFBB00185E65 /* TZPhotoPickerController.m in Sources */,
 				EC9AC9BD1FC3BBF200BF74BD /* KAInVoteViewController.m in Sources */,
 				ECF5FE461EE00C7B007963DA /* ESPictureView.m in Sources */,
@@ -5159,6 +5352,7 @@
 				CCC2E6D61C16C96000395CBA /* MJRefreshBackStateFooter.m in Sources */,
 				EC6D93A31EA9B8D100F35E10 /* SeckillTableViewCell.m in Sources */,
 				54D83F8D1CF43F170005568B /* MasterVideoCollectionCell.m in Sources */,
+				EC762B761FDFB20400241FBE /* KASearchViewController.m in Sources */,
 				CC9E06701CBC90B6001195BF /* LoginViewModel.m in Sources */,
 				CC4B1B721CD1A6DC00CBA023 /* CourseReplyCommentViewModel.m in Sources */,
 				CCFFC5D51C858437000B090D /* MineTableViewCell.m in Sources */,
@@ -5190,6 +5384,7 @@
 				EC81F0AF1F960D6400916496 /* NSDate+BRAdd.m in Sources */,
 				54ED0FA51CEAE2DC002C5BF9 /* GuessLikeCell.m in Sources */,
 				CC4B1A851CD0AEF100CBA023 /* EMChatImageBubbleView.m in Sources */,
+				EC9A00C71FD7C93300D44215 /* JFADoubleSlider.m in Sources */,
 				406F71EC1D2D085500E4069C /* UserMsgModel.m in Sources */,
 				407544DB1DFFDB4B008F9F00 /* MapCourseController.m in Sources */,
 				CC4B1A571CD0AEF100CBA023 /* FacialView.m in Sources */,
@@ -5211,11 +5406,13 @@
 				CCCEB3D31C1949BE004D0B15 /* UIView+Master.m in Sources */,
 				540308F81CF3181A00992A70 /* MyDetailCell.m in Sources */,
 				5446E15A1CD092EA007DF8D6 /* MyCouponViewController.m in Sources */,
+				EC8718E31FEA0926005F7C02 /* KAOrderShareViewController.m in Sources */,
 				5486BD561CD988940084D9C1 /* MyShareViewController.m in Sources */,
 				BE652CA01E03E7A5003D2C88 /* LoginView.m in Sources */,
 				CCB20C911C4F2C2A004A347D /* LoginNavigationController.m in Sources */,
 				40B855FE1D7E86AE0070F8EB /* PaySuccessModel.m in Sources */,
 				40F699CF1E09148600FF3A69 /* CategoryCollectionViewCell.m in Sources */,
+				EC762B7F1FDFDFF500241FBE /* KACollectViewController.m in Sources */,
 				5446E15D1CD093DD007DF8D6 /* MyCouponModel.m in Sources */,
 				EC8080BC1FCFE41B00267A68 /* KAPlaceDetailTitleTableViewCell.m in Sources */,
 				5430F54C1CEDBBCF0075639A /* StudentController.m in Sources */,
@@ -5223,7 +5420,9 @@
 				540308F11CF2E5EF00992A70 /* MasterOrUserHomepageModel.m in Sources */,
 				EC2CBE4E1ECC55FE0002B12C /* CLPlayerView.m in Sources */,
 				CC4B1A561CD0AEF100CBA023 /* FaceUtil.m in Sources */,
+				EC6E273B1FDA7EE300D4E300 /* KAEditTableViewCell.m in Sources */,
 				40F699CC1E08E29A00FF3A69 /* CategorySelectView.m in Sources */,
+				EC762B831FDFE0B400241FBE /* KACollectTableViewCell.m in Sources */,
 				407544DE1DFFFD2D008F9F00 /* AllCategoryModel.m in Sources */,
 				F6C1200E1CEC03BE0044342E /* SystemMessageViewController.m in Sources */,
 				CC4B1A481CD0AEF100CBA023 /* CourseV3CommentTableViewCell.m in Sources */,
@@ -5233,6 +5432,7 @@
 				40EE982B1D66A7E900085427 /* MajorViewController.m in Sources */,
 				EC5C92FA1EAEEB26005719BE /* NSString+MasterTime.m in Sources */,
 				407544B41DF8F6AC008F9F00 /* HobyView.m in Sources */,
+				EC9A00CD1FD7D36000D44215 /* KAMomentViewModel.m in Sources */,
 				BE7FAD851D61B93300896194 /* longTouchLabel.m in Sources */,
 				401BB9FF1D2CD39A00B51D86 /* HobyCell.m in Sources */,
 				CC308E4C1C45EBD700C473DC /* ViewControllerAnimation.m in Sources */,
@@ -5240,13 +5440,13 @@
 				EC68720B1F3D6C36000137D7 /* AnswerListViewController.m in Sources */,
 				54DBB5D11CE99529004182FB /* CouseDetailHeadView.m in Sources */,
 				CC78A4471C293124006BBB3C /* MineRootViewController.m in Sources */,
-				CCE043E41CC8B228009E7181 /* SDCycleScrollView.m in Sources */,
 				40D7D39D1DACFF54007ABC73 /* AticleBannerListModel.m in Sources */,
 				CC9E06871CBCD38E001195BF /* NSString+Master.m in Sources */,
 				EC894DCE1EE7EFBB00185E65 /* UIView+Layout.m in Sources */,
 				CC4B1A8A1CD0AEF100CBA023 /* EMChatTimeCell.m in Sources */,
 				CC308E3A1C44A4F400C473DC /* NSString+URL.m in Sources */,
 				400EDC621D5C32F200777A2F /* ShopCellView.m in Sources */,
+				ECCE2DC51FDEA4420010F410 /* KADetailEndView.m in Sources */,
 				EC47FCDB1E80D70C007A3EF6 /* MWTapDetectingImageView.m in Sources */,
 				5486BD5D1CD98A960084D9C1 /* MyShareCell.m in Sources */,
 				54CB44861CD3498200963848 /* MyFansCell.m in Sources */,
@@ -5298,9 +5498,9 @@
 				40486E441D75586400340E26 /* PaySuccessTableView.m in Sources */,
 				CC1748851CD8730800B0E210 /* UISearchBar+Master.m in Sources */,
 				40F699DC1E0A8C5700FF3A69 /* CourseProgressHeadView.m in Sources */,
-				CCE043E21CC8B228009E7181 /* TAPageControl.m in Sources */,
 				CC5BA0E31CE5C3AD002BB613 /* CourseItemView.m in Sources */,
 				CCC2E6CF1C16C96000395CBA /* MJRefreshFooter.m in Sources */,
+				EC6F347D1FD9368D00FD49B6 /* KAImageTableViewCell.m in Sources */,
 				CC0F46C21D12ADD20026C681 /* CollectionViewModel.m in Sources */,
 				CC4B1B801CD1AFEF00CBA023 /* ReplyTableViewCell.m in Sources */,
 				40EE982A1D66A7E900085427 /* ShopBaseViewController.m in Sources */,
@@ -5325,9 +5525,9 @@
 				CC5F1A201CF6F3A000B2E0E9 /* UITableView+Gzw.m in Sources */,
 				40D7D39A1DACFF28007ABC73 /* AticleListModel.m in Sources */,
 				CCE38A611CF2F6A100F4812C /* WXUtil.mm in Sources */,
-				CCE043DF1CC8B228009E7181 /* TAAbstractDotView.m in Sources */,
 				40486E4A1D75625A00340E26 /* PayDetailView.m in Sources */,
 				CC52B7591CC08AF00069E8DA /* UIView+Toast.m in Sources */,
+				ECCE2DA91FDE26A00010F410 /* KAHomeSlideView.m in Sources */,
 				CC4B1A401CD0AEF100CBA023 /* CourseReplyCommentViewController.m in Sources */,
 				EC77EFFB1F3B1D0E00FADD09 /* AskViewController.m in Sources */,
 				544046701CDB0C47008B6E7D /* MyOrderModel.m in Sources */,
@@ -5353,10 +5553,12 @@
 				40F699E51E0B6E0200FF3A69 /* MasterMsg.m in Sources */,
 				CC4B1A4A1CD0AEF100CBA023 /* ChatingViewController.m in Sources */,
 				EC8AF3681FCEA8CD003D68DF /* AticleDetailImageCell.m in Sources */,
+				ECABCCB21FE7755200B3209F /* HomeTextField.m in Sources */,
 				54D2D4AC1CEEA68000683795 /* CardDetailViewController.m in Sources */,
 				406F71E91D2CECD300E4069C /* BindCell.m in Sources */,
 				CCC2E6DE1C16C96000395CBA /* UIView+MJExtension.m in Sources */,
 				CC4B1AA31CD0B51D00CBA023 /* UIResponder+Master.m in Sources */,
+				EC762B6A1FDF870200241FBE /* KADetailVoteTableViewCell.m in Sources */,
 				EC85C4D21FCD3208003F31AF /* KAOrderDetailViewModel.m in Sources */,
 				BE32B55C1E0BC54A001FDEEF /* ForgetPwdView.m in Sources */,
 				CC17FE6A1C9BD87400AA6873 /* UICollectionView+Master.m in Sources */,
@@ -5399,7 +5601,6 @@
 				54DBE00D1CE57D9E00475466 /* GoodDetailViewController.m in Sources */,
 				400EDC691D5C3E8100777A2F /* MajorCollectionView.m in Sources */,
 				BE3085B61D4775AF00FD8037 /* JiangyouModel.m in Sources */,
-				EC91C1C61FD11B33002C4DEC /* KAEndView.m in Sources */,
 				CCF37C3F1C58693500D4759A /* GCDQueue.m in Sources */,
 				CC16FE9E1D055BDB0061B419 /* UIImageView+Browser.m in Sources */,
 				F6F0A0771CEB379D005E6B7B /* MyMsgVC.m in Sources */,
@@ -5423,16 +5624,23 @@
 				CC4B1A831CD0AEF100CBA023 /* EMChatAudioBubbleView.m in Sources */,
 				CC4B1A881CD0AEF100CBA023 /* EMChatVideoBubbleView.m in Sources */,
 				EC894DCB1EE7EFBB00185E65 /* TZImageManager.m in Sources */,
+				EC1B78451FE154CC00B6F6E4 /* YHSlider.m in Sources */,
 				CC52B74F1CC07D9D0069E8DA /* UserClient.m in Sources */,
 				54CB44811CD3330C00963848 /* MyCardCell.m in Sources */,
+				EC762B7C1FDFC32000241FBE /* KASearchTableView.m in Sources */,
 				CC70801A1CC609C60088F981 /* MasterShareModel.m in Sources */,
 				EC9EE3211F2F084A006F8452 /* UIView+ZJFrame.m in Sources */,
 				EC7DDD911EE64E3C007BB0A3 /* CLPaoPaoView.m in Sources */,
 				BE32B5571E0BC529001FDEEF /* registerView.m in Sources */,
 				CC4B1A8B1CD0AEF100CBA023 /* EMChatViewBaseCell.m in Sources */,
 				549151CD1CEC398700AC5C06 /* MapViewController.m in Sources */,
+				EC762B6E1FDFA27C00241FBE /* KAVotePeopleViewController.m in Sources */,
+				EC8256461FD639450000E216 /* ChooseCityController.m in Sources */,
 				F6DB19A51CFDA35800C1FE3D /* GoodsSubCell.m in Sources */,
+				EC8E89281FD53D2F0009CE39 /* KABannerModel.m in Sources */,
+				EC762B721FDFA2A700241FBE /* KAVotePeopleTableViewCell.m in Sources */,
 				CC9E067E1CBC9594001195BF /* LoginCodeViewModel.m in Sources */,
+				ECCE2DC11FDEA0B70010F410 /* KAPlaceAndMomentCell.m in Sources */,
 				400EDC6C1D5D699700777A2F /* UIImageView+Shop.m in Sources */,
 				EC9EE3271F2F084A006F8452 /* ZJSegmentStyle.m in Sources */,
 				40C4D8D81DAE4EBF0091264B /* UIButton+LikeBtn.m in Sources */,
@@ -5461,14 +5669,15 @@
 				40EE98231D66A58600085427 /* CategoryView.m in Sources */,
 				CCB20CA81C520446004A347D /* UILabel+Master.m in Sources */,
 				CC12C8421D1A51B600DB5458 /* ViewControllerCell.m in Sources */,
+				EC8E89251FD5388A0009CE39 /* KAFristHomeModel.m in Sources */,
 				CCFFC5DD1C86D8ED000B090D /* SlideMainViewController.m in Sources */,
 				404AD2801E28D62B002F6CF2 /* categoryFilterCell.m in Sources */,
 				CC2005221C157DFC008E47C0 /* AppDelegate.mm in Sources */,
 				EC6913531FC57AED00F6857D /* KADetailVoteViewModel.m in Sources */,
 				CC4B1A9B1CD0B01600CBA023 /* Emoji.m in Sources */,
-				EC81D1FB1FB4671E002C4E38 /* TTRangeSlider.m in Sources */,
 				40082E0B1DBDF080006EE3B8 /* ImageTopBtn.m in Sources */,
 				EC894DC81EE7EFBB00185E65 /* TZVideoPlayerController.m in Sources */,
+				EC78BC9C1FE3BACA00D3ADED /* KAVotePeopleViewModel.m in Sources */,
 				CCE38A601CF2F6A100F4812C /* payRequsestHandler.mm in Sources */,
 				EC894DC41EE7EFBB00185E65 /* TZAssetCell.m in Sources */,
 				EC0A3F891E88F5FC0051FC17 /* HyPopMenuView.m in Sources */,
@@ -5498,7 +5707,6 @@
 				CC5DF0281CEB177B00861193 /* CourseDateTimeModel.m in Sources */,
 				5430F5431CEDAC1E0075639A /* StudentCell.m in Sources */,
 				EC463BBC1FCBE8D200FA4AB9 /* KAPlaceViewModel.m in Sources */,
-				CCE043E51CC8B228009E7181 /* UIView+SDExtension.m in Sources */,
 				F6FA24C51CE2DBEA00084D7E /* GoodsSubListViewController.m in Sources */,
 				BEF83BDD1D52F8B8003AB594 /* TTTAttributedLabel.m in Sources */,
 			);
@@ -5662,7 +5870,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LIBRARY = "libstdc++";
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
-				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_ENTITLEMENTS = MasterKA/MasterKA.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: liao yuan (XPJWCNXNZ5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: liao yuan (XPJWCNXNZ5)";
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -5712,7 +5920,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LIBRARY = "libstdc++";
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
-				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_ENTITLEMENTS = MasterKA/MasterKA.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: liao yuan (XPJWCNXNZ5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: liao yuan (XPJWCNXNZ5)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";

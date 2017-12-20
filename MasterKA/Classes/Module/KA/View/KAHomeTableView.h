@@ -13,8 +13,9 @@
 #import "BaseViewController.h"
 
 @interface KAHomeTableView : UITableView
-@property (nonatomic, strong) NSArray *kaHomeData;
+@property (nonatomic, strong) NSMutableArray *kaHomeData;
 
 @property (nonatomic, strong)BaseViewController * baseVC;
 
+@property(nonatomic ,assign)BOOL isChange;
 @end
