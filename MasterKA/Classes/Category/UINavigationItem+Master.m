@@ -120,22 +120,22 @@ static NSString *kBackButtonTitleKey = @"kBackButtonTitleKey";
     UIBarButtonItem *spacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:type target:self action:nil];
     spacer.width = margin - [self.class systemMargin];
     if (!item.customView) {
-        spacer.width += 20; // a margin of private class `UINavigationButton` is different from custom view
+        spacer.width += 8; // a margin of private class `UINavigationButton` is different from custom view
     }
     return spacer;
 }
 
 - (UIBarButtonItem *)leftSpacerForItem:(UIBarButtonItem *)item
 {
-//    return [self spacerForItem:item withMargin:-20];
-    return [self spacerForItem:item withMargin:self.leftMargin];
+    return [self spacerForItem:item withMargin:-20];
+//    return [self spacerForItem:item withMargin:self.leftMargin];
 }
 
 - (UIBarButtonItem *)rightSpacerForItem:(UIBarButtonItem *)item
 {
   
-//    return [self spacerForItem:item withMargin:-20];
-    return [self spacerForItem:item withMargin:self.rightMargin];
+    return [self spacerForItem:item withMargin:-20];
+//    return [self spacerForItem:item withMargin:self.rightMargin];
 }
 
 #pragma mark - Original Bar Button Items

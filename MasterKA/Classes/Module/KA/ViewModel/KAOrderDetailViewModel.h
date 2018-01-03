@@ -9,5 +9,8 @@
 #import "TableViewModel.h"
 
 @interface KAOrderDetailViewModel : TableViewModel
+@property (nonatomic, strong)NSString *oid;
+@property (nonatomic, strong)NSString *orderStatus;
+@property (nonatomic, strong)NSDictionary *info;
 + (void)moveAnimationWithTableView:(UITableView *)tableView;
 @end

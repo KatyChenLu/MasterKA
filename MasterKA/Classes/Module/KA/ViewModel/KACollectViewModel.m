@@ -9,31 +9,81 @@
 #import "KACollectViewModel.h"
 #import "KACollectTableViewCell.h"
 #import "KADetailViewController.h"
+#import "KACollectViewController.h"
 
 @implementation KACollectViewModel
 - (void)initialize {
     [super initialize];
-    //    self.nomorArr = [NSMutableArray array];
+        self.addVoteKAID = [NSMutableArray array];
+    self.cancelVoteKAID = [NSMutableArray array];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addVoteBtnChange:) name:@"addVote" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cancelVoteBtnChange:) name:@"cancelVote" object:nil];
+    self.myTimer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(showCustomBtn) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:self.myTimer forMode:NSRunLoopCommonModes];
+}
+
+- (void)cancelVoteBtnChange:(NSNotification *)notify {
+    NSDictionary * infoDic = [notify object];
+    
+    if ([self.addVoteKAID containsObject:infoDic[@"ka_course_id"]]) {
+        [self.addVoteKAID removeObject:infoDic[@"ka_course_id"]];
+    }
+    if (![self.cancelVoteKAID containsObject:infoDic[@"ka_course_id"]]) {
+        [self.cancelVoteKAID addObject:infoDic[@"ka_course_id"]];
+    }
+    
+}
+- (void)addVoteBtnChange:(NSNotification *)notify {
+    NSDictionary * infoDic = [notify object];
+    if ([self.cancelVoteKAID containsObject:infoDic[@"ka_course_id"]]) {
+        [self.cancelVoteKAID removeObject:infoDic[@"ka_course_id"]];
+    }
+    if (![self.addVoteKAID containsObject:infoDic[@"ka_course_id"]]) {
+        [self.addVoteKAID addObject:infoDic[@"ka_course_id"]];
+    }
     
 }
 - (void)bindTableView:(UITableView *)tableView {
     [super bindTableView:tableView];
     [self.mTableView registerCellWithReuseIdentifier:@"KACollectTableViewCell"];
+    self.shouldMoreToRefresh = YES;
+    self.shouldPullToRefresh = YES;
+    self.pageSize = @(10);
 }
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath withObject:(id)object {
     KACollectTableViewCell *mcell = (KACollectTableViewCell *)cell;
     mcell.collectDic = object;
     
     @weakify(self);
+    for (NSString * addVoteStr in self.addVoteKAID) {
+        if ([mcell.ka_course_id isEqualToString:addVoteStr]) {
+            [mcell.collectDic setValue:@"1" forKey:@"is_vote_cart"];
+            mcell.addVoteBtn.selected = YES;
+            mcell.addVoteBtn.borderWidth = 1.0f;
+            mcell.addVoteBtn.borderColor = RGBFromHexadecimal(0xb9b8af);
+            
+        }
+    }
+    
+    for (NSString *cancelVoteStr in self.cancelVoteKAID) {
+        if ([mcell.ka_course_id isEqualToString:cancelVoteStr]){
+            [mcell.collectDic setValue:@"0" forKey:@"is_vote_cart"];
+            mcell.addVoteBtn.selected = NO;
+            mcell.addVoteBtn.borderWidth = 0.0f;
+            mcell.addVoteBtn.borderColor = [UIColor clearColor];
+        }
+    }
     
     [mcell setCanceljoinClick:^(NSString *ka_course_id) {
         @strongify(self);
         [self.viewController deleteVoteActionWithKaCourseId:ka_course_id];
+         [[NSNotificationCenter defaultCenter] postNotificationName:@"cancelVote" object:@{@"ka_course_id":ka_course_id}];
     }];
     
     [mcell setJoinClick:^(UIImageView *joinImgView,NSString *ka_course_id) {
         @strongify(self);
         [self.viewController addVoteActionWithJoinImgView:joinImgView KaCourseId:ka_course_id Animation:YES];
+         [[NSNotificationCenter defaultCenter] postNotificationName:@"addVote" object:@{@"ka_course_id":ka_course_id}];
      }];
         
 }
@@ -55,16 +105,33 @@
         }
         
     }] map:^id(NSArray *responses) {
-        BaseModel *model = responses.firstObject;
+        NSLog(@"===== value  %@",responses);
         @strongify(self);
+        BaseModel *model = responses.firstObject;
+        NSArray * array = [NSArray new];
         if (model.code==200) {
-            self.info = model.data;
-            self.dataSource=@[model.data];
-            [self.mTableView reloadData];
+            if (![model.data  isEqual:@""]) array = model.data;
+            if(array && array.count){
+                if([self.curPage intValue] > 1){
+                    NSMutableArray *indexPaths = [[NSMutableArray alloc] initWithArray:self.dataSource[0]];
+                    [indexPaths addObjectsFromArray:array];
+                    
+                    self.dataSource = @[ indexPaths ];
+                    self.info=indexPaths;
+                }else{
+                    self.dataSource = @[ array ];
+                    self.info=array;
+                }
+                [self.mTableView reloadData];
+                
+            }
             
+        }else{
+            
+            [self showRequestErrorMessage:model];
         }
-        return self.dataSource;
         
+        return array;
         
     }];
     
@@ -96,15 +163,18 @@
         @weakify(self);
         [[[HttpManagerCenter sharedHttpManager] cancelLikeCource:cell.ka_course_id resultClass:nil] subscribeNext:^(BaseModel *model) {
             @strongify(self)
-            [self.info removeObjectAtIndex:indexPath.row];
-            self.dataSource=@[self.info];
+            
+            
             if (model.code==200) {
-                [self.mTableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+              
                 [self.viewController toastWithString:model.message error:NO];
             }else{
                 [self.viewController toastWithString:model.message error:YES];
             }
         }];
+        [self.info removeObjectAtIndex:indexPath.row];
+        self.dataSource=@[self.info];
+          [self.mTableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         
     }
     
@@ -127,5 +197,38 @@
     kaDetailVC.headViewUrl = votePeopleData[@"course_cover"];
     
     [self.viewController pushViewController:kaDetailVC animated:YES];
+}
+- (NSTimer *)myTimer {
+    if (!_myTimer) {
+        _myTimer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(showCustomBtn) userInfo:nil repeats:YES];
+        [[NSRunLoop currentRunLoop] addTimer:_myTimer forMode:NSRunLoopCommonModes];
+    }
+    return _myTimer;
+}
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    [self.myTimer invalidate];
+    self.myTimer = nil;
+    [(KACollectViewController *)self.viewController showCusBtn:NO];
+    self.isShowCusBtn = NO;
+}
+-(void)showCustomBtn{
+    
+    NSLog(@"szdfasdasdd---sdasdasd99999999999999999999999@-@");
+    if (!self.isShowCusBtn) {
+        [(KACollectViewController *)self.viewController showCusBtn:YES];
+        self.isShowCusBtn = YES;
+    }
+    [self.myTimer invalidate];
+    self.myTimer = nil;
+}
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    self.myTimer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(showCustomBtn) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:self.myTimer forMode:NSRunLoopCommonModes];
+}
+-(void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"addVote" object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"cancelVote" object:nil];
+    [self.myTimer invalidate];
+    self.myTimer = nil;
 }
 @end

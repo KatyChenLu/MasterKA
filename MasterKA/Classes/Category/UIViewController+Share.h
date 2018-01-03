@@ -23,4 +23,5 @@
 
 - (void)shareContentOfApp:(NSString*)title content:(NSString*)content imageUrl:(NSString*)imageUrl linkUrl:(NSString*)linkUrl shareToPlatform:(UMSocialPlatformType)type;
 
+- (void)shareContentOfApp:(NSDictionary*)shareInfo cancelVoteArr:(NSArray *)cancelArr;
 @end

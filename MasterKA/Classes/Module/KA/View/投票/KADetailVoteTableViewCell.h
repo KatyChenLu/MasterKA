@@ -24,6 +24,6 @@
 //投票百分比
 @property (nonatomic, strong)NSString *percent;
 
-@property (nonatomic, copy) void(^showVotePeople)(NSString *itemId);
+@property (nonatomic, copy) void(^showVotePeople)(NSString *itemId,NSString *peoTitle);
 - (void)showKADetailVoteDetail:(NSDictionary *)dic;
 @end

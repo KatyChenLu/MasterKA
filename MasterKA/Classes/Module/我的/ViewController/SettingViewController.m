@@ -40,7 +40,7 @@
 
 - (IBAction)commentMaster:(id)sender {
     //去评分
-    NSString *str = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@",@"925646944"];
+    NSString *str = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@",MasterAppId];
     NSURL * url = [NSURL URLWithString:str];
     
     if ([[UIApplication sharedApplication] canOpenURL:url])
@@ -87,7 +87,7 @@
             
             [[UserClient sharedUserClient] outLogin];
             [[UserClient sharedUserClient] outChanegeUid];
-            
+            [UMSocialGlobal shareInstance].isClearCacheWhenGetUserInfo = YES;
             [[NSNotificationCenter defaultCenter] postNotificationName:@"RefurbishMyInfo" object:nil];
         }
         

@@ -131,6 +131,7 @@
     }
     
 }
+
 - (RACSignal*)requestRemoteDataSignalWithPage:(NSUInteger)page
 {
     RACSignal *fetchSignal = [self.httpService kaCourseDetail:self.ka_course_id resultClass:nil];
@@ -158,7 +159,9 @@
             [data addObject:[self getDesc:self.info[@"cousre_desc"]]];
             [data addObject:[self getDescImgList:self.info[@"cousre_desc_img_lists"]]];
             [data addObject:[self getContent:self.info[@"course_content"]]];
-            [data addObject:[self getProduct:self.info[@"course_product"]]];
+            if (![self.info[@"course_product"] isEqualToString:@""]) {
+                 [data addObject:[self getProduct:self.info[@"course_product"]]];
+            }
             [data addObject:[self getflowImg]];
             
             self.dataSource=data;
@@ -192,12 +195,16 @@
     return @[contentDic];
 }
 - (NSArray *)getProduct:(NSString *)course_product {
-    
-    NSMutableDictionary *producttDic = [NSMutableDictionary dictionary];
-    [producttDic setObject:course_product forKey:@"course_product"];
-    [producttDic setObject:@"course_product" forKey:@"type"];
-    [self.detailSection addObject:@"产品内容"];
+     NSMutableDictionary *producttDic = [NSMutableDictionary dictionary];
+    if (course_product.length) {
+       
+        [producttDic setObject:course_product forKey:@"course_product"];
+        [producttDic setObject:@"course_product" forKey:@"type"];
+        [self.detailSection addObject:@"产品内容"];
+        
+    }
     return @[producttDic];
+   
 }
 
 - (NSArray *)getDesc:(NSString *)cousre_desc {
@@ -224,9 +231,19 @@
     return @[titleViewDic];
 }
 
-
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    @weakify(self);
+    CGFloat height = [tableView fd_heightForCellWithIdentifier:[self getReuseIdentifierWithIndexPath:indexPath] configuration:^(id cell) {
+        @strongify(self);
+        id object = self.dataSource[indexPath.section][indexPath.row];
+        [self configureCell:cell atIndexPath:indexPath withObject:(id)object];
+    }];
+    return height;
+}
 - (void)configureCell:(CouseDetailCell *)cell atIndexPath:(NSIndexPath *)indexPath withObject:(id)object
 {
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     if ([[_detailSection objectAtIndex:indexPath.section]isEqual:@"标题"]) {
         KATitleTableViewCell *_cell=(KATitleTableViewCell *)cell;
@@ -235,10 +252,12 @@
         [_cell setJoinClick:^(NSString *ka_course_id) {
             @strongify(self);
             [self.viewController addVoteActionWithJoinImgView:nil KaCourseId:ka_course_id Animation:NO];
+             [[NSNotificationCenter defaultCenter] postNotificationName:@"addVote" object:@{@"ka_course_id":ka_course_id}];
         }];
         [_cell setCanceljoinClick:^(NSString *ka_course_id) {
             @strongify(self);
             [self.viewController deleteVoteActionWithKaCourseId:ka_course_id];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"cancelVote" object:@{@"ka_course_id":ka_course_id,@"isDetail2Vote":@"1"}];
         }];
         
     }else if([[_detailSection objectAtIndex:indexPath.section]isEqual:@"课程介绍"]||[[_detailSection objectAtIndex:indexPath.section]isEqual:@"产品内容"]||[[_detailSection objectAtIndex:indexPath.section]isEqual:@"活动内容"]){
@@ -256,72 +275,6 @@
 }
 #pragma mark -- tableViewDataSource;
 
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-//{
-//    UIColor *back= [UIColor colorWithRed:235/255.f green:235/255.f  blue:235/255.f  alpha:1.0f];;
-//    UIView *backGround=[[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 10)];
-//    backGround.backgroundColor=back;
-//    UIView *sectionView=[[UIView alloc]initWithFrame:CGRectMake(0, 10, ScreenWidth, 47)];;
-//    [backGround addSubview:sectionView];
-//    sectionView.backgroundColor =[UIColor whiteColor];
-//    
-//    UIButton *Idlabel =[UIButton buttonWithType:UIButtonTypeCustom];
-//    Idlabel.frame=CGRectMake(0, 0, ScreenWidth, 46);
-//    [Idlabel.titleLabel setFont: [UIFont systemFontOfSize:15]];
-//    Idlabel.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-//    [Idlabel setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//    [Idlabel setTitle:[NSString stringWithFormat:@"    %@" ,[self.detailSection objectAtIndex:section]] forState:UIControlStateNormal];
-//    [sectionView addSubview:Idlabel];
-//    UIImageView *jiantou =[[UIImageView alloc]initWithFrame:CGRectMake(ScreenWidth-26, 16, 15, 15)];
-//    jiantou.image=[UIImage imageNamed:@"gerenqianming-jiantou"];
-//    jiantou.contentMode=UIViewContentModeScaleAspectFit;
-//    [sectionView addSubview:jiantou];
-//    sectionView.hidden=YES;
-//    if(![[self.detailSection objectAtIndex:section]  isEqual:@""]&&![[self.detailSection objectAtIndex:section]  isEqual:@"时间地点"]&&![[self.detailSection objectAtIndex:section]  isEqual:@"秒杀价格"]&&![[self.detailSection objectAtIndex:section]  isEqual:@"详细"]&&![[self.detailSection objectAtIndex:section]isEqual:@"他们也想学"]&&![[self.detailSection objectAtIndex:section]isEqual:@"课程流程"]&&![[self.detailSection objectAtIndex:section]isEqual:@"masters"]){
-//        backGround.height=57;
-//        sectionView.hidden=NO;
-//        sectionView.height=46;
-//        if([[_detailSection objectAtIndex:section] rangeOfString:@"玩家评论"].location != NSNotFound){
-//            [Idlabel addTarget:self action:@selector(showShare)forControlEvents:UIControlEventTouchUpInside];
-//        }
-//        if([[_detailSection objectAtIndex:section] isEqual:@"套餐"]&&[[_detailSection objectAtIndex:section] isEqual:@"问大家"]&&[[_detailSection objectAtIndex:section] isEqual:@"提问题"]){
-//            jiantou.hidden=YES;
-//        }
-//        
-//        if([[_detailSection objectAtIndex:section] isEqual:@"进阶课程"]){
-//            jiantou.hidden=YES;
-//            CGRect frame=sectionView.frame;
-//            frame.origin.y=0;
-//            frame.size.height=sectionView.height+10;
-//            sectionView.frame=frame;
-//            //            backGround.backgroundColor=[UIColor whiteColor];
-//        }
-//        if([[_detailSection objectAtIndex:section] isEqual:@"相关推荐"]){
-//            jiantou.hidden=YES;
-//            sectionView.backgroundColor=[UIColor whiteColor];
-//            Idlabel.backgroundColor=[UIColor whiteColor];
-//        }
-//        
-//    }
-//    return backGround;
-//}
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-//{
-//    if([[self.detailSection objectAtIndex:section]  isEqual:@""]||[[self.detailSection objectAtIndex:section]  isEqual:@"详细"]||[[self.detailSection objectAtIndex:section]  isEqual:@"他们也想学"]||[[self.detailSection objectAtIndex:section]isEqual:@"课程流程"]){
-//        return 10;
-//    }
-//    if([[self.detailSection objectAtIndex:section]  isEqual:@"时间地点"] ||[[self.detailSection objectAtIndex:section]  isEqual:@"秒杀价格"]){
-//        return 0.5;
-//    }
-//    if(section==0){
-//        return 0;
-//    }
-//    if ([[self.detailSection objectAtIndex:section]  isEqual:@"masters"]) {
-//        return 10;
-//    }
-//    
-//    return 57;
-//}
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
     return CGFLOAT_MIN;

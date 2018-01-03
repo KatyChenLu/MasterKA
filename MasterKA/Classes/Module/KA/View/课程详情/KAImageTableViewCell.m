@@ -34,11 +34,7 @@
         
         self.imageWidth.constant = ScreenWidth-24;
         self.imageHeight.constant = num;
-        [self.contentImgView setImageWithURLString:[dic[@"url"] ClipImageUrl:[NSString stringWithFormat:@"%f",ScreenWidth- 24]] placeholderImage:nil];
+        [self.contentImgView setImageWithURLString:[dic[@"url"] ClipImageUrl:[NSString stringWithFormat:@"%f",(ScreenWidth- 24)*0.75*[UIScreen mainScreen].scale]] placeholderImage:nil];
     }
-   
-    
-    
-    
 }
 @end

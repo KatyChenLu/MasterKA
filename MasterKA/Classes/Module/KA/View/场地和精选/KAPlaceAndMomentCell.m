@@ -33,10 +33,10 @@
     
     self.KAcontentLabel.attributedText = attributeStr;
     
-    
-    [self.KAimgView setImageWithURLString:dic[@"cover"] placeholderImage:nil];
+     [self.KAimgView setImageFadeInWithURLString:[dic[@"cover"] ClipImageUrl:[NSString stringWithFormat:@"%f",(ScreenWidth- 24)*0.75*ScreenScale]] placeholderImage:[UIImage imageNamed:@"KAHoemLoadingDefault"]];
+//    [self.KAimgView setImageWithURLString:[dic[@"cover"] ClipImageUrl:[NSString stringWithFormat:@"%f",(ScreenWidth- 24)*0.75*ScreenScale]] placeholderImage:[UIImage imageNamed:@"KAHoemLoadingDefault"]];
     self.KAtitleLabel.text = dic[@"title"];
-    
+    self.KAtitleLabel.font = [UIFont fontWithName:@"PingFangSC-Medium" size:18];
     self.KApeopleNumLabel.text = [NSString stringWithFormat:@"可容纳%@人",dic[@"max_people_num"]];
     self.distanceLabel.hidden = NO;
     self.dotImg.hidden = NO;
@@ -63,7 +63,7 @@
     
     [self.KAimgView setImageWithURLString:dic[@"cover"] placeholderImage:nil];
     self.KAtitleLabel.text = dic[@"title"];
-    
+    self.KAtitleLabel.font = [UIFont fontWithName:@"PingFangSC-Medium" size:18];
     self.KApeopleNumLabel.text = dic[@"add_time"];
     self.KAPlaceLabel.text = dic[@"company_name"];
     self.distanceLabel.hidden = YES;

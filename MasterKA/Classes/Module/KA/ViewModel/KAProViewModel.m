@@ -22,7 +22,33 @@
     self.nomorArr = [NSMutableArray array];
     self.selectVoteArr = [NSMutableArray array];
     self.info = [NSMutableArray array];
+    self.selectVoteArr = self.nomorArr ;
     
+    //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addVoteBtnChange:) name:@"addVote" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cancelVoteBtnChange:) name:@"cancelVote" object:nil];
+}
+- (void)cancelVoteBtnChange:(NSNotification *)notify {
+    NSDictionary * notifyDic = [notify object];
+    
+    if ([notifyDic[@"isDetail2Vote"] isEqualToString:@"1"]) {
+        for (NSDictionary *infoDic in self.info) {
+            if([infoDic[@"ka_course_id"] isEqualToString:notifyDic[@"ka_course_id"]]){
+                
+                for (NSString *selectID in self.nomorArr) {
+                    if ([infoDic[@"ka_course_id"] isEqualToString:selectID]) {
+                        [self.nomorArr removeObject:selectID];
+                    }
+                }
+                
+                self.selectVoteArr = self.nomorArr;
+                
+                [self.info removeObject:infoDic];
+                self.dataSource=@[self.info];
+                [self.mTableView reloadData];
+                //            [self.mTableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            }
+        }
+    }
 }
 - (void)bindTableView:(UITableView *)tableView {
     [super bindTableView:tableView];
@@ -33,7 +59,7 @@
 }
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath withObject:(id)object {
     KAPreVoteTableViewCell *mcell = (KAPreVoteTableViewCell *)cell;
-    mcell.KApreVoteBtn.hidden = self.isHideSelect;
+    
     @weakify(self);
     [mcell setSelectClick:^(NSString *kaid) {
         @strongify(self);
@@ -46,7 +72,14 @@
         [self.nomorArr removeObject:kaid];
         self.selectVoteArr = self.nomorArr;
     }];
-    [mcell setKaProVoteDic:object];
+    NSMutableDictionary *dataDic = object;
+    [dataDic setValue:@"0" forKey:@"isSelect"];
+    for (NSString *kaid in self.selectVoteArr) {
+        if ([kaid isEqualToString:object[@"ka_course_id"]]) {
+            [dataDic setValue:@"1" forKey:@"isSelect"];
+        }
+    }
+    [mcell setKaProVoteDic:dataDic];
 }
 
 -(NSString *)getReuseIdentifierWithIndexPath:(NSIndexPath *)indexPath {
@@ -70,32 +103,23 @@
         NSArray * array = [NSArray new];
         if (model.code==200) {
             if (![model.data  isEqual:@""]) array = model.data;
-         
-                if([self.curPage intValue] > 1){
-                    NSMutableArray *indexPaths = [[NSMutableArray alloc] initWithArray:self.dataSource[0]];
-                    [indexPaths addObjectsFromArray:array];
-                    
-                    self.dataSource = @[ indexPaths ];
-                    self.info = self.dataSource[0];
-                }else{
-                                if (![model.data isEqual:[NSNull null]]) {
-//                                    for (NSDictionary *dataDic in model.data) {
-//                                        [self.nomorArr addObject:dataDic[@"ka_course_id"]];
-//                                    }
-                                    self.dataSource = @[model.data];
-                                    self.info = self.dataSource[0];
-                                }else {
-                    
-                                    self.dataSource = @[];
-                                }
-                    
-                    
-                                self.selectVoteArr = self.nomorArr ;
-                    
-                }
-                [self.mTableView reloadData];
+            
+            if([self.curPage intValue] > 1){
+                NSMutableArray *indexPaths = [[NSMutableArray alloc] initWithArray:self.dataSource[0]];
+                [indexPaths addObjectsFromArray:array];
                 
-        
+                self.dataSource = @[ indexPaths ];
+                self.info = self.dataSource[0];
+            }else{
+                if (![model.data isEqual:[NSNull null]]) {
+                    self.dataSource = @[model.data];
+                    self.info = self.dataSource[0];
+                }else {
+                    
+                    self.dataSource = @[];
+                }
+            }
+            [self.mTableView reloadData];
             
         }else{
             
@@ -103,27 +127,6 @@
         }
         
         return self.dataSource;
-//        if (model.code==200) {
-//
-//            self.info = model.data;
-//
-//
-//            if (![model.data isEqual:[NSNull null]]) {
-//                for (NSDictionary *dataDic in model.data) {
-//                    [self.nomorArr addObject:dataDic[@"ka_course_id"]];
-//                }
-//                self.dataSource = @[model.data];
-//            }else {
-//
-//                self.dataSource = @[];
-//            }
-//
-//
-//            self.selectVoteArr = self.nomorArr ;
-//            [self.mTableView reloadData];
-//
-//        }
-//        return self.dataSource;
     }];
     
 }
@@ -131,16 +134,20 @@
 #pragma mark --
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-        NSDictionary *votePeopleData =  self.dataSource[indexPath.section][indexPath.row];
-        
-        KADetailViewController *kaDetailVC = [[KADetailViewController alloc] init];
-        
-        kaDetailVC.ka_course_id = votePeopleData[@"ka_course_id"];
-        kaDetailVC.headViewUrl = votePeopleData[@"course_cover"];
-        
-        [self.viewController pushViewController:kaDetailVC animated:YES];
+    NSDictionary *votePeopleData =  self.dataSource[indexPath.section][indexPath.row];
     
+    KAPreVoteTableViewCell *cell = [self.mTableView cellForRowAtIndexPath:indexPath];
     
+    cell.KApreVoteBtn.selected = !cell.KApreVoteBtn.selected;
+    if (cell.KApreVoteBtn.isSelected) {
+        cell.isVoteImg.image = [UIImage imageNamed:@"选择"];
+        [self.nomorArr addObject:votePeopleData[@"ka_course_id"]];
+        self.selectVoteArr = self.nomorArr;
+    }else{
+        cell.isVoteImg.image = [UIImage imageNamed:@"未选择"];
+        [self.nomorArr removeObject:votePeopleData[@"ka_course_id"]];
+        self.selectVoteArr = self.nomorArr;
+    }
 }
 //设cell可编辑
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -150,7 +157,7 @@
 }
 //定义编辑样式
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
-    //    [tableView setEditing:YES animated:YES];
+    
     return UITableViewCellEditingStyleDelete;
     
 }
@@ -163,44 +170,28 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        KAPreVoteTableViewCell *cell = [self.mTableView cellForRowAtIndexPath:indexPath];
+        
+        [self.viewController deleteVoteActionWithKaCourseId:cell.ka_course_id];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"cancelVote" object:@{@"ka_course_id":cell.ka_course_id}];
+        
+        if (cell.KApreVoteBtn.isSelected) {
+            for (NSString *selectID in self.selectVoteArr) {
+                if ([cell.ka_course_id isEqualToString:selectID]) {
+                    [self.nomorArr removeObject:selectID];
+                    break;
+                }
+            }
+            
+            
+        }
+        self.selectVoteArr = self.nomorArr;
         [self.info removeObjectAtIndex:indexPath.row];
         self.dataSource=@[self.info];
         
         [self.mTableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        KAPreVoteTableViewCell *cell = [self.mTableView cellForRowAtIndexPath:indexPath];
-        if (cell.KApreVoteBtn.isSelected) {
-            for (NSString *selectID in self.nomorArr) {
-                if ([cell.ka_course_id isEqualToString:selectID]) {
-                    [self.nomorArr removeObject:selectID];
-                }
-            }
-            
-            self.selectVoteArr = self.nomorArr;
-        }
     }
-   
+    
 }
-//- (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
-//
-//
-//    //添加一个删除按钮
-//    UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"删除" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
-//
-//    }];
-//
-////    //添加一个置顶按钮
-////    UITableViewRowAction *topAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"置顶" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
-////
-////    }];
-////    topAction.backgroundColor = [UIColor blueColor];
-////
-////    //添加一个编辑按钮
-////    UITableViewRowAction *editAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"修改" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
-////
-////    }];
-////    editAction.backgroundColor = [UIColor greenColor];
-//
-//    return @[deleteAction];
-//
-//}
 @end

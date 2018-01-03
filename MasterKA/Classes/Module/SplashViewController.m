@@ -36,13 +36,28 @@
 //    self.view.backgroundColor = MasterDefaultColor;
     self.guidedView.hidden = YES;
     
-    self.splashImageView.image = [self getTheLaunchImage];
+//    self.splashImageView.image = [self getTheLaunchImage];
 //     [self buildPlayLayer];
+    [self initAppConfig];
     [self checkAppVersion];
     
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
 }
 
+- (void)initAppConfig{
+    HttpManagerCenter* httpCenter = [HttpManagerCenter sharedHttpManager];
+    DBHelper *dbHelper = [DBHelper sharedDBHelper];
+    [[httpCenter appConfig:[AppConfigModel class]] subscribeNext:^(BaseModel *model) {
+        if (model.code == 200) {
+            AppConfigModel *configModel = model.data;
+            [dbHelper deleteClass:[CityModel class]];
+            [dbHelper insertModelArray:configModel.city_list];
+            
+            [[UserClient sharedUserClient] setAppConfigUrl:configModel];
+        
+        }
+    }];
+}
 
 - (UIImage *)getTheLaunchImage
 {
@@ -98,33 +113,13 @@
 }
 
 - (void)checkAppVersion{
-    NSUserDefaults* userDefault = [NSUserDefaults standardUserDefaults];
-    NSString* appCode = [userDefault objectForKey:FristStartAppVersionKey];
-    if (appCode==nil || ![App_Version isEqualToString:appCode])//新版本
-    {
-        if (appCode == nil) {
-            
-            self.firstInstall = YES;
-        }
-        [userDefault setObject: App_Version forKey:FristStartAppVersionKey];
-        [userDefault synchronize];
-        //旧版本引导效果
-//        self.guidedView.hidden = NO;
-//       [self setUpPage];
-//        
-        
-        
-        
-        
-        [self buildPlayLayer];
-    }else{
 
         self.playerView.hidden = YES;
 
         [self autoLogin];
         
 //        [self buildPlayLayer];
-    }
+    
     
 }
 
@@ -202,16 +197,16 @@
 -(void)tap
 {
   //第一次安装app
-    if (self.firstInstall) {
-
-        HobyViewController * hobyVC = [[HobyViewController alloc]init];
-        hobyVC.view.backgroundColor = [UIColor whiteColor];
-
-        [UIApplication sharedApplication].keyWindow.rootViewController = hobyVC;
-    }else//更新app
-    {
+//    if (self.firstInstall) {
+//
+//        HobyViewController * hobyVC = [[HobyViewController alloc]init];
+//        hobyVC.view.backgroundColor = [UIColor whiteColor];
+//
+//        [UIApplication sharedApplication].keyWindow.rootViewController = hobyVC;
+//    }else//更新app
+//    {
         [SharedAppDelegate openAppMainVCT];
-    }
+//    }
     
     
     

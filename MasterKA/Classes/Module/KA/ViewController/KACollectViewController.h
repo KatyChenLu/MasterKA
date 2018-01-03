@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface KACollectViewController : BaseViewController
-
+- (void)showCusBtn:(BOOL)show;
 @end

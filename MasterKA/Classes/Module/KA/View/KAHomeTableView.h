@@ -17,5 +17,10 @@
 
 @property (nonatomic, strong)BaseViewController * baseVC;
 
+@property (nonatomic, assign)BOOL isShowCusBtn;
+
 @property(nonatomic ,assign)BOOL isChange;
+- (void)logoutAction;
+
+
 @end

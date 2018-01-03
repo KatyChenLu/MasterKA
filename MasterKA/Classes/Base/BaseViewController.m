@@ -210,10 +210,11 @@
         _searchTitleView.enablesReturnKeyAutomatically = NO;
         
         UIImageView *leftView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"search"]];
-
+        leftView.contentMode = UIViewContentModeScaleAspectFit;
         _searchTitleView.leftView =leftView;
         
-        _searchTitleView.leftView.frame = CGRectMake(0, 0, 16, 16);
+        _searchTitleView.leftView.frame = CGRectMake(0, 0, 30, 16);
+        
 
         _searchTitleView.leftViewMode = UITextFieldViewModeAlways;
         

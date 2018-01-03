@@ -34,6 +34,9 @@
 - (UITableView *)mTableView {
     if (!_mTableView) {
         _mTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight - (IsPhoneX?(34 + 88):64)) style:UITableViewStylePlain];
+        _mTableView.separatorInset = UIEdgeInsetsMake(0, 12, 0, 12);
+        _mTableView.separatorColor = RGBFromHexadecimal(0xeaeaea);
+        
         _mTableView.mj_header = [MasterTableHeaderView addRefreshGifHeadViewWithRefreshBlock:^{
             
             [self.viewModel first];

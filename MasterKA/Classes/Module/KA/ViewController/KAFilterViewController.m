@@ -26,6 +26,7 @@
 @property (nonatomic, strong)UIView *conditionView;
 @property (nonatomic, strong)NSMutableArray *titleBtnArr;
 @property (nonatomic,strong) NSMutableArray *filterArr;
+@property (nonatomic,strong)UIView *defaultNoKeyWorkView;
 
 
 //页数
@@ -52,9 +53,9 @@
     self.page_size = @"10";
     
     self.priceMin = [[UserClient sharedUserClient].course_price_min floatValue];
-    self.priceMax = [[UserClient sharedUserClient].course_price_max floatValue];
+    self.priceMax = [[UserClient sharedUserClient].course_price_max floatValue]+FilterOverFlow;
     self.peopleMin = [[UserClient sharedUserClient].people_num_min floatValue];
-    self.peopleMax = [[UserClient sharedUserClient].people_num_max floatValue];
+    self.peopleMax = [[UserClient sharedUserClient].people_num_max floatValue]+FilterOverFlow;
     self.timeMin = 0;
     self.timeMax = ([UserClient sharedUserClient].course_time.count -1)*10 ;
     
@@ -66,17 +67,65 @@
     self.navigationItem.rightBarButtonItem = fetchItem;
     
     [self.view addSubview:self.filterTitleView];
+   
     
     [self.view addSubview:self.kaHomeTableView];
     [self.kaHomeTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.and.right.equalTo(self.view);
-        make.top.equalTo(self.view).offset(50);
+        make.top.equalTo(self.view).offset(40);
         make.bottom.equalTo(self.mas_bottomLayoutGuide);
     }];
      self.kaHomeTableView.baseVC = self;
     
     [self requestKAHomeData];
+    @weakify(self);
+    [RACObserve(self.kaHomeTableView, kaHomeData) subscribeNext:^(NSMutableArray *kaData) {
+        @strongify(self);
+        if (!kaData.count) {
+            [self showDefaultNoKeyWorkView:YES];
+        }else{
+            [self showDefaultNoKeyWorkView:NO];
+        }
+    }];
     
+}
+
+- (UIView*)defaultNoKeyWorkView
+{
+    if (!_defaultNoKeyWorkView) {
+        _defaultNoKeyWorkView = [[UIView alloc] init];
+        _defaultNoKeyWorkView.backgroundColor = [UIColor whiteColor];
+        [self.view addSubview:_defaultNoKeyWorkView];
+        [_defaultNoKeyWorkView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.and.right.equalTo(self.view);
+            make.bottom.equalTo(self.mas_bottomLayoutGuide);
+            make.top.equalTo(self.filterTitleView.mas_bottom);
+        }];
+        UIImageView *imageView = [[UIImageView alloc] init];
+        imageView.image = [UIImage imageNamed:@"placeholder_fancy"];
+        [_defaultNoKeyWorkView addSubview:imageView];
+        [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(_defaultNoKeyWorkView);
+            make.centerY.equalTo(_defaultNoKeyWorkView).offset(-20);
+        }];
+        UILabel * defaulabel = [[UILabel alloc] init];
+        defaulabel.text = @"什么也没找到~";
+        defaulabel.textColor = RGBFromHexadecimal(0x7f7f7f);
+        [_defaultNoKeyWorkView addSubview:defaulabel];
+        [defaulabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(_defaultNoKeyWorkView);
+            make.centerY.equalTo(imageView.mas_bottom).offset(20);
+        }];
+        _defaultNoKeyWorkView.hidden = YES;
+    }
+    return _defaultNoKeyWorkView;
+}
+- (void)showDefaultNoKeyWorkView:(BOOL)show{
+    if (show) {
+        self.defaultNoKeyWorkView.hidden = NO;
+    }else{
+        self.defaultNoKeyWorkView.hidden = YES;
+    }
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -90,9 +139,21 @@
 - (void)requestKAHomeData{
     NSInteger  firstInt =  self.timeMin/10;
     NSInteger secondInt = self.timeMax/10;
-//    self.valueLabel.text = [NSString stringWithFormat:@"%@~%@",_sliderArr[firstInt],_sliderArr[secondInt]];
+    NSString *priceMaxStr;
+    NSString *peopleMaxStr;
+    if ((int)self.priceMax >[[UserClient sharedUserClient].course_price_max floatValue]) {
+        priceMaxStr = @"";
+    }else{
+        priceMaxStr = [NSString stringWithFormat:@"%.f",self.priceMax];
+    }
+    if ((int)self.peopleMax >[[UserClient sharedUserClient].people_num_max floatValue]) {
+        peopleMaxStr = @"";
+    }else{
+        peopleMaxStr = [NSString stringWithFormat:@"%.f",self.peopleMax];
+    }
     
-    RACSignal *fetchSignal1 = [[HttpManagerCenter sharedHttpManager] getCourseScenesListWithID:self.scenesID peopleMin:[NSString stringWithFormat:@"%f",self.peopleMin] peopleMax:[NSString stringWithFormat:@"%f",self.peopleMax] priceMin:[NSString stringWithFormat:@"%f",self.priceMin] priceMax:[NSString stringWithFormat:@"%f",self.priceMax] timeMin:[UserClient sharedUserClient].course_time[firstInt] timeMax:[UserClient sharedUserClient].course_time[secondInt] page:self.page pageSize:self.page_size resultClass:nil];
+    
+    RACSignal *fetchSignal1 = [[HttpManagerCenter sharedHttpManager] getCourseScenesListWithID:self.scenesID peopleMin:[NSString stringWithFormat:@"%.f",self.peopleMin] peopleMax:peopleMaxStr priceMin:[NSString stringWithFormat:@"%.f",self.priceMin] priceMax:priceMaxStr timeMin:[UserClient sharedUserClient].course_time[firstInt] timeMax:[UserClient sharedUserClient].course_time[secondInt] page:self.page pageSize:self.page_size resultClass:nil];
     
     @weakify(self)
     [fetchSignal1 subscribeNext:^(BaseModel *model) {
@@ -119,6 +180,7 @@
 - (KAHomeTableView *)kaHomeTableView {
     if (!_kaHomeTableView) {
         _kaHomeTableView = [[KAHomeTableView alloc]init];
+        
         _kaHomeTableView.mj_header = [MasterTableHeaderView addRefreshGifHeadViewWithRefreshBlock:^{
             
             [self first];
@@ -150,18 +212,20 @@
 
 - (UIView *)filterTitleView {
     if (!_filterTitleView) {
-        _filterTitleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 42)];
+        _filterTitleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 40)];
+        _filterTitleView.backgroundColor = [UIColor whiteColor];
         NSArray *titleArr = @[@"预算",@"人数",@"时长"];
         for (int i = 0; i<3; i++) {
-            LeftTitleBtn * categoryBtn = [[LeftTitleBtn alloc]initWithFrame:CGRectMake(ScreenWidth/3*i, 0, ScreenWidth/3, 50)];
+            LeftTitleBtn * categoryBtn = [[LeftTitleBtn alloc]initWithFrame:CGRectMake(ScreenWidth/3*i, 0, ScreenWidth/3, 40)];
             [categoryBtn addTarget: self action:@selector(titleAction:) forControlEvents:UIControlEventTouchUpInside];
             [categoryBtn setTitle:titleArr[i] forState:UIControlStateNormal];
             categoryBtn.titleLabel.font = [UIFont systemFontOfSize:15];
-            categoryBtn.tag = i*1000;
-            categoryBtn.backgroundColor = [UIColor whiteColor];
-            [categoryBtn setImage:[UIImage imageNamed:@"jiantouxia1"] forState:UIControlStateNormal];
-            [categoryBtn setImage:[UIImage imageNamed:@"jiantoushang"] forState:UIControlStateSelected];
-            [categoryBtn setTitleColor:RGBFromHexadecimal(0xff5e28) forState:UIControlStateSelected];
+            categoryBtn.tag = i;
+            [categoryBtn setImage:[[UIImage imageNamed:@"jiantoushang"] imageWithTintColor:[[UIColor blackColor] colorWithAlphaComponent:0.3]] forState:UIControlStateNormal];
+            [categoryBtn setImage:[[UIImage imageNamed:@"jiantouxia1"] imageWithTintColor:[[UIColor blackColor] colorWithAlphaComponent:0.3]] forState:UIControlStateSelected];
+            [categoryBtn setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forState:UIControlStateNormal];
+             [categoryBtn setBackgroundImage:[UIImage imageWithColor:RGBFromHexadecimal(0xf8f7f5)] forState:UIControlStateSelected];
+            [categoryBtn setBackgroundImage:[UIImage imageWithColor:RGBFromHexadecimal(0xf8f7f5)] forState:UIControlStateHighlighted];
             [categoryBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             [_filterTitleView addSubview:categoryBtn];
             [_titleBtnArr addObject:categoryBtn];
@@ -172,19 +236,19 @@
 }
 - (KAFilterView *)filterView0 {
     if (!_filterView0) {
-        _filterView0 = [[KAFilterView alloc] initWithFrame:CGRectMake(0, 42, ScreenWidth, ScreenHeight) withFilerMin:[[UserClient sharedUserClient].course_price_min floatValue] filerMax:[[UserClient sharedUserClient].course_price_max floatValue] selectMin:self.priceMin selectMax:self.priceMax sliderArr:nil];
+        _filterView0 = [[KAFilterView alloc] initWithFrame:CGRectMake(0, 40, ScreenWidth, ScreenHeight) withFilerMin:[[UserClient sharedUserClient].course_price_min floatValue] filerMax:[[UserClient sharedUserClient].course_price_max floatValue]+FilterOverFlow selectMin:self.priceMin selectMax:self.priceMax sliderArr:nil unit:@"￥"];
     }
     return _filterView0;
 }
 - (KAFilterView *)filterView1 {
     if (!_filterView1) {
-        _filterView1 = [[KAFilterView alloc] initWithFrame:CGRectMake(0, 42, ScreenWidth, ScreenHeight) withFilerMin:[[UserClient sharedUserClient].people_num_min floatValue] filerMax:[[UserClient sharedUserClient].people_num_max floatValue] selectMin:self.peopleMin selectMax:self.peopleMax sliderArr:nil];
+        _filterView1 = [[KAFilterView alloc] initWithFrame:CGRectMake(0, 40, ScreenWidth, ScreenHeight) withFilerMin:[[UserClient sharedUserClient].people_num_min floatValue] filerMax:[[UserClient sharedUserClient].people_num_max floatValue]+FilterOverFlow selectMin:self.peopleMin selectMax:self.peopleMax sliderArr:nil unit:nil];
     }
     return _filterView1;
 }
 - (KAFilterView *)filterView2 {
     if (!_filterView2) {
-        _filterView2 = [[KAFilterView alloc] initWithFrame:CGRectMake(0, 42, ScreenWidth, ScreenHeight) withFilerMin:0 filerMax:([UserClient sharedUserClient].course_time.count -1)*10  selectMin:self.timeMin selectMax:self.timeMax sliderArr:[UserClient sharedUserClient].course_time];
+        _filterView2 = [[KAFilterView alloc] initWithFrame:CGRectMake(0, 40, ScreenWidth, ScreenHeight) withFilerMin:0 filerMax:([UserClient sharedUserClient].course_time.count -1)*10  selectMin:self.timeMin selectMax:self.timeMax sliderArr:[UserClient sharedUserClient].course_time unit:nil];
         
     }
     return _filterView2;
@@ -193,12 +257,15 @@
 - (void)titleAction:(LeftTitleBtn *)sender {
     for (KAFilterView *fil in self.filterArr) {
         [fil removeFromSuperview];
+        [self.filterArr removeAllObjects];
     }
-    
-       if ([_titleBtnArr indexOfObject:sender]*1000 == 0){
+ 
+
+       if ([_titleBtnArr indexOfObject:sender] == 0){
            
            
            [self.view addSubview:self.filterView0];
+           [self.filterView0 animateAction];
            [self.filterArr addObject:self.filterView0];
             @weakify(self);
            [_filterView0 setFilterSendBlock:^(CGFloat min, CGFloat max) {
@@ -208,21 +275,21 @@
                  [self first];
                for (LeftTitleBtn *btn in self.titleBtnArr) {
                    btn.selected = NO;
-                   [self.filterView0 removeFromSuperview];
+                   [self.filterView0 baceAnimateAction];
                }
            }];
            
            [_filterView0 setTouchBlock:^{
                @strongify(self);
                for (LeftTitleBtn *btn in self.titleBtnArr) {
-                   
                    btn.selected = NO;
-                    [self.filterView0 removeFromSuperview];
+//                    [self.filterView0 baceAnimateAction];
                }
                
            }];
-       }else if ([_titleBtnArr indexOfObject:sender]*1000 == 1000) {
+       }else if ([_titleBtnArr indexOfObject:sender] == 1) {
            [self.view addSubview:self.filterView1];
+            [self.filterView1 animateAction];
              [self.filterArr addObject:self.filterView1];
            @weakify(self);
            [_filterView1 setFilterSendBlock:^(CGFloat min, CGFloat max) {
@@ -232,7 +299,7 @@
                [self first];
                for (LeftTitleBtn *btn in self.titleBtnArr) {
                    btn.selected = NO;
-                   [self.filterView1 removeFromSuperview];
+                   [self.filterView1 baceAnimateAction];
                }
                
            }];
@@ -241,12 +308,13 @@
                for (LeftTitleBtn *btn in self.titleBtnArr) {
                    
                    btn.selected = NO;
-                   [self.filterView1 removeFromSuperview];
+//                   [self.filterView1 baceAnimateAction];
                }
                
            }];
-       } else if ([_titleBtnArr indexOfObject:sender]*1000 == 2000){
+       } else if ([_titleBtnArr indexOfObject:sender] == 2){
              [self.view addSubview:self.filterView2];
+            [self.filterView2 animateAction];
              [self.filterArr addObject:self.filterView2];
             @weakify(self);
             [_filterView2 setFilterSendBlock:^(CGFloat min, CGFloat max) {
@@ -256,7 +324,7 @@
                  [self first];
                 for (LeftTitleBtn *btn in self.titleBtnArr) {
                     btn.selected = NO;
-                    [self.filterView2 removeFromSuperview];
+                    [self.filterView2 baceAnimateAction];
                 }
                
             }];
@@ -265,15 +333,19 @@
                for (LeftTitleBtn *btn in self.titleBtnArr) {
                    
                    btn.selected = NO;
-                   [self.filterView2 removeFromSuperview];
+//                   [self.filterView2 baceAnimateAction];
                }
                
            }];
          
         }
-    
+ 
     for (LeftTitleBtn *btn in _titleBtnArr) {
-        if (btn.tag == [_titleBtnArr indexOfObject:sender]*1000) {
+        if (btn.tag == [_titleBtnArr indexOfObject:sender]) {
+            if (sender.selected) {
+                KAFilterView *selecFilter = [self.filterArr objectAtIndex:0];
+                [selecFilter baceAnimateAction];
+            }
             sender.selected = !sender.selected;
         }else{
             btn.selected = NO;
@@ -281,9 +353,10 @@
         
     }
     
-    if (sender.selected) {
-        sender.imageView.tintColor = RGBFromHexadecimal(0xff5e28);
-    }
+//    if (sender.selected) {
+////        sender.imageView.tintColor = RGBFromHexadecimal(0xff5e28);
+//    }
+     [self.view bringSubviewToFront:self.filterTitleView];
     
 }
 - (void)didReceiveMemoryWarning {

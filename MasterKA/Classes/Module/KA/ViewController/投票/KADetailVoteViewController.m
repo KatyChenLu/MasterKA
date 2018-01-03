@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong) UITableView *mTableView;
 @property (nonatomic, strong) KADetailVoteViewModel *viewModel;
+@property (nonatomic,strong)UIButton *shareBtn;
 @end
 
 @implementation KADetailVoteViewController
@@ -21,14 +22,33 @@
     [super viewDidLoad];
      self.title = @"投票详情";
     [self.view addSubview:self.mTableView];
+    [self.mTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.and.top.equalTo(self.view);
+        make.bottom.equalTo(self.mas_bottomLayoutGuide);
+    }];
     
     [self.viewModel bindTableView:self.mTableView];
+    
+    UIBarButtonItem *shareBarBtnItem = [[UIBarButtonItem alloc] initWithCustomView:self.shareBtn];
+    [self.navigationItem setRightBarButtonItem:shareBarBtnItem];
     
     
 }
 - (void)bindViewModel {
     [super bindViewModel];
     
+}
+- (UIButton *)shareBtn {
+    if (!_shareBtn) {
+        _shareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _shareBtn.frame = CGRectMake(0, 0, 30, 30);
+        [_shareBtn setImage:[UIImage imageNamed:@"分享"] forState:UIControlStateNormal];
+        [_shareBtn addTarget:self action:@selector(shareButtonOnClick) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _shareBtn;
+}
+- (void)shareButtonOnClick {
+    [self shareContentOfApp:self.viewModel.info[@"share_data"]];
 }
 - (UITableView *)mTableView {
     if (!_mTableView) {

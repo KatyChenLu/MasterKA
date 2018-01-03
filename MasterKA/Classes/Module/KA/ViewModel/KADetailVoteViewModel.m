@@ -31,11 +31,12 @@
         
         KADetailVoteTableViewCell *mcell = (KADetailVoteTableViewCell *)cell;
         @weakify(self);
-        [mcell setShowVotePeople:^(NSString *itemId) {
+        [mcell setShowVotePeople:^(NSString *itemId,NSString *title) {
             @strongify(self);
             NSLog(@"%@",itemId);
             KAVotePeopleViewController *votePeopleVC = [[KAVotePeopleViewController alloc] init];
             votePeopleVC.item_id = itemId;
+            votePeopleVC.title = title;
             [self.viewController pushViewController:votePeopleVC animated:YES];
         }];
         [mcell showKADetailVoteDetail:object];
@@ -68,7 +69,7 @@
         if (model.code==200) {
             
             
-            NSDictionary *dic = model.data;
+            self.info = model.data;
         
             NSMutableArray*data =[NSMutableArray array];
 
@@ -112,6 +113,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     if (section == 1) {
         UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 50)];
+        header.backgroundColor = [UIColor whiteColor];
         UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(12, 0, ScreenWidth - 12, 50)];
         NSArray *sectionData = self.dataSource[section];
         headerLabel.text = [NSString stringWithFormat:@"%ld个项目进行投票",sectionData.count];

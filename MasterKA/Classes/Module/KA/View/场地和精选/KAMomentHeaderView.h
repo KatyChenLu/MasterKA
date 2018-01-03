@@ -13,6 +13,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *userIntro;
 @property (weak, nonatomic) IBOutlet UIImageView *imgTopView;
 @property (weak, nonatomic) IBOutlet UILabel *markLabel;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topBlankHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *markBGHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *markViewHeight;
+@property (nonatomic, assign) NSInteger totleHeight;
+
 - (void)showDetailHeaderView:(NSDictionary *)dic;
 @end

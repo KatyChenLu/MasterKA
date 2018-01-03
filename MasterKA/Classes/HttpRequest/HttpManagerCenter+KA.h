@@ -20,7 +20,6 @@
  *  @return
  */
 - (RACSignal*)getHomeDataListsPage:(NSString *)page pageSize:(NSString*)page_size resultClass:(Class)resultClass;
-
 /**
  *  订单列表
  *
@@ -31,6 +30,26 @@
  *  @return
  */
 - (RACSignal*)getKAOrderListsPage:(NSString *)page pageSize:(NSString*)page_size resultClass:(Class)resultClass;
+/**
+ *  订单详情
+ *
+ *  @param oid        订单id
+ *  @param orderStatus    订单状态
+ *  @param resutlClass  返回数据解析类
+ *
+ *  @return
+ */
+- (RACSignal*)getKAOrderDetailWithOid:(NSString *)oid orderStatus:(NSString*)order_status resultClass:(Class)resultClass;
+/**
+ *  活动邀请
+ *
+ *  @param oid        订单id
+ *  @param orderStatus    订单状态
+ *  @param resutlClass  返回数据解析类
+ *
+ *  @return
+ */
+- (RACSignal*)getActivityInviteWithOid:(NSString *)oid orderStatus:(NSString*)order_status resultClass:(Class)resultClass;
 
 /**
  *  团建需求提交

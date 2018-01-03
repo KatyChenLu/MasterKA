@@ -128,7 +128,7 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    self.progressView.center = CGPointMake(self.frame.size.width * 0.5, self.frame.size.height * 0.5);
+    self.progressView.center = CGPointMake(self.frame.size.width * 0.5, self.frame.size.height * 0.5-100);
 }
 
 - (void)setShowAnim:(BOOL)showAnim {
@@ -222,7 +222,7 @@
     CGFloat y = 0;
     
     if (imageSize.height < [UIScreen mainScreen].bounds.size.height) {
-        y = ([UIScreen mainScreen].bounds.size.height - imageSize.height) / 2;
+        y = ([UIScreen mainScreen].bounds.size.height - imageSize.height) / 2-100;
     }
     return CGRectMake(x, y, imageSize.width, imageSize.height);
 }

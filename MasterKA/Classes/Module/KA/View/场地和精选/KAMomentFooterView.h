@@ -16,7 +16,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *coursePeople;
 @property (weak, nonatomic) IBOutlet UILabel *coursePrice;
 @property (weak, nonatomic) IBOutlet UIButton *colloctAction;
-@property (weak, nonatomic) IBOutlet UIButton *colloctBtn;
 @property (nonatomic, strong)NSString *kaCourseId;
 - (void)showDetailFooterView:(NSDictionary *)dic;
 @property (nonatomic, copy) void(^colloctBlock)(NSString *kaCourseid);

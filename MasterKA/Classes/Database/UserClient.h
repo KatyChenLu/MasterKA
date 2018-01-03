@@ -82,7 +82,8 @@ typedef NS_ENUM(NSInteger, MasterLoginType) {
 @property (nonatomic, strong)NSArray *sence;
 //定制需求信息
 @property (nonatomic,strong)NSDictionary *requirement;
-
+//400电话
+@property (nonatomic,strong)NSString *server_number;
 
 
 
@@ -98,5 +99,5 @@ typedef NS_ENUM(NSInteger, MasterLoginType) {
 
 - (void)setAppConfigUrl:(AppConfigModel*)conf;
 
-
+- (void)setAppConfigUrlFormDic:(NSDictionary*)conf;
 @end

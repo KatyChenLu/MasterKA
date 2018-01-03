@@ -34,14 +34,24 @@
         self.contentLabel.text = dic[@"course_content"];
     }
         self.titleLabel.font = [UIFont fontWithName:@"PingFangSC-Medium" size:16];
-    
+        self.contentLabel.userInteractionEnabled = YES;
    [UILabel changeSpaceForLabel:self.contentLabel withLineSpace:4.0 WordSpace:0.6];
-//    CGSize contentSize = [self.contentLabel.text boundingRectWithSize:CGSizeMake(ScreenWidth-24, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]} context:nil].size;
-//    self.contentHeight.constant = contentSize.height;
+    UILongPressGestureRecognizer *touch = [[UILongPressGestureRecognizer alloc] initWithTarget:self       action:@selector(addgesture:)];
     
+    [self.contentLabel addGestureRecognizer:touch];
+}
+-(void)addgesture:(UILongPressGestureRecognizer*) recognizer{
     
+    [self.contentLabel becomeFirstResponder];
     
+    UIMenuController *menu = [UIMenuController sharedMenuController];
+    
+    [menu setTargetRect:self.contentLabel.frame inView:self];
+    
+    [menu setMenuVisible:YES animated:YES];
     
 }
-
+- (BOOL)canBecomeFirstResponder{
+    return YES;
+}
 @end

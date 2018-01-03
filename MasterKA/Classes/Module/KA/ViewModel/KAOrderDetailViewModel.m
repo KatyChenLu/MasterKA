@@ -23,13 +23,32 @@
     
     
     KAOrderDetailTableViewCell *mcell = (KAOrderDetailTableViewCell *)cell;
-    [mcell showOrderDetail:object[0]];
+    [mcell showOrderDetail:object];
+    
     NSArray *arr = self.dataSource[0];
     if (indexPath.row == 0) {
         mcell.topLine.backgroundColor = [UIColor whiteColor];
-    }else if (indexPath.row == arr.count - 1){
+    }else {
+        mcell.timeLabel.alpha = 0.5;
+        mcell.stateLabel.alpha = 0.5;
+    }
+    if (indexPath.row == arr.count - 1){
         mcell.bottomLine.backgroundColor = [UIColor whiteColor];
     }
+    
+    
+    if (indexPath.row == 0) {
+        if ([self.info[@"flag"] isEqualToString:@"0"]) {
+            mcell.lineImgV.image = [UIImage imageNamed:@"订单进行中"];
+        }else if ([self.info[@"flag"] isEqualToString:@"1"]){
+            mcell.lineImgV.image = [UIImage imageNamed:@"订单成功"];
+        }else if ([self.info[@"flag"] isEqualToString:@"2"]){
+            mcell.lineImgV.image = [UIImage imageNamed:@"订单失败"];
+        }
+    }else {
+        mcell.lineImgV.image = [UIImage imageNamed:@"订单首"];
+    }
+    
     
 }
 -(NSString *)getReuseIdentifierWithIndexPath:(NSIndexPath *)indexPath {
@@ -39,37 +58,19 @@
     
 }
 - (RACSignal *)requestRemoteDataSignalWithPage:(NSUInteger)page {
-    RACSignal *fetchSignal = [self.httpService getCourseDetail:@"4747" resultClass:nil];
+    RACSignal *fetchSignal = [self.httpService getKAOrderDetailWithOid:self.oid orderStatus:self.orderStatus resultClass:nil];
     @weakify(self);
     return [[[fetchSignal collect] doNext:^(NSArray *pageSize) {
-        @strongify(self);
-        //        if(self.mTableView.mj_footer.isRefreshing ){
-        //            [self.mTableView.mj_footer endRefreshing];
-        //        }
-        //        if (self.mTableView.mj_header.isRefreshing) {
-        //            [self.mTableView.mj_header endRefreshing];
-        //        }
         
     }] map:^id(NSArray *responses) {
         BaseModel *model = responses.firstObject;
         @strongify(self);
         if (model.code==200) {
-            
-            
-            //
-            NSDictionary *dic = model.data;
-            //
-            NSMutableArray*data =[NSMutableArray array];
-            //            self.detailSection=[NSMutableArray array];
-            
-            //            [data addObject:[self getNameAndMoney:self.info]];
-            //
-            [data addObjectsFromArray:[self getDetail:model.data]];
-            
-            self.dataSource=@[data];
-            
+            self.info = model.data;
+            NSArray *data = model.data[@"lists"];
+            self.dataSource = @[data];
             [self.mTableView reloadData];
-          [self starAnimationWithTableView:self.mTableView];
+            [self starAnimationWithTableView:self.mTableView];
             
         }
         return self.dataSource;
@@ -78,10 +79,10 @@
 }
 - (void)starAnimationWithTableView:(UITableView *)tableView  {
     unsigned int count = 0;
- 
+    
     //Get Class Method
     Method *methodlist = class_copyMethodList(object_getClass(self.class), &count);
- 
+    
     for (int i = 0; i < count; i++) {
         Method method = methodlist[i];
         SEL selector = method_getName(method);
@@ -90,9 +91,9 @@
         if ([methodName rangeOfString:@"AnimationWithTableView"].location != NSNotFound) {
             
             
-                ((void (*)(id,SEL,UITableView *))objc_msgSend)([self class],selector,tableView);
-                break;
-           
+            ((void (*)(id,SEL,UITableView *))objc_msgSend)([self class],selector,tableView);
+            break;
+            
         }
     }
     free(methodlist);
@@ -123,6 +124,6 @@
 #pragma mark --
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-   
+    
 }
 @end

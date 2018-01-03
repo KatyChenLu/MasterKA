@@ -30,12 +30,16 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_fancy" translatesAutoresizingMaskIntoConstraints="NO" id="AGQ-hf-VMi">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_fancy" translatesAutoresizingMaskIntoConstraints="NO" id="AGQ-hf-VMi">
                         <rect key="frame" x="10" y="12" width="96" height="96"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="96" id="XKG-bi-GLP"/>
                             <constraint firstAttribute="width" constant="96" id="wVU-ow-t3Q"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="3"/>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2个小时" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nqv-Cf-qmf">
                         <rect key="frame" x="132" y="40.5" width="37" height="12"/>
@@ -51,13 +55,13 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBm-1D-qha">
-                        <rect key="frame" x="116" y="86" width="30" height="21.5"/>
+                        <rect key="frame" x="116" y="88.5" width="30" height="21.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                        <color key="textColor" red="0.80784313730000001" green="0.0" blue="0.074509803920000006" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.99607843137254903" green="0.21176470588235294" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="起" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lu-NO-bQL">
-                        <rect key="frame" x="148" y="93" width="12.5" height="14.5"/>
+                        <rect key="frame" x="148" y="93.5" width="12.5" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -85,15 +89,15 @@
                     <constraint firstItem="AGQ-hf-VMi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="H50-DW-8pq"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Z12-Pz-YeG" secondAttribute="trailing" constant="10" id="L33-2C-yPh"/>
                     <constraint firstItem="6lu-NO-bQL" firstAttribute="leading" secondItem="FBm-1D-qha" secondAttribute="trailing" constant="2.5" id="L7t-I7-pGp"/>
-                    <constraint firstItem="FBm-1D-qha" firstAttribute="bottom" secondItem="6lu-NO-bQL" secondAttribute="bottom" id="N7Y-bp-0AD"/>
                     <constraint firstItem="nqv-Cf-qmf" firstAttribute="top" secondItem="Z12-Pz-YeG" secondAttribute="bottom" constant="6" id="NVb-pT-8fR"/>
+                    <constraint firstItem="6lu-NO-bQL" firstAttribute="bottom" secondItem="AGQ-hf-VMi" secondAttribute="bottom" id="R8g-aO-iur"/>
                     <constraint firstAttribute="bottom" secondItem="AGQ-hf-VMi" secondAttribute="bottom" constant="9.5" id="XmA-fS-6qY"/>
                     <constraint firstItem="Z12-Pz-YeG" firstAttribute="leading" secondItem="AGQ-hf-VMi" secondAttribute="trailing" constant="10" id="dbA-MI-sq1"/>
                     <constraint firstItem="nqv-Cf-qmf" firstAttribute="centerY" secondItem="Nn5-4p-y9d" secondAttribute="centerY" id="f1b-LV-S6Z"/>
                     <constraint firstItem="Z12-Pz-YeG" firstAttribute="top" secondItem="AGQ-hf-VMi" secondAttribute="top" id="khE-Gg-dlt"/>
                     <constraint firstItem="fyM-qn-oMD" firstAttribute="leading" secondItem="NiH-DZ-5vS" secondAttribute="trailing" constant="4" id="sZy-WO-Z5F"/>
                     <constraint firstItem="fyM-qn-oMD" firstAttribute="centerY" secondItem="NiH-DZ-5vS" secondAttribute="centerY" id="tGf-fQ-dwe"/>
-                    <constraint firstItem="FBm-1D-qha" firstAttribute="bottom" secondItem="AGQ-hf-VMi" secondAttribute="bottom" id="tVi-OT-aeu"/>
+                    <constraint firstItem="FBm-1D-qha" firstAttribute="bottom" secondItem="AGQ-hf-VMi" secondAttribute="bottom" constant="2" id="tVi-OT-aeu"/>
                     <constraint firstItem="fyM-qn-oMD" firstAttribute="top" secondItem="nqv-Cf-qmf" secondAttribute="bottom" constant="4" id="ul6-eC-dgy"/>
                 </constraints>
             </tableViewCellContentView>

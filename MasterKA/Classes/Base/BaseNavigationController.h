@@ -8,6 +8,6 @@
 
 #import "SlideNavigationController.h"
 
-@interface BaseNavigationController : SlideNavigationController<UINavigationControllerDelegate>
+@interface BaseNavigationController : UINavigationController <UINavigationControllerDelegate>
 
 @end

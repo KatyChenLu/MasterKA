@@ -9,16 +9,49 @@
 #import "KAOrderShareViewController.h"
 
 @interface KAOrderShareViewController ()
-
+@property (nonatomic, strong)NSDictionary *info;
 @end
 
 @implementation KAOrderShareViewController
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.hidden = YES;
+}
+//- (void)viewDidAppear:(BOOL)animated {
+//    [super viewDidAppear:animated];
+//     self.navigationController.navigationBar.hidden = YES;
+//}
+-(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBar.hidden = NO;
+}
+- (IBAction)backBtnAction:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.shareTitleLabel.font = [UIFont fontWithName:@"PingFangSC-Medium" size:28];
+    RACSignal *fetchSignal = [[HttpManagerCenter sharedHttpManager] getActivityInviteWithOid:self.oid orderStatus:self.orderStatus resultClass:nil];
+    
+    [fetchSignal subscribeNext:^(BaseModel *baseModel) {
+        if (baseModel.code == 200) {
+            self.info = baseModel.data;
+            [self.shareImgView setImageWithURLString:baseModel.data[@"course_cover"] placeholderImage:nil];
+            self.shareTitleLabel.text = baseModel.data[@"activity_start_time"];
+            [self.erweimaImgView setImageWithURLString:baseModel.data[@"qr_url"] placeholderImage:nil];
+            NSString *conStr = [NSString stringWithFormat:@"%@\n%@人参加\n%@",baseModel.data[@"title"],baseModel.data[@"people_num"],baseModel.data[@"activity_address"]];
+            self.conLabel.text = conStr;
+        }
+        
+    }completed:^{
+        
+        
+    }];
+    
 }
 - (IBAction)shareBtnAction:(id)sender {
+    [self shareContentOfApp:self.info[@"share_data"]];
 }
 - (void)showShareOrder:(NSDictionary *)dic {
     

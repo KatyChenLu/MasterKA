@@ -13,7 +13,7 @@
 
 @property (nonatomic, strong) UITableView *mTableView;
 @property (nonatomic, strong) KAInVIewModel *viewModel;
-
+@property (nonatomic,strong)UIButton *shareBtn;
 //页数
 @property(nonatomic ,copy)NSString * page;
 //每页单位
@@ -35,12 +35,13 @@
     
     [self.viewModel bindTableView:self.mTableView];
 //    [self.mTableView.mj_header beginRefreshing];
-    
+
 }
 - (void)bindViewModel {
     [super bindViewModel];
     
 }
+
 - (UITableView *)mTableView {
     if (!_mTableView) {
         _mTableView = [[UITableView alloc] init];

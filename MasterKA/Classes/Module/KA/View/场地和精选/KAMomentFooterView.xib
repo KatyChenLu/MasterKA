@@ -20,12 +20,16 @@
             <rect key="frame" x="0.0" y="0.0" width="444" height="106"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EOJ-So-WuF">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EOJ-So-WuF">
                     <rect key="frame" x="10" y="10" width="86" height="86"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="86" id="BB6-Gs-6Gg"/>
                         <constraint firstAttribute="height" constant="86" id="dQ8-gr-ncJ"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="3"/>
+                    </userDefinedRuntimeAttributes>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="终极蜜汁暗黑烘焙课" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dyo-ay-2YA">
                     <rect key="frame" x="106" y="10" width="328" height="22.5"/>
@@ -34,39 +38,39 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2个小时" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAN-zf-eBP">
-                    <rect key="frame" x="120" y="37.5" width="37" height="12"/>
+                    <rect key="frame" x="120" y="38.5" width="37" height="12"/>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="n个小时" translatesAutoresizingMaskIntoConstraints="NO" id="DLZ-VI-M0m">
-                    <rect key="frame" x="106" y="38.5" width="10" height="10"/>
+                    <rect key="frame" x="106" y="39.5" width="10" height="10"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="10" id="PZK-rA-X89"/>
                         <constraint firstAttribute="width" constant="10" id="jdn-uf-4rG"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z6W-xw-n8Q">
-                    <rect key="frame" x="106" y="75" width="30" height="21.5"/>
+                    <rect key="frame" x="106" y="76.5" width="30" height="21.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <color key="textColor" red="0.80784313730000001" green="0.0" blue="0.074509803920000006" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.99607843137254903" green="0.21176470588235294" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="起" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61Q-hG-oFm">
-                    <rect key="frame" x="138" y="81.5" width="12.5" height="15"/>
+                    <rect key="frame" x="138" y="81" width="12.5" height="15"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="n人起" translatesAutoresizingMaskIntoConstraints="NO" id="MWS-NA-zNF">
-                    <rect key="frame" x="106" y="54.5" width="10" height="10"/>
+                    <rect key="frame" x="106" y="55.5" width="10" height="10"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="10" id="0Q5-J4-8gg"/>
                         <constraint firstAttribute="width" constant="10" id="WNA-OG-2ab"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20人起" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3tS-aJ-NSv">
-                    <rect key="frame" x="120" y="53.5" width="33.5" height="12"/>
+                    <rect key="frame" x="120" y="54.5" width="33.5" height="12"/>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -89,34 +93,33 @@
                 <constraint firstItem="Dyo-ay-2YA" firstAttribute="leading" secondItem="EOJ-So-WuF" secondAttribute="trailing" constant="10" id="1d6-qg-rZ4"/>
                 <constraint firstAttribute="trailing" secondItem="1xk-Im-WN6" secondAttribute="trailing" constant="15" id="2Jp-TM-dJE"/>
                 <constraint firstItem="HAN-zf-eBP" firstAttribute="leading" secondItem="DLZ-VI-M0m" secondAttribute="trailing" constant="4" id="3IV-QP-wns"/>
-                <constraint firstItem="Z6W-xw-n8Q" firstAttribute="bottom" secondItem="EOJ-So-WuF" secondAttribute="bottom" id="3OC-Kj-LPC"/>
+                <constraint firstItem="Z6W-xw-n8Q" firstAttribute="bottom" secondItem="EOJ-So-WuF" secondAttribute="bottom" constant="2" id="3OC-Kj-LPC"/>
                 <constraint firstItem="1xk-Im-WN6" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="9Xw-aw-kFo"/>
                 <constraint firstItem="61Q-hG-oFm" firstAttribute="leading" secondItem="Z6W-xw-n8Q" secondAttribute="trailing" constant="2" id="AyK-WO-Zcw"/>
-                <constraint firstItem="61Q-hG-oFm" firstAttribute="bottom" secondItem="Z6W-xw-n8Q" secondAttribute="bottom" id="BIw-UR-npw"/>
                 <constraint firstAttribute="trailing" secondItem="Dyo-ay-2YA" secondAttribute="trailing" constant="10" id="BQ7-GF-mEL"/>
                 <constraint firstItem="MWS-NA-zNF" firstAttribute="centerY" secondItem="3tS-aJ-NSv" secondAttribute="centerY" id="KKE-6k-52G"/>
-                <constraint firstItem="DLZ-VI-M0m" firstAttribute="top" secondItem="Dyo-ay-2YA" secondAttribute="bottom" constant="6" id="PPv-An-i31"/>
                 <constraint firstItem="3tS-aJ-NSv" firstAttribute="leading" secondItem="HAN-zf-eBP" secondAttribute="leading" id="XQj-j2-snV"/>
                 <constraint firstItem="Dyo-ay-2YA" firstAttribute="top" secondItem="EOJ-So-WuF" secondAttribute="top" id="YY4-S1-BTb"/>
                 <constraint firstItem="EOJ-So-WuF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="ZBO-0W-QIb"/>
                 <constraint firstItem="EOJ-So-WuF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="cDe-ii-pVY"/>
                 <constraint firstItem="Z6W-xw-n8Q" firstAttribute="leading" secondItem="MWS-NA-zNF" secondAttribute="leading" id="dJs-gc-AmN"/>
                 <constraint firstItem="3tS-aJ-NSv" firstAttribute="top" secondItem="HAN-zf-eBP" secondAttribute="bottom" constant="4" id="jn4-ue-0aZ"/>
+                <constraint firstItem="61Q-hG-oFm" firstAttribute="bottom" secondItem="EOJ-So-WuF" secondAttribute="bottom" id="oTV-gv-iOK"/>
                 <constraint firstItem="HAN-zf-eBP" firstAttribute="centerY" secondItem="DLZ-VI-M0m" secondAttribute="centerY" id="q1d-Fy-3Xv"/>
                 <constraint firstItem="MWS-NA-zNF" firstAttribute="leading" secondItem="DLZ-VI-M0m" secondAttribute="leading" id="ti5-VS-FrP"/>
                 <constraint firstItem="DLZ-VI-M0m" firstAttribute="leading" secondItem="Dyo-ay-2YA" secondAttribute="leading" id="uhP-62-sRf"/>
+                <constraint firstItem="HAN-zf-eBP" firstAttribute="top" secondItem="Dyo-ay-2YA" secondAttribute="bottom" constant="6" id="w4a-vm-usB"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="colloctAction" destination="1xk-Im-WN6" id="hfd-t4-Ra6"/>
-                <outlet property="colloctBtn" destination="1xk-Im-WN6" id="0gM-ws-GFM"/>
                 <outlet property="courseCover" destination="EOJ-So-WuF" id="aXh-ki-qGT"/>
                 <outlet property="coursePeople" destination="3tS-aJ-NSv" id="ytX-TW-MVe"/>
                 <outlet property="coursePrice" destination="Z6W-xw-n8Q" id="vqn-oH-nL5"/>
                 <outlet property="courseTime" destination="HAN-zf-eBP" id="BoL-zB-Ig0"/>
                 <outlet property="courseTitle" destination="Dyo-ay-2YA" id="Vxq-5C-sp6"/>
             </connections>
-            <point key="canvasLocation" x="-325" y="9"/>
+            <point key="canvasLocation" x="-203" y="-171"/>
         </view>
     </objects>
     <resources>

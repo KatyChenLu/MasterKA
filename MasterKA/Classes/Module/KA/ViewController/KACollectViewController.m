@@ -15,6 +15,10 @@
 @property (nonatomic, strong) UITableView *mTableView;
 //定制悬浮按钮
 @property (nonatomic, strong) UIButton *customizeBtn;
+//页数
+@property(nonatomic ,copy)NSString * page;
+//每页单位
+@property(nonatomic ,copy)NSString * page_size;
 @end
 
 @implementation KACollectViewController
@@ -23,6 +27,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"我的收藏";
+    
+    self.page = @"1";
+    self.page_size = @"10";
     [self.view addSubview:self.mTableView];
     UIBarButtonItem *fetchItem = [[UIBarButtonItem alloc] initWithCustomView:self.voteNavView];
     
@@ -35,12 +42,24 @@
     
     [self.customizeBtn setImage:[UIImage imageNamed:@"高端定制"] forState:UIControlStateNormal];
     
-    //    self.customizeBtn.hidden = YES;
-    
     [self.customizeBtn addTarget: self action:@selector(customizeAction:) forControlEvents:UIControlEventTouchUpInside];
     
     [[UIApplication sharedApplication].keyWindow addSubview:self.customizeBtn];
     
+}
+- (void)showCusBtn:(BOOL)show {
+    NSInteger height = IsPhoneX?(65+100+34):(65+100);
+    if (show) {
+        [UIView animateWithDuration:0.5 animations:^{
+            self.customizeBtn.frame = CGRectMake(ScreenWidth-102*0.7, ScreenHeight-height, 102*0.7, 67*0.7);
+            self.customizeBtn.alpha = 1.0f;
+        }];
+    }else {
+        [UIView animateWithDuration:0.5 animations:^{
+            self.customizeBtn.frame = CGRectMake(ScreenWidth-102*0.7*0.5, ScreenHeight-height, 102*0.7, 67*0.7);
+            self.customizeBtn.alpha = 0.5f;
+        }];
+    }
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -61,7 +80,19 @@
 - (UITableView *)mTableView {
     if (!_mTableView) {
         _mTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight - (IsPhoneX?(34 + 88):64)) style:UITableViewStylePlain];
+        _mTableView.separatorInset = UIEdgeInsetsMake(0, 12, 0, 12);
+        _mTableView.separatorColor = RGBFromHexadecimal(0xeaeaea);
+        _mTableView.mj_header = [MasterTableHeaderView addRefreshGifHeadViewWithRefreshBlock:^{
+            
+            [self.viewModel first];
+            
+        }];
         
+        _mTableView.mj_footer = [MasterTableFooterView footerWithRefreshingBlock:^{
+            [self.viewModel requestRemoteDataSignalWithPage:[self.page integerValue]+1];
+            
+            
+        }];
     }
     return _mTableView;
 }

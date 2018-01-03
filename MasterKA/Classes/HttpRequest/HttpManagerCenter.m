@@ -177,7 +177,7 @@
     NSMutableDictionary * info = [NSMutableDictionary new];
     [info setObjectNotNull:self.networtType forKey:@"networt_type"];
     [info setObjectNotNull:[NSString stringWithFormat:@"%.0f x %.0f",ScreenWidth,ScreenHeight] forKey:@"screen"];
-    [info setObjectNotNull:@"ios" forKey:@"client"];
+    [info setObjectNotNull:@"ios_ka" forKey:@"client"];
     [info setObjectNotNull:App_Version forKey:@"app_version"];
     [info setObjectNotNull:[[UIDevice currentDevice] systemName] forKey:@"d_brand"];//iphone
    

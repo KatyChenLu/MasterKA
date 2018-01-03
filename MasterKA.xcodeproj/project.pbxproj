@@ -710,12 +710,12 @@
 		EC0A3F8B1E88F5FC0051FC17 /* PopMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0A3F861E88F5FC0051FC17 /* PopMenuButton.m */; };
 		EC0A3F8C1E88F5FC0051FC17 /* UIColor+ImageGetColor.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0A3F881E88F5FC0051FC17 /* UIColor+ImageGetColor.m */; };
 		EC1B78451FE154CC00B6F6E4 /* YHSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1B78441FE154CC00B6F6E4 /* YHSlider.m */; };
+		EC218E2A1FECDEFD00053ABE /* UIControl+Interval.m in Sources */ = {isa = PBXBuildFile; fileRef = EC218E291FECDEFC00053ABE /* UIControl+Interval.m */; };
+		EC218E2D1FED49C500053ABE /* UIButton+EnlargeTouchArea.m in Sources */ = {isa = PBXBuildFile; fileRef = EC218E2C1FED49C500053ABE /* UIButton+EnlargeTouchArea.m */; };
+		EC218E301FED4FDA00053ABE /* UITextField+EnlargeTouchArea.m in Sources */ = {isa = PBXBuildFile; fileRef = EC218E2F1FED4FDA00053ABE /* UITextField+EnlargeTouchArea.m */; };
 		EC2CBE4D1ECC55FE0002B12C /* CLPlayerMaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2CBE481ECC55FE0002B12C /* CLPlayerMaskView.m */; };
 		EC2CBE4E1ECC55FE0002B12C /* CLPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2CBE4A1ECC55FE0002B12C /* CLPlayerView.m */; };
 		EC2CBE4F1ECC55FE0002B12C /* CLSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2CBE4C1ECC55FE0002B12C /* CLSlider.m */; };
-		EC3750CD1E78FF270067AF0F /* libPaymentControl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC3750CC1E78FF270067AF0F /* libPaymentControl.a */; };
-		EC3750D01E7908240067AF0F /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EC3750CE1E7908240067AF0F /* AlipaySDK.bundle */; };
-		EC3750D11E7908240067AF0F /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC3750CF1E7908240067AF0F /* AlipaySDK.framework */; };
 		EC463BB41FCBBC1200FA4AB9 /* KAPlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC463BB31FCBBC1200FA4AB9 /* KAPlaceViewController.m */; };
 		EC463BBC1FCBE8D200FA4AB9 /* KAPlaceViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EC463BBB1FCBE8D200FA4AB9 /* KAPlaceViewModel.m */; };
 		EC463BBF1FCC1B2B00FA4AB9 /* KAPlaceDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC463BBE1FCC1B2B00FA4AB9 /* KAPlaceDetailViewController.m */; };
@@ -814,6 +814,7 @@
 		EC894DCE1EE7EFBB00185E65 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = EC894DA01EE7EFBB00185E65 /* UIView+Layout.m */; };
 		EC894DCF1EE7EFBB00185E65 /* NSBundle+TZImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = EC894DA21EE7EFBB00185E65 /* NSBundle+TZImagePicker.m */; };
 		EC894DDF1EE7EFBB00185E65 /* TZImagePickerController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EC894DC11EE7EFBB00185E65 /* TZImagePickerController.bundle */; };
+		EC89A4B11FF5166900E606DE /* peizhiPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = EC89A4B01FF5166900E606DE /* peizhiPlist.plist */; };
 		EC8AF3641FCE9ECE003D68DF /* KAContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8AF3621FCE9ECE003D68DF /* KAContentTableViewCell.m */; };
 		EC8AF3651FCE9ECE003D68DF /* KAContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8AF3631FCE9ECE003D68DF /* KAContentTableViewCell.xib */; };
 		EC8AF3681FCEA8CD003D68DF /* AticleDetailImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8AF3661FCEA8CC003D68DF /* AticleDetailImageCell.m */; };
@@ -837,7 +838,6 @@
 		EC91C1CF1FD15B9B002C4DEC /* KAMineHeadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC91C1CD1FD15B9B002C4DEC /* KAMineHeadTableViewCell.m */; };
 		EC91C1D01FD15B9B002C4DEC /* KAMineHeadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC91C1CE1FD15B9B002C4DEC /* KAMineHeadTableViewCell.xib */; };
 		EC930F371ED9613D0042B6B0 /* UIViewController+Debugging.m in Sources */ = {isa = PBXBuildFile; fileRef = EC930F361ED9613C0042B6B0 /* UIViewController+Debugging.m */; };
-		EC9A00C71FD7C93300D44215 /* JFADoubleSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9A00C51FD7C93200D44215 /* JFADoubleSlider.m */; };
 		EC9A00CA1FD7D2C100D44215 /* KAMomentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9A00C91FD7D2C100D44215 /* KAMomentViewController.m */; };
 		EC9A00CD1FD7D36000D44215 /* KAMomentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9A00CC1FD7D36000D44215 /* KAMomentViewModel.m */; };
 		EC9A00D01FD7E76B00D44215 /* KAMomentDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9A00CF1FD7E76B00D44215 /* KAMomentDetailViewController.m */; };
@@ -873,6 +873,8 @@
 		ECCE2DCF1FDEAA410010F410 /* KAMomentFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCE2DCE1FDEAA410010F410 /* KAMomentFooterView.m */; };
 		ECCE2DD11FDEAA4D0010F410 /* KAMomentFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECCE2DD01FDEAA4D0010F410 /* KAMomentFooterView.xib */; };
 		ECD0F9FE1F970349004C5C46 /* MStringPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD0F9FD1F970349004C5C46 /* MStringPickerView.m */; };
+		ECDD8A531FF1146E005C31A8 /* KAPlaceDetailFooderView.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDD8A521FF1146E005C31A8 /* KAPlaceDetailFooderView.m */; };
+		ECDD8A551FF114AC005C31A8 /* KAPlaceDetailFooderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECDD8A541FF114AB005C31A8 /* KAPlaceDetailFooderView.xib */; };
 		ECF5FE451EE00C7B007963DA /* ESPictureBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = ECF5FE401EE00C7B007963DA /* ESPictureBrowser.m */; };
 		ECF5FE461EE00C7B007963DA /* ESPictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = ECF5FE421EE00C7B007963DA /* ESPictureView.m */; };
 		ECF5FE471EE00C7B007963DA /* ESPictureProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = ECF5FE441EE00C7B007963DA /* ESPictureProgressView.m */; };
@@ -1281,6 +1283,7 @@
 		54ED0FBB1CEB2B4E002C5BF9 /* LeaderDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaderDetailCell.h; sourceTree = "<group>"; };
 		54ED0FBC1CEB2B4E002C5BF9 /* LeaderDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaderDetailCell.m; sourceTree = "<group>"; };
 		54ED0FBD1CEB2B4E002C5BF9 /* LeaderDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeaderDetailCell.xib; sourceTree = "<group>"; };
+		87748BED17FE41CFC2224884 /* Pods-MasterKA.ad hoc distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterKA.ad hoc distribution.xcconfig"; path = "Pods/Target Support Files/Pods-MasterKA/Pods-MasterKA.ad hoc distribution.xcconfig"; sourceTree = "<group>"; };
 		95C364D5AE74F67C980B841E /* Pods-MasterKA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterKA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MasterKA/Pods-MasterKA.debug.xcconfig"; sourceTree = "<group>"; };
 		BA822C52A049FA63D3C2009B /* libPods-MasterKA.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MasterKA.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDAD5DC7F1035E8E7D3AE5CE /* Pods-MasterKA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterKA.release.xcconfig"; path = "Pods/Target Support Files/Pods-MasterKA/Pods-MasterKA.release.xcconfig"; sourceTree = "<group>"; };
@@ -2020,22 +2023,20 @@
 		EC0A3F861E88F5FC0051FC17 /* PopMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopMenuButton.m; sourceTree = "<group>"; };
 		EC0A3F871E88F5FC0051FC17 /* UIColor+ImageGetColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ImageGetColor.h"; sourceTree = "<group>"; };
 		EC0A3F881E88F5FC0051FC17 /* UIColor+ImageGetColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ImageGetColor.m"; sourceTree = "<group>"; };
-		EC1B783D1FE1416E00B6F6E4 /* UIView+Dimension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Dimension.h"; sourceTree = "<group>"; };
-		EC1B783E1FE1416E00B6F6E4 /* JLDoubleSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLDoubleSlider.h; sourceTree = "<group>"; };
-		EC1B783F1FE1416E00B6F6E4 /* JLDoubleSlider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLDoubleSlider.m; sourceTree = "<group>"; };
-		EC1B78401FE1416F00B6F6E4 /* UIView+Dimension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Dimension.m"; sourceTree = "<group>"; };
 		EC1B78431FE154CB00B6F6E4 /* YHSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHSlider.h; sourceTree = "<group>"; };
 		EC1B78441FE154CC00B6F6E4 /* YHSlider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHSlider.m; sourceTree = "<group>"; };
+		EC218E281FECDEFC00053ABE /* UIControl+Interval.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+Interval.h"; sourceTree = "<group>"; };
+		EC218E291FECDEFC00053ABE /* UIControl+Interval.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+Interval.m"; sourceTree = "<group>"; };
+		EC218E2B1FED49C400053ABE /* UIButton+EnlargeTouchArea.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+EnlargeTouchArea.h"; sourceTree = "<group>"; };
+		EC218E2C1FED49C500053ABE /* UIButton+EnlargeTouchArea.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+EnlargeTouchArea.m"; sourceTree = "<group>"; };
+		EC218E2E1FED4FD900053ABE /* UITextField+EnlargeTouchArea.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+EnlargeTouchArea.h"; sourceTree = "<group>"; };
+		EC218E2F1FED4FDA00053ABE /* UITextField+EnlargeTouchArea.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+EnlargeTouchArea.m"; sourceTree = "<group>"; };
 		EC2CBE471ECC55FE0002B12C /* CLPlayerMaskView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLPlayerMaskView.h; sourceTree = "<group>"; };
 		EC2CBE481ECC55FE0002B12C /* CLPlayerMaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLPlayerMaskView.m; sourceTree = "<group>"; };
 		EC2CBE491ECC55FE0002B12C /* CLPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLPlayerView.h; sourceTree = "<group>"; };
 		EC2CBE4A1ECC55FE0002B12C /* CLPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLPlayerView.m; sourceTree = "<group>"; };
 		EC2CBE4B1ECC55FE0002B12C /* CLSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSlider.h; sourceTree = "<group>"; };
 		EC2CBE4C1ECC55FE0002B12C /* CLSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSlider.m; sourceTree = "<group>"; };
-		EC3750CB1E78FF190067AF0F /* UPPaymentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPPaymentControl.h; sourceTree = "<group>"; };
-		EC3750CC1E78FF270067AF0F /* libPaymentControl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPaymentControl.a; sourceTree = "<group>"; };
-		EC3750CE1E7908240067AF0F /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
-		EC3750CF1E7908240067AF0F /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		EC463BB21FCBBC1200FA4AB9 /* KAPlaceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAPlaceViewController.h; sourceTree = "<group>"; };
 		EC463BB31FCBBC1200FA4AB9 /* KAPlaceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAPlaceViewController.m; sourceTree = "<group>"; };
 		EC463BBA1FCBE8D200FA4AB9 /* KAPlaceViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAPlaceViewModel.h; sourceTree = "<group>"; };
@@ -2109,9 +2110,6 @@
 		EC6E27381FDA7EE300D4E300 /* KAEditTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAEditTableViewCell.h; sourceTree = "<group>"; };
 		EC6E27391FDA7EE300D4E300 /* KAEditTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAEditTableViewCell.m; sourceTree = "<group>"; };
 		EC6E273A1FDA7EE300D4E300 /* KAEditTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KAEditTableViewCell.xib; sourceTree = "<group>"; };
-		EC6E27491FDA807800D4E300 /* KAPlaceDetailFooderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAPlaceDetailFooderView.h; sourceTree = "<group>"; };
-		EC6E274B1FDA807900D4E300 /* KAPlaceDetailFooderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KAPlaceDetailFooderView.xib; sourceTree = "<group>"; };
-		EC6E274C1FDA807900D4E300 /* KAPlaceDetailFooderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAPlaceDetailFooderView.m; sourceTree = "<group>"; };
 		EC6E275B1FDA825000D4E300 /* KAEditViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAEditViewModel.h; sourceTree = "<group>"; };
 		EC6E275C1FDA825000D4E300 /* KAEditViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAEditViewModel.m; sourceTree = "<group>"; };
 		EC6F347A1FD9368300FD49B6 /* KAImageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAImageTableViewCell.h; sourceTree = "<group>"; };
@@ -2223,6 +2221,7 @@
 		EC894DA11EE7EFBB00185E65 /* NSBundle+TZImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+TZImagePicker.h"; sourceTree = "<group>"; };
 		EC894DA21EE7EFBB00185E65 /* NSBundle+TZImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+TZImagePicker.m"; sourceTree = "<group>"; };
 		EC894DC11EE7EFBB00185E65 /* TZImagePickerController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TZImagePickerController.bundle; sourceTree = "<group>"; };
+		EC89A4B01FF5166900E606DE /* peizhiPlist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = peizhiPlist.plist; sourceTree = "<group>"; };
 		EC8AF3611FCE9ECE003D68DF /* KAContentTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAContentTableViewCell.h; sourceTree = "<group>"; };
 		EC8AF3621FCE9ECE003D68DF /* KAContentTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAContentTableViewCell.m; sourceTree = "<group>"; };
 		EC8AF3631FCE9ECE003D68DF /* KAContentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KAContentTableViewCell.xib; sourceTree = "<group>"; };
@@ -2262,8 +2261,6 @@
 		EC91C1CE1FD15B9B002C4DEC /* KAMineHeadTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KAMineHeadTableViewCell.xib; sourceTree = "<group>"; };
 		EC930F351ED9613C0042B6B0 /* UIViewController+Debugging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Debugging.h"; sourceTree = "<group>"; };
 		EC930F361ED9613C0042B6B0 /* UIViewController+Debugging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Debugging.m"; sourceTree = "<group>"; };
-		EC9A00C51FD7C93200D44215 /* JFADoubleSlider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JFADoubleSlider.m; sourceTree = "<group>"; };
-		EC9A00C61FD7C93300D44215 /* JFADoubleSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JFADoubleSlider.h; sourceTree = "<group>"; };
 		EC9A00C81FD7D2C100D44215 /* KAMomentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAMomentViewController.h; sourceTree = "<group>"; };
 		EC9A00C91FD7D2C100D44215 /* KAMomentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAMomentViewController.m; sourceTree = "<group>"; };
 		EC9A00CB1FD7D36000D44215 /* KAMomentViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAMomentViewModel.h; sourceTree = "<group>"; };
@@ -2326,6 +2323,9 @@
 		ECCE2DD01FDEAA4D0010F410 /* KAMomentFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KAMomentFooterView.xib; sourceTree = "<group>"; };
 		ECD0F9FC1F970349004C5C46 /* MStringPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MStringPickerView.h; sourceTree = "<group>"; };
 		ECD0F9FD1F970349004C5C46 /* MStringPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MStringPickerView.m; sourceTree = "<group>"; };
+		ECDD8A511FF1146E005C31A8 /* KAPlaceDetailFooderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAPlaceDetailFooderView.h; sourceTree = "<group>"; };
+		ECDD8A521FF1146E005C31A8 /* KAPlaceDetailFooderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAPlaceDetailFooderView.m; sourceTree = "<group>"; };
+		ECDD8A541FF114AB005C31A8 /* KAPlaceDetailFooderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KAPlaceDetailFooderView.xib; sourceTree = "<group>"; };
 		ECF5FE3F1EE00C7B007963DA /* ESPictureBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPictureBrowser.h; sourceTree = "<group>"; };
 		ECF5FE401EE00C7B007963DA /* ESPictureBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESPictureBrowser.m; sourceTree = "<group>"; };
 		ECF5FE411EE00C7B007963DA /* ESPictureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPictureView.h; sourceTree = "<group>"; };
@@ -2421,7 +2421,6 @@
 				540E97F11CFBD5BB000F1255 /* MediaPlayer.framework in Frameworks */,
 				5420EF7B1CFAF4B4006E665E /* CoreMedia.framework in Frameworks */,
 				CCE38A541CF2AD7F00F4812C /* CoreBluetooth.framework in Frameworks */,
-				EC3750D11E7908240067AF0F /* AlipaySDK.framework in Frameworks */,
 				CCE38A521CF2AD5500F4812C /* JavaScriptCore.framework in Frameworks */,
 				54CF204D1CE094D0005FBA28 /* EventKit.framework in Frameworks */,
 				54CF204B1CE0916E005FBA28 /* CoreImage.framework in Frameworks */,
@@ -2435,7 +2434,6 @@
 				406C2AAE1D61695D00080ADE /* UMMobClick.framework in Frameworks */,
 				CC78A4001C28028D006BBB3C /* ImageIO.framework in Frameworks */,
 				CC78A3F91C27EDC7006BBB3C /* CoreTelephony.framework in Frameworks */,
-				EC3750CD1E78FF270067AF0F /* libPaymentControl.a in Frameworks */,
 				CC78A3F71C27EDB5006BBB3C /* CoreGraphics.framework in Frameworks */,
 				CC78A3F51C27EDA4006BBB3C /* libiconv.tbd in Frameworks */,
 				CC78A3F11C27ED7F006BBB3C /* SystemConfiguration.framework in Frameworks */,
@@ -2494,6 +2492,7 @@
 			children = (
 				95C364D5AE74F67C980B841E /* Pods-MasterKA.debug.xcconfig */,
 				BDAD5DC7F1035E8E7D3AE5CE /* Pods-MasterKA.release.xcconfig */,
+				87748BED17FE41CFC2224884 /* Pods-MasterKA.ad hoc distribution.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -2534,26 +2533,6 @@
 			path = TZImagePickerController;
 			sourceTree = "<group>";
 		};
-		CC1BD7251C2AAEBC0036E036 /* 支付宝15.3.3 */ = {
-			isa = PBXGroup;
-			children = (
-				EC3750CE1E7908240067AF0F /* AlipaySDK.bundle */,
-				EC3750CF1E7908240067AF0F /* AlipaySDK.framework */,
-			);
-			name = "支付宝15.3.3";
-			path = "支付宝15.0.1";
-			sourceTree = "<group>";
-		};
-		CC1BD72F1C2B899B0036E036 /* 银联支付3.3.6 */ = {
-			isa = PBXGroup;
-			children = (
-				EC3750CC1E78FF270067AF0F /* libPaymentControl.a */,
-				EC3750CB1E78FF190067AF0F /* UPPaymentControl.h */,
-			);
-			name = "银联支付3.3.6";
-			path = "银联支付";
-			sourceTree = "<group>";
-		};
 		CC2005111C157DFC008E47C0 = {
 			isa = PBXGroup;
 			children = (
@@ -2585,6 +2564,7 @@
 				CC2005201C157DFC008E47C0 /* AppDelegate.h */,
 				CC2005211C157DFC008E47C0 /* AppDelegate.mm */,
 				EC9B963B1F67EA3600870A35 /* cityJson.plist */,
+				EC89A4B01FF5166900E606DE /* peizhiPlist.plist */,
 				F65B4FE71D250B7B0063F36D /* main.js */,
 				CC2005231C157DFC008E47C0 /* ViewController.h */,
 				CC2005241C157DFC008E47C0 /* ViewController.m */,
@@ -3827,6 +3807,12 @@
 				40BB590C1E1E43A500B97E74 /* leftTextBtn.m */,
 				40B57A751E24945B00C3780D /* MapBtn.h */,
 				40B57A761E24945B00C3780D /* MapBtn.m */,
+				EC218E281FECDEFC00053ABE /* UIControl+Interval.h */,
+				EC218E291FECDEFC00053ABE /* UIControl+Interval.m */,
+				EC218E2B1FED49C400053ABE /* UIButton+EnlargeTouchArea.h */,
+				EC218E2C1FED49C500053ABE /* UIButton+EnlargeTouchArea.m */,
+				EC218E2E1FED4FD900053ABE /* UITextField+EnlargeTouchArea.h */,
+				EC218E2F1FED4FDA00053ABE /* UITextField+EnlargeTouchArea.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -4063,8 +4049,6 @@
 				CCE0439E1CC8609E009E7181 /* TYSlidePageScrollView */,
 				CCF37C351C58693500D4759A /* GCDObjC */,
 				CCB20C661C4CEFE2004A347D /* MWPhotoBrowser2.1.1 */,
-				CC1BD72F1C2B899B0036E036 /* 银联支付3.3.6 */,
-				CC1BD7251C2AAEBC0036E036 /* 支付宝15.3.3 */,
 				406C2AAD1D61695D00080ADE /* UMMobClick.framework */,
 				CC57DCFF1C202405000978C2 /* HMSegmentedControl */,
 				CCC2E6411C16C95F00395CBA /* MJRefresh */,
@@ -4278,10 +4262,8 @@
 		EC1B783C1FE1414B00B6F6E4 /* 筛选 */ = {
 			isa = PBXGroup;
 			children = (
-				EC1B783E1FE1416E00B6F6E4 /* JLDoubleSlider.h */,
-				EC1B783F1FE1416E00B6F6E4 /* JLDoubleSlider.m */,
-				EC1B783D1FE1416E00B6F6E4 /* UIView+Dimension.h */,
-				EC1B78401FE1416F00B6F6E4 /* UIView+Dimension.m */,
+				EC88412B1F8E0939009DE65A /* KAFilterView.h */,
+				EC88412C1F8E0939009DE65A /* KAFilterView.m */,
 			);
 			path = "筛选";
 			sourceTree = "<group>";
@@ -4445,20 +4427,20 @@
 		EC8AF35E1FCE9870003D68DF /* 场地和精选 */ = {
 			isa = PBXGroup;
 			children = (
-				EC8AF3671FCEA8CD003D68DF /* AticleDetailImageCell.h */,
-				EC8AF3661FCEA8CC003D68DF /* AticleDetailImageCell.m */,
 				EC8080B91FCFE41B00267A68 /* KAPlaceDetailTitleTableViewCell.h */,
 				EC8080BA1FCFE41B00267A68 /* KAPlaceDetailTitleTableViewCell.m */,
 				EC8080BB1FCFE41B00267A68 /* KAPlaceDetailTitleTableViewCell.xib */,
+				EC8AF3671FCEA8CD003D68DF /* AticleDetailImageCell.h */,
+				EC8AF3661FCEA8CC003D68DF /* AticleDetailImageCell.m */,
 				EC8AF3611FCE9ECE003D68DF /* KAContentTableViewCell.h */,
 				EC8AF3621FCE9ECE003D68DF /* KAContentTableViewCell.m */,
 				EC8AF3631FCE9ECE003D68DF /* KAContentTableViewCell.xib */,
 				ECCE2DCD1FDEAA410010F410 /* KAMomentFooterView.h */,
 				ECCE2DCE1FDEAA410010F410 /* KAMomentFooterView.m */,
 				ECCE2DD01FDEAA4D0010F410 /* KAMomentFooterView.xib */,
-				EC6E27491FDA807800D4E300 /* KAPlaceDetailFooderView.h */,
-				EC6E274C1FDA807900D4E300 /* KAPlaceDetailFooderView.m */,
-				EC6E274B1FDA807900D4E300 /* KAPlaceDetailFooderView.xib */,
+				ECDD8A511FF1146E005C31A8 /* KAPlaceDetailFooderView.h */,
+				ECDD8A521FF1146E005C31A8 /* KAPlaceDetailFooderView.m */,
+				ECDD8A541FF114AB005C31A8 /* KAPlaceDetailFooderView.xib */,
 				ECCE2DCA1FDEA6C00010F410 /* KAMomentHeaderView.h */,
 				ECCE2DCB1FDEA6C00010F410 /* KAMomentHeaderView.m */,
 				ECCE2DC81FDEA6B10010F410 /* KAMomentHeaderView.xib */,
@@ -4504,12 +4486,8 @@
 				EC8F65F41F8CC766004DC535 /* KAHomeTableViewCell.h */,
 				EC8F65F51F8CC766004DC535 /* KAHomeTableViewCell.m */,
 				EC8F65F61F8CC766004DC535 /* KAHomeTableViewCell.xib */,
-				EC88412B1F8E0939009DE65A /* KAFilterView.h */,
-				EC88412C1F8E0939009DE65A /* KAFilterView.m */,
 				ECABCCB01FE7755200B3209F /* HomeTextField.h */,
 				ECABCCB11FE7755200B3209F /* HomeTextField.m */,
-				EC9A00C61FD7C93300D44215 /* JFADoubleSlider.h */,
-				EC9A00C51FD7C93200D44215 /* JFADoubleSlider.m */,
 				EC8E36101F8F056700C77635 /* KADetailTableView.h */,
 				EC8E36111F8F056700C77635 /* KADetailTableView.m */,
 				EC8F65F11F8C9A2B004DC535 /* KAHomeTableView.h */,
@@ -4728,7 +4706,7 @@
 								enabled = 1;
 							};
 							com.apple.Push = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -4848,6 +4826,7 @@
 				CC4B192A1CD0AD9300CBA023 /* 021.png in Resources */,
 				40F699E61E0B6E0200FF3A69 /* MasterMsg.xib in Resources */,
 				CC4B1A7E1CD0AEF100CBA023 /* chatBar_more_photo.png in Resources */,
+				ECDD8A551FF114AC005C31A8 /* KAPlaceDetailFooderView.xib in Resources */,
 				CC4B1A7A1CD0AEF100CBA023 /* chatBar_more_location.png in Resources */,
 				CC4B1A771CD0AEF100CBA023 /* chatBar_more_camera@2x.png in Resources */,
 				CC4B19641CD0AD9300CBA023 /* 050.png in Resources */,
@@ -4912,7 +4891,6 @@
 				CC4B19161CD0AD9300CBA023 /* 011.png in Resources */,
 				54D83F8E1CF43F170005568B /* MasterVideoCollectionCell.xib in Resources */,
 				CC4B19981CD0AD9300CBA023 /* 076.png in Resources */,
-				EC3750D01E7908240067AF0F /* AlipaySDK.bundle in Resources */,
 				CC135AF01D0F991A000D5CF1 /* QROrderDetail0Cell.xib in Resources */,
 				CCFFC5D61C858437000B090D /* MineTableViewCell.xib in Resources */,
 				EC762B6B1FDF870200241FBE /* KADetailVoteTableViewCell.xib in Resources */,
@@ -5006,6 +4984,7 @@
 				CC4B1A721CD0AEF100CBA023 /* chatBar_colorMore_photo@2x.png in Resources */,
 				CC4B192D1CD0AD9300CBA023 /* 022@2x.png in Resources */,
 				F6FA24C21CE2D6CA00084D7E /* Goods.storyboard in Resources */,
+				EC89A4B11FF5166900E606DE /* peizhiPlist.plist in Resources */,
 				CC4B1A661CD0AEF100CBA023 /* chatBar_record.png in Resources */,
 				CC4B191F1CD0AD9300CBA023 /* 015@2x.png in Resources */,
 				54ED0FA61CEAE2DC002C5BF9 /* GuessLikeCell.xib in Resources */,
@@ -5268,6 +5247,7 @@
 				CCC2E6DC1C16C96000395CBA /* UIScrollView+MJExtension.m in Sources */,
 				EC463BBF1FCC1B2B00FA4AB9 /* KAPlaceDetailViewController.m in Sources */,
 				CC308E3D1C44A50400C473DC /* NSURL+URL.m in Sources */,
+				EC218E301FED4FDA00053ABE /* UITextField+EnlargeTouchArea.m in Sources */,
 				5440466A1CDAF04B008B6E7D /* MineOrdersViewController.m in Sources */,
 				EC9AC9BA1FC3BB5200BF74BD /* KAPreVoteViewController.m in Sources */,
 				54CB447D1CD3309400963848 /* MyCardViewModel.m in Sources */,
@@ -5314,7 +5294,9 @@
 				CCD2ECE21CBB51F600C9E3B3 /* LoginResetPwdViewController.m in Sources */,
 				5446E17E1CD1AF2D007DF8D6 /* MyFansModel.m in Sources */,
 				CC70803C1CC750460088F981 /* InterestModel.m in Sources */,
+				ECDD8A531FF1146E005C31A8 /* KAPlaceDetailFooderView.m in Sources */,
 				CC2C35571C2D2C130078B7A7 /* UITableView+Master.m in Sources */,
+				EC218E2A1FECDEFD00053ABE /* UIControl+Interval.m in Sources */,
 				F6FA24DF1CE31FF200084D7E /* SubCourseModel.m in Sources */,
 				ECF5FE451EE00C7B007963DA /* ESPictureBrowser.m in Sources */,
 				F6F0A0691CEAB136005E6B7B /* SelectTypeModel.m in Sources */,
@@ -5384,7 +5366,6 @@
 				EC81F0AF1F960D6400916496 /* NSDate+BRAdd.m in Sources */,
 				54ED0FA51CEAE2DC002C5BF9 /* GuessLikeCell.m in Sources */,
 				CC4B1A851CD0AEF100CBA023 /* EMChatImageBubbleView.m in Sources */,
-				EC9A00C71FD7C93300D44215 /* JFADoubleSlider.m in Sources */,
 				406F71EC1D2D085500E4069C /* UserMsgModel.m in Sources */,
 				407544DB1DFFDB4B008F9F00 /* MapCourseController.m in Sources */,
 				CC4B1A571CD0AEF100CBA023 /* FacialView.m in Sources */,
@@ -5404,6 +5385,7 @@
 				CC57DD021C202405000978C2 /* HMSegmentedControl.m in Sources */,
 				EC894DC61EE7EFBB00185E65 /* TZPhotoPreviewController.m in Sources */,
 				CCCEB3D31C1949BE004D0B15 /* UIView+Master.m in Sources */,
+				EC218E2D1FED49C500053ABE /* UIButton+EnlargeTouchArea.m in Sources */,
 				540308F81CF3181A00992A70 /* MyDetailCell.m in Sources */,
 				5446E15A1CD092EA007DF8D6 /* MyCouponViewController.m in Sources */,
 				EC8718E31FEA0926005F7C02 /* KAOrderShareViewController.m in Sources */,
@@ -5907,8 +5889,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.shishiTec.MasterKA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ea382b2b-736f-4cf9-8564-e2bd1b30b580";
-				PROVISIONING_PROFILE_SPECIFIER = MasterKA_Development;
+				PROVISIONING_PROFILE = "6a912ad8-8898-4f3a-b0a7-a8ef5dbba852";
+				PROVISIONING_PROFILE_SPECIFIER = MasterKA_Development12_26_3;
 			};
 			name = Debug;
 		};
@@ -5921,8 +5903,8 @@
 				CLANG_CXX_LIBRARY = "libstdc++";
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_ENTITLEMENTS = MasterKA/MasterKA.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: liao yuan (XPJWCNXNZ5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: liao yuan (XPJWCNXNZ5)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: ShiShi Technology Co., Ltd. (753Y42S756)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ShiShi Technology Co., Ltd. (753Y42S756)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 753Y42S756;
 				ENABLE_BITCODE = NO;
@@ -5956,8 +5938,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.shishiTec.MasterKA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ea382b2b-736f-4cf9-8564-e2bd1b30b580";
-				PROVISIONING_PROFILE_SPECIFIER = MasterKA_Development;
+				PROVISIONING_PROFILE = "0c055fe3-afc2-4bbb-8bc1-0bb5fcb21bd6";
+				PROVISIONING_PROFILE_SPECIFIER = MasterKA_Distribution;
 			};
 			name = Release;
 		};
@@ -6025,6 +6007,124 @@
 			};
 			name = Release;
 		};
+		ECA35D091FF37CF0000A0B66 /* ad hoc distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "ad hoc distribution";
+		};
+		ECA35D0A1FF37CF0000A0B66 /* ad hoc distribution */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87748BED17FE41CFC2224884 /* Pods-MasterKA.ad hoc distribution.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LIBRARY = "libstdc++";
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
+				CODE_SIGN_ENTITLEMENTS = MasterKA/MasterKA.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: ShiShi Technology Co., Ltd. (753Y42S756)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ShiShi Technology Co., Ltd. (753Y42S756)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 753Y42S756;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MasterKA/Classes/Vendor/SDWebImage",
+					"$(PROJECT_DIR)/MasterKA/Classes/Vendor/友盟/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
+					"$(PROJECT_DIR)/MasterKA/Classes/Vendor/支付宝15.0.1",
+					"$(PROJECT_DIR)/MasterKA/Classes/Vendor",
+					"$(PROJECT_DIR)/MasterKA/Classes/Vendor/百度地图2.10.2",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/MasterKA/Classes/Vendor/百度地图3.2.1",
+					"$(PROJECT_DIR)/MasterKA/Classes/Vendor/MWPhotoBrowser2.1.1/百度地图2.10.2",
+				);
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MasterKA/PrefixHeader.pch";
+				INFOPLIST_FILE = MasterKA/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/MasterKA/Classes/Vendor/友盟/UMSocial_Sdk_Extra_Frameworks/SinaSSO",
+					"$(PROJECT_DIR)/MasterKA/Classes/Vendor/友盟/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
+					"$(PROJECT_DIR)/MasterKA/Classes/Vendor/友盟/UMSocial_Sdk_Extra_Frameworks/Wechat",
+					"$(PROJECT_DIR)/MasterKA/Classes/Vendor/银联支付",
+					"$(PROJECT_DIR)/MasterKA/Classes/Vendor/友盟/UMSocial_Sdk_5.0.1",
+					"$(PROJECT_DIR)/MasterKA/Classes/Vendor/GtSdkLib",
+					"$(PROJECT_DIR)/MasterKA/Classes/Vendor/百度地图3.2.1/thirdlibs",
+					"$(PROJECT_DIR)/Pods/BaiduMapKit/BaiduMapKit/thirdlibs",
+					"$(PROJECT_DIR)/MasterKA/Classes/Vendor/thirdlibs",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shishiTec.MasterKA;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e171f4db-2289-4210-8136-b24d44bd4542";
+				PROVISIONING_PROFILE_SPECIFIER = MasterKA_Distribution1228;
+			};
+			name = "ad hoc distribution";
+		};
+		ECA35D0B1FF37CF0000A0B66 /* ad hoc distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = MasterKATests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shishiTec.MasterKATests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MasterKA.app/MasterKA";
+			};
+			name = "ad hoc distribution";
+		};
+		ECA35D0C1FF37CF0000A0B66 /* ad hoc distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = MasterKAUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shishiTec.MasterKAUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MasterKA;
+				USES_XCTRUNNER = YES;
+			};
+			name = "ad hoc distribution";
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -6033,6 +6133,7 @@
 			buildConfigurations = (
 				CC2005451C157DFC008E47C0 /* Debug */,
 				CC2005461C157DFC008E47C0 /* Release */,
+				ECA35D091FF37CF0000A0B66 /* ad hoc distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -6042,6 +6143,7 @@
 			buildConfigurations = (
 				CC2005481C157DFC008E47C0 /* Debug */,
 				CC2005491C157DFC008E47C0 /* Release */,
+				ECA35D0A1FF37CF0000A0B66 /* ad hoc distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -6051,6 +6153,7 @@
 			buildConfigurations = (
 				CC20054B1C157DFC008E47C0 /* Debug */,
 				CC20054C1C157DFC008E47C0 /* Release */,
+				ECA35D0B1FF37CF0000A0B66 /* ad hoc distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -6060,6 +6163,7 @@
 			buildConfigurations = (
 				CC20054E1C157DFC008E47C0 /* Debug */,
 				CC20054F1C157DFC008E47C0 /* Release */,
+				ECA35D0C1FF37CF0000A0B66 /* ad hoc distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

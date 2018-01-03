@@ -24,8 +24,31 @@
     [super awakeFromNib];
     
     // Initialization code
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addVoteBtnChange:) name:@"addVote" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cancelVoteBtnChange:) name:@"cancelVote" object:nil];
 }
-
+- (void)addVoteBtnChange:(NSNotification *)notify {
+      NSDictionary * infoDic = [notify object];
+    if([self.ka_course_id isEqualToString:infoDic[@"ka_course_id"]]){
+         [_kaHomeModel setValue:@"1" forKey:@"is_vote_cart"];
+        self.voteBtn.selected = YES;
+        self.voteBtn.borderWidth = 1.0f;
+        self.voteBtn.borderColor = RGBFromHexadecimal(0xb9b8af);
+    }
+}
+- (void)cancelVoteBtnChange:(NSNotification *)notify {
+    NSDictionary * infoDic = [notify object];
+    if([self.ka_course_id isEqualToString:infoDic[@"ka_course_id"]]){
+        [_kaHomeModel setValue:@"0" forKey:@"is_vote_cart"];
+        self.voteBtn.selected = NO;
+        self.voteBtn.borderWidth = 0.0f;
+        self.voteBtn.borderColor = [UIColor clearColor];
+    }
+}
+-(void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"addVote" object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"cancelVote" object:nil];
+}
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
@@ -36,13 +59,13 @@
     
     _kaHomeModel = kaHomeModel;
     self.nameLabel.text = _kaHomeModel[@"course_title"];
-    self.nameLabel.font = [UIFont fontWithName:@"PingFangSC-Medium" size:16];
+    self.nameLabel.font = [UIFont fontWithName:@"PingFangSC-Medium" size:18];
     self.IntrLabel.text = _kaHomeModel[@"course_sub_title"];
     self.timeLabel.text = _kaHomeModel[@"course_time"];
     self.countLabel.text = _kaHomeModel[@"people_num"];
     self.priceLabel.text = [NSString stringWithFormat:@"¥%@",_kaHomeModel[@"course_price"]];
-    self.priceLabel.font = [UIFont fontWithName:@"PingFangSC-Medium" size:16];
-    [self.topImgview setImageFadeInWithURLString:_kaHomeModel[@"course_cover"] placeholderImage:nil];
+    self.priceLabel.font = [UIFont fontWithName:@"PingFangSC-Medium" size:18];
+    [self.topImgview setImageFadeInWithURLString:[_kaHomeModel[@"course_cover"] ClipImageUrl:[NSString stringWithFormat:@"%f",(ScreenWidth- 24)*0.75*ScreenScale]] placeholderImage:[UIImage imageNamed:@"KAHoemLoadingDefault"]];
     
     self.ka_course_id = _kaHomeModel[@"ka_course_id"];
     
@@ -72,114 +95,120 @@
     
     
  
-    [self.tipView addSubview:self.commentLabel];
-    [self.commentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.tipView);
+    if (self.commentLabelArr) {
         
-        make.left.equalTo(self.tipView).offset(10);
+        [self.commentLabelArr enumerateObjectsUsingBlock:^(UILabel * obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            
+            [obj removeFromSuperview];
+            
+        }];
         
-        make.height.equalTo(@20);
-    }];
+    }
+    if(self.commentLabel){
+        [self.commentLabel removeFromSuperview];
+    }
     
    NSArray *comments = _kaHomeModel[@"tags_name"];
-    self.commentLabel.text = comments[0];
-    if (self.commentLabelArr) {
-
-        [self.commentLabelArr enumerateObjectsUsingBlock:^(UILabel * obj, NSUInteger idx, BOOL * _Nonnull stop) {
-
-            [obj removeFromSuperview];
-
+    if (comments.count) {
+        self.commentLabel.text = comments[0];
+        [self.tipView addSubview:self.commentLabel];
+        [self.commentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.tipView);
+            
+            make.left.equalTo(self.tipView).offset(10);
+            
+            make.height.equalTo(@20);
         }];
-
-    }
-    NSMutableArray * topicLabels = [NSMutableArray arrayWithCapacity:10];
+        
     
-    for (int i =0; i<comments.count; i++) {
-        if (i == 0) {
-              CGSize size  = [comments[0] sizeWithAttributes:@{NSFontAttributeName : [UIFont fontWithName:SpecialFont  size:10]}];
-            NSInteger firstW = size.width + 10.0;
-            [self.commentLabel mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.width.mas_equalTo(firstW);
-            }];
-            
-            self.totalWidth = size.width +10;
-            
-            self.beforeLabel = _commentLabel;
-        }else {
-            UILabel *nextLabel = [[UILabel alloc] init];
-            nextLabel.text = comments[i];
-            nextLabel.tag = i;
-            nextLabel.textColor = [UIColor blackColor];
-            
-            nextLabel.font = [UIFont fontWithName:SpecialFont  size:12];
-            
-            nextLabel.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.6];
-            nextLabel.textAlignment = NSTextAlignmentCenter;
-            
-            nextLabel.layer.cornerRadius = 3.0f;
-            nextLabel.layer.masksToBounds = YES;
-            [topicLabels addObject:nextLabel];
-            [self.tipView addSubview:nextLabel];
-               CGSize nextSize  = [comments[i] sizeWithAttributes:@{NSFontAttributeName : [UIFont fontWithName:SpecialFont  size:10]}];
-            
-            if (self.totalWidth + 6+10+nextLabel.width <=ScreenWidth) {
-                [nextLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-                    make.left.equalTo(self.beforeLabel.mas_right).offset(6);
-                    
-                    make.top.equalTo(self.beforeLabel);
-                    
-                    make.width.mas_equalTo(nextSize.width+10);
-                    
-                    make.height.equalTo(@20);
+        NSMutableArray * topicLabels = [NSMutableArray arrayWithCapacity:10];
+        
+        for (int i =0; i<comments.count; i++) {
+            if (i == 0) {
+                CGSize size  = [comments[0] sizeWithAttributes:@{NSFontAttributeName : [UIFont fontWithName:SpecialFont  size:10]}];
+                NSInteger firstW = size.width + 10.0;
+                [self.commentLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+                    make.width.mas_equalTo(firstW);
                 }];
-                self.totalWidth += (nextSize.width +6);
+                
+                self.totalWidth = size.width +10;
+                
+                self.beforeLabel = _commentLabel;
             }else {
+                UILabel *nextLabel = [[UILabel alloc] init];
+                nextLabel.text = comments[i];
+                nextLabel.tag = i;
+                nextLabel.textColor = [UIColor blackColor];
                 
-                [nextLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-                    
-                    make.left.equalTo(self.commentLabel);
-                    
-                    make.top.equalTo(self.beforeLabel.mas_bottom).offset(10);
-                    
-                    make.height.equalTo(@12);
-                    
-                }];
+                nextLabel.font = [UIFont fontWithName:SpecialFont  size:12];
                 
-                self.totalWidth = nextSize.width + 10;
+                nextLabel.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.6];
+                nextLabel.textAlignment = NSTextAlignmentCenter;
+                
+                nextLabel.layer.cornerRadius = 3.0f;
+                nextLabel.layer.masksToBounds = YES;
+                [topicLabels addObject:nextLabel];
+                [self.tipView addSubview:nextLabel];
+                CGSize nextSize  = [comments[i] sizeWithAttributes:@{NSFontAttributeName : [UIFont fontWithName:SpecialFont  size:10]}];
+                
+                if (self.totalWidth + 6+10+nextLabel.width <=ScreenWidth) {
+                    [nextLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+                        make.left.equalTo(self.beforeLabel.mas_right).offset(6);
+                        
+                        make.top.equalTo(self.beforeLabel);
+                        
+                        make.width.mas_equalTo(nextSize.width+10);
+                        
+                        make.height.equalTo(@20);
+                    }];
+                    self.totalWidth += (nextSize.width +6);
+                }else {
+                    
+                    [nextLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+                        
+                        make.left.equalTo(self.commentLabel);
+                        
+                        make.top.equalTo(self.beforeLabel.mas_bottom).offset(10);
+                        
+                        make.height.equalTo(@12);
+                        
+                    }];
+                    
+                    self.totalWidth = nextSize.width + 10;
+                }
+                self.beforeLabel = nextLabel;
+                
+                
             }
-             self.beforeLabel = nextLabel;
-            
-            
+            self.commentLabelArr = topicLabels;
         }
-        self.commentLabelArr = topicLabels;
     }
+    
+   
     
     
     
 }
 - (IBAction)voteBtnAction:(id)sender {
-    if ([UserClient sharedUserClient].rawLogin) {
+//    if ([UserClient sharedUserClient].rawLogin) {
+    if ([(BaseViewController *)self.superViewController doLogin]) {
         if (self.voteBtn.selected) {
             self.canceljoinClick(self.ka_course_id);
             [_kaHomeModel setValue:@"0" forKey:@"is_vote_cart"];
             self.voteBtn.borderWidth = 0.0f;
             self.voteBtn.borderColor = [UIColor clearColor];
-            
+            self.voteBtn.selected =NO;
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"cancelVote" object:@{@"ka_course_id":self.ka_course_id}];
         }else{
             self.joinClick(self.topImgview,self.ka_course_id);
             [_kaHomeModel setValue:@"1" forKey:@"is_vote_cart"];
-            
             self.voteBtn.borderWidth = 1.0f;
             self.voteBtn.borderColor = RGBFromHexadecimal(0xb9b8af);
-            
+            self.voteBtn.selected = YES;
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"addVote" object:@{@"ka_course_id":self.ka_course_id}];
         }
         
-        self.voteBtn.selected = !self.voteBtn.selected;
-    }else{
-        self.todoLogin();
     }
- 
-    
 }
 
 //topic

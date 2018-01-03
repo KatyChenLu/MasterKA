@@ -39,7 +39,7 @@
     [self.view addSubview:self.beginVoteBtn];
     [self.beginVoteBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.and.right.equalTo(self.view);
-        make.height.equalTo(@42);
+        make.height.equalTo(@45);
         make.bottom.equalTo(self.mas_bottomLayoutGuide);
     }];
     
@@ -57,10 +57,16 @@
         return @(title.length);
     }];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cancelShare) name:@"cancelShare" object:nil];
+//     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cancelShare) name:@"cancelVote" object:nil];
 }
 - (void)cancelShare {
     self.iscancelShare = YES;
     [self gotoBack];
+    NSInteger voteNum = [UserClient sharedUserClient].voteNum - self.selArr.count;
+    [[UserClient sharedUserClient] setVoteNum: voteNum];
+    for (NSString *kaid in self.selArr) {
+             [[NSNotificationCenter defaultCenter] postNotificationName:@"cancelVote" object:@{@"ka_course_id":kaid}];
+    }
 }
 - (void)gotoBack{
     if(self.iscancelShare){
@@ -71,7 +77,7 @@
                 
                 _voteVC = (KAVoteViewController *)vc;
                 _voteVC.selectViewPageIndex = 1;
-                [_voteVC reload];
+//                [_voteVC reload];
                 [self.navigationController popToViewController:_voteVC animated:YES];
                 
                 self.iscancelShare = NO;
@@ -88,6 +94,8 @@
 }
 -(void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"cancelShare" object:nil];
+     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"cancelVote" object:nil];
+    
 }
 
 - (UITableView *)mTableView {
@@ -109,11 +117,17 @@
         _beginVoteBtn.titleLabel.font = [UIFont systemFontOfSize:15];
         [_beginVoteBtn setTitle:btnTitle forState:UIControlStateNormal];
         [_beginVoteBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        @weakify(self);
         [[_beginVoteBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+            @strongify(self);
             [[[HttpManagerCenter sharedHttpManager] postVoteWithTitle:self.titleTextView.text desc:self.describeTextView.text endDays:self.endDay endHours:self.endHours courseIds:self.selArr resultClass:nil] subscribeNext:^(BaseModel *baseModel) {
                 if (baseModel.code == 200) {
-                    [self shareContentOfApp:baseModel.data[@"share_data"]];
+                    [self shareContentOfApp:baseModel.data[@"share_data"] ];
+                     [self toastWithString:@"发布成功" error:YES];
+//              [[NSNotificationCenter defaultCenter] postNotificationName:@"cancelShare" object:nil];
                     
+                }else{
+                     [self toastWithString:baseModel.message error:YES];
                 }
             }];
             
@@ -152,7 +166,7 @@
         
         UIView *describeView =[[UIView alloc] initWithFrame:CGRectMake(0, 61, ScreenWidth, 60)];
         describeView.backgroundColor = [UIColor whiteColor];
-        _describeTextView = [[UITextView alloc] initWithFrame:CGRectMake(12, 20, ScreenWidth - 12*2, 60-20)];
+        _describeTextView = [[UITextView alloc] initWithFrame:CGRectMake(12, 0, ScreenWidth - 12*2, 60)];
         _describeTextView.placeholderStr = @"补充描述";
         _describeTextView.font = [UIFont systemFontOfSize:14];
         [describeView addSubview:_describeTextView];
@@ -232,6 +246,10 @@
     
     return YES;
     
+}
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self.titleTextView resignFirstResponder];
+    [self.describeTextView resignFirstResponder];
 }
 /*
 #pragma mark - Navigation

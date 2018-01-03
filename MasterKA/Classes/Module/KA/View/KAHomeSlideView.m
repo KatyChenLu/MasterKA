@@ -21,19 +21,41 @@
     self.finishSlide(@"dingdan");
 }
 - (IBAction)xiangceAction:(id)sender {
-    self.finishSlide(@"xiangce");
+    self.finishSlide(@"shoucang");
 }
 - (IBAction)shoucangAction:(id)sender {
-    self.finishSlide(@"shoucang");
+//    self.finishSlide(@"shoucang");
+         NSString * phones = [UserClient sharedUserClient].server_number;
+        NSString* courseMobile = phones;
+        courseMobile = [courseMobile stringByReplacingOccurrencesOfString:@"、" withString:@","];
+        courseMobile = [courseMobile stringByReplacingOccurrencesOfString:@"，" withString:@","];
+        NSArray* phonesArray = [courseMobile componentsSeparatedByString:@","];
+        UIActionSheet* actionSheet = [[UIActionSheet alloc] init];
+        actionSheet.title = @"电话号码";
+        [actionSheet addButtonWithTitle:@"取消"];
+        for (NSString* phone in phonesArray) {
+            [actionSheet addButtonWithTitle:phone];
+        }
+        [actionSheet setCancelButtonIndex:0];
+        [actionSheet showInView:self.superViewController.view];
+        [actionSheet.rac_buttonClickedSignal subscribeNext:^(NSNumber *index) {
+            if (index.integerValue>0) {
+                NSString* phone = [actionSheet buttonTitleAtIndex:index.integerValue];
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",phone]]];
+            }
+        } ];
+        
+    
+    
 }
 - (IBAction)settingAction:(id)sender {
     self.finishSlide(@"setting");
 }
 - (IBAction)loginBtnAction:(id)sender {
-    self.todoLogin();
+    self.finishSlide(@"");
 }
 - (IBAction)headerBtnAction:(id)sender {
-    self.todoLogin();
+    self.finishSlide(@"headerBtn");
 }
 
 

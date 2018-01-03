@@ -7,12 +7,10 @@
 //
 
 #import "AppDelegate.h"
-#import <AlipaySDK/AlipaySDK.h>
 #import <CoreSpotlight/CoreSpotlight.h>
 #import "ViewModelServicesImpl.h"
 #import "WXApi.h"
 #import "GeTuiSdk.h"
-#import "UPPaymentControl.h"
 #import "UserClient.h"
 #import "AdvertisementView.h"
 #import "SlideMainViewController.h"
@@ -112,7 +110,7 @@ UserClient * _userClient;
 //回到前台获取登陆状态
 - (void)getLoginStaue
 {
-    //    [UMSocialGlobal shareInstance].isClearCacheWhenGetUserInfo = YES;
+//        [UMSocialGlobal shareInstance].isClearCacheWhenGetUserInfo = YES;
      UMSocialUserInfoResponse *input = [UMSocialUserInfoResponse mj_objectWithKeyValues:[UserClient sharedUserClient].UserInfoResponse];
     NSString *myUID =   input.uid;
     
@@ -310,34 +308,35 @@ UserClient * _userClient;
 
 - (void)openApplicationWithURL:(NSURL *)url{
     
-    if ([url.scheme isEqualToString:UnionpayScheme]) {//银联支付
-        [[UPPaymentControl defaultControl] handlePaymentResult:url completeBlock:^(NSString *code, NSDictionary *data) {
-            NSLog(@"UPPaymentControl  result = %@",data);
-            //结果code为成功时，先校验签名，校验成功后做后续处理
-            if([code isEqualToString:@"success"]) {
-                //判断签名数据是否存在
-                if(data == nil){
-                    
-                }
-                [self paySuccess:1];
-            }else if ([code isEqualToString:@"fail"]){
-                alertShowMessage(@"支付失败");
-            }else if ([code isEqualToString:@"cancel"]){
-                alertShowMessage(@"您已取消了支付");
-            }
-        }];
-    }else if ([url.scheme isEqualToString:AlipayScheme]){//支付支付
-        //TODO 支付宝支付处理
-        [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
-            NSLog(@"reslut = %@   %@",resultDic,resultDic[@"memo"]);
-            NSString* resultStatus = resultDic[@"resultStatus"];
-            if ([resultStatus isEqualToString:@"9000"]) {
-                [self paySuccess:2];
-            }else{
-                alertShowMessage(@"支付失败");
-            }
-        }];
-    }else if([url.scheme isEqualToString:WeixinScheme]){//微信支付
+//    if ([url.scheme isEqualToString:UnionpayScheme]) {//银联支付
+//        [[UPPaymentControl defaultControl] handlePaymentResult:url completeBlock:^(NSString *code, NSDictionary *data) {
+//            NSLog(@"UPPaymentControl  result = %@",data);
+//            //结果code为成功时，先校验签名，校验成功后做后续处理
+//            if([code isEqualToString:@"success"]) {
+//                //判断签名数据是否存在
+//                if(data == nil){
+//
+//                }
+//                [self paySuccess:1];
+//            }else if ([code isEqualToString:@"fail"]){
+//                alertShowMessage(@"支付失败");
+//            }else if ([code isEqualToString:@"cancel"]){
+//                alertShowMessage(@"您已取消了支付");
+//            }
+//        }];
+//    }else if ([url.scheme isEqualToString:AlipayScheme]){//支付支付
+//        //TODO 支付宝支付处理
+//        [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
+//            NSLog(@"reslut = %@   %@",resultDic,resultDic[@"memo"]);
+//            NSString* resultStatus = resultDic[@"resultStatus"];
+//            if ([resultStatus isEqualToString:@"9000"]) {
+//                [self paySuccess:2];
+//            }else{
+//                alertShowMessage(@"支付失败");
+//            }
+//        }];
+//    }else
+        if([url.scheme isEqualToString:WeixinScheme]){//微信支付
         [WXApi handleOpenURL:url delegate:self];
     }else if([url.scheme isEqualToString:@"master"] || [url.scheme hasPrefix:@"http"]){
         if(self.appRunning){
@@ -904,6 +903,15 @@ UserClient * _userClient;
     [urlManager addStoryboardName:@"Goods"];
     [urlManager addStoryboardName:@"Login"];
     
+    
+    
+    
+    
+    [urlManager setViewControllerName:@"KADetailViewController" forURL:URL_KAHomeDetail];
+     [urlManager setViewControllerName:@"KAMomentDetailViewController" forURL:URL_KAMomentDetail];
+     [urlManager setViewControllerName:@"KAPlaceDetailViewController" forURL:URL_KAPlaceDetail];
+    
+    
     [urlManager setViewControllerName:@"MasterShareViewController" forURL:URL_MasterShareChild];
     [urlManager setViewControllerName:@"MasterShareListViewController" forURL:URL_MasterShareList];
     [urlManager setViewControllerName:@"MasterShareDetailViewController" forURL:URL_MasterShareDetail];
@@ -968,10 +976,10 @@ UserClient * _userClient;
 //    UIViewController *mainVct = [UIStoryboard viewController:@"Main" identifier:@"MainTabBarController"];
 //    self.window.rootViewController = mainVct;
 
-    
+//             [self initAppConfig];
     UIViewController * vct = [[KAHomeViewController alloc] init];
     BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:vct];
-    nav.leftMenu =[[UIStoryboard  storyboardWithName:@"Mine" bundle:nil]instantiateInitialViewController];
+//    nav.leftMenu =[[UIStoryboard  storyboardWithName:@"Mine" bundle:nil]instantiateInitialViewController];
    
    
     
@@ -1042,6 +1050,7 @@ UserClient * _userClient;
                 break;
         }
     }
+    
 }
 #pragma mark -- GeTuiSdkDelegate
 

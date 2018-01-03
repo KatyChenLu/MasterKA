@@ -7,8 +7,6 @@ pod "Realm"
 #pod ‘UMengUShare'
 
 pod ‘UMengUShare/Social/WeChat'
-pod ‘UMengUShare/Social/ReducedQQ'
-pod ‘UMengUShare/Social/ReducedSina'
 pod 'BaiduMapKit', '~> 3.2.1'
 pod 'GTSDK', '1.6.2.0-noidfa'
 pod 'AFNetworking', '~> 2.6.3’
@@ -26,5 +24,5 @@ pod 'SDWebImage/GIF'
 pod 'FLAnimatedImage', '~> 1.0’
 pod 'MJExtension'
 pod 'SDCycleScrollView','~> 1.73'
-pod 'NMRangeSlider' 
+
 end

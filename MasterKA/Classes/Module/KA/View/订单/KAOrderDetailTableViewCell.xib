@@ -24,17 +24,11 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KA已执行" translatesAutoresizingMaskIntoConstraints="NO" id="mXi-Oi-zKS">
-                        <rect key="frame" x="10" y="25" width="13" height="13"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="13" id="aaF-hN-O0J"/>
-                            <constraint firstAttribute="width" constant="13" id="tXv-xA-a8Z"/>
-                        </constraints>
-                    </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="32X-SD-pcN">
-                        <rect key="frame" x="16" y="38" width="1" height="59.5"/>
+                        <rect key="frame" x="16" y="30" width="1" height="67.5"/>
                         <color key="backgroundColor" red="1" green="0.89019607840000003" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="height" constant="67.5" id="GM7-Un-rj7"/>
                             <constraint firstAttribute="width" constant="1" id="e1Z-dF-Idv"/>
                         </constraints>
                     </view>
@@ -52,6 +46,13 @@
                         <color key="textColor" white="0.0" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KA已执行" translatesAutoresizingMaskIntoConstraints="NO" id="mXi-Oi-zKS">
+                        <rect key="frame" x="14" y="25" width="5" height="5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="5" id="aaF-hN-O0J"/>
+                            <constraint firstAttribute="width" constant="5" id="tXv-xA-a8Z"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="mXi-Oi-zKS" firstAttribute="centerX" secondItem="BwV-7q-ghd" secondAttribute="centerX" id="2TI-e7-yRk"/>
@@ -63,10 +64,9 @@
                     <constraint firstItem="mXi-Oi-zKS" firstAttribute="top" secondItem="BwV-7q-ghd" secondAttribute="bottom" id="Vr9-By-Jq3"/>
                     <constraint firstItem="DrN-UK-TqI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="34" id="aqF-v7-Cns"/>
                     <constraint firstItem="BwV-7q-ghd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="mcU-P3-GBn"/>
-                    <constraint firstAttribute="bottom" secondItem="PbX-H6-tcT" secondAttribute="bottom" constant="19" id="rZJ-3s-fgj"/>
+                    <constraint firstAttribute="bottom" secondItem="PbX-H6-tcT" secondAttribute="bottom" constant="19" id="rjU-Ti-o0a"/>
                     <constraint firstAttribute="trailing" secondItem="DrN-UK-TqI" secondAttribute="trailing" constant="20" id="u5d-hl-SS6"/>
                     <constraint firstItem="32X-SD-pcN" firstAttribute="top" secondItem="mXi-Oi-zKS" secondAttribute="bottom" id="vG3-Ld-HOT"/>
-                    <constraint firstItem="PbX-H6-tcT" firstAttribute="top" secondItem="DrN-UK-TqI" secondAttribute="bottom" constant="8" id="y9r-XE-hwU"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -76,7 +76,7 @@
                 <outlet property="timeLabel" destination="PbX-H6-tcT" id="PYm-TL-pkw"/>
                 <outlet property="topLine" destination="BwV-7q-ghd" id="Ysn-hq-6Iq"/>
             </connections>
-            <point key="canvasLocation" x="-342.5" y="66"/>
+            <point key="canvasLocation" x="-460" y="59"/>
         </tableViewCell>
     </objects>
     <resources>

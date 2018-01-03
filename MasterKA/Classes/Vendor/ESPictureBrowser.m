@@ -140,11 +140,11 @@
     CGRect rect = CGRectMake(x, y, 0, 0);
     if ([_delegate respondsToSelector:@selector(pictureView:viewForIndex:)]) {
         UIView *endView = [_delegate pictureView:self viewForIndex:_currentPage];
-        if (endView.superview != nil) {
+//        if (endView.superview != nil) {
             rect = [endView convertRect:endView.bounds toView:nil];
-        }else {
-            rect = endView.frame;
-        }
+//        }else {
+//            rect = endView.frame;
+//        }
     }
     
     // 取到当前显示的 pictureView

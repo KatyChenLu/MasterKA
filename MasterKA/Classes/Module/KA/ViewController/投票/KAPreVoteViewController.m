@@ -36,7 +36,7 @@
         [self.view addSubview:self.mTableView];
     [self.beginVoteBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.and.right.equalTo(self.view);
-        make.height.equalTo(@42);
+        make.height.equalTo(@45);
         make.bottom.equalTo(self.mas_bottomLayoutGuide);
     }];
 
@@ -47,7 +47,12 @@
     }];
     [self.viewModel bindTableView:self.mTableView];
     
+     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cancelShare) name:@"cancelShare" object:nil];
 
+}
+- (void)cancelShare {
+    [self.viewModel first];
+    [self.viewModel.selectVoteArr removeAllObjects];
 }
 - (void)bindViewModel {
     [super bindViewModel];
@@ -100,7 +105,6 @@
     if (!_viewModel) {
         _viewModel = [[KAProViewModel alloc] initWithViewController:self
                       ];
-         _viewModel.isHideSelect = NO;
     }
     return _viewModel;
 }

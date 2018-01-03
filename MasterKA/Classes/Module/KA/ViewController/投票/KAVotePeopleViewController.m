@@ -28,7 +28,10 @@
     self.page = @"1";
     self.page_size = @"10";
     [self.view addSubview:self.mTableView];
-    
+    [self.mTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.and.top.equalTo(self.view);
+        make.bottom.equalTo(self.mas_bottomLayoutGuide);
+    }];
     [self.viewModel bindTableView:self.mTableView];
     
     

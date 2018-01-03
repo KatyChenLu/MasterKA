@@ -19,7 +19,7 @@
 #import "MainTabBarController.h"
 
 
-@interface registerView(){
+@interface registerView()<UITextFieldDelegate>{
     UITextField*phoneField;
     UITextField*testField;
     UITextField*passwordField;
@@ -83,7 +83,7 @@
         [self addSubview:speakLabel];
         
         [speakLabel mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.bottom.equalTo(self).with.offset(-10);
+            make.bottom.equalTo(self.mas_bottomMargin).offset(-10);
             make.height.mas_equalTo(12);
             make.width.mas_equalTo(105);
             make.centerX.equalTo(self).with.offset(-10);
@@ -378,7 +378,7 @@
 }
 
 -(void)procolClicked{
-    //    self.hidden=YES;
+        self.hidden=YES;
     //    [vc pushViewControllerWithUrl:vc.userClient.agree_url];
     [self.delegate DoProtolFrame];
 }
@@ -533,7 +533,7 @@
     
 }
 -(void)sendClicked{
-    
+    sendBtn.enabled = NO;
     [[self.httpService sendPhoneCode:phonestr codeType:@"1" resultClass:nil] subscribeNext:^(BaseModel *model) {
         
         if (model.code==200) {
@@ -650,6 +650,12 @@
         //        [[self getHUDView] addSubview:hud];
     }
     return hud;
+}
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+    [phoneField resignFirstResponder];
+    [passwordField resignFirstResponder];
+    [testField resignFirstResponder];
 }
 
 /*

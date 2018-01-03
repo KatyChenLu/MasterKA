@@ -22,8 +22,10 @@
 
 - (UIView *)tapView {
     if (!_tapView) {
-        _tapView = [[UIView alloc]initWithFrame:self.bounds];
-        _tapView.backgroundColor = [UIColor clearColor];
+        CGRect tapRect =   CGRectMake(self.bounds.origin.x, self.bounds.origin.y, self.bounds.size.width+50, self.bounds.size.height);
+//        _tapView = [[UIView alloc]initWithFrame:self.bounds];
+        _tapView = [[UIView alloc]initWithFrame:tapRect];
+//        _tapView.backgroundColor = [UIColor redColor];
         [self addSubview:_tapView];
         _tapView.userInteractionEnabled = YES;
         UITapGestureRecognizer *myTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapTextField)];

@@ -33,6 +33,7 @@
 - (UIButton *)shareBtn {
     if (!_shareBtn) {
         _shareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _shareBtn.frame = CGRectMake(0, 0, 30, 30);
         [_shareBtn setImage:[UIImage imageNamed:@"分享"] forState:UIControlStateNormal];
         [_shareBtn addTarget:self action:@selector(shareButtonOnClick) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -41,6 +42,7 @@
 -  (UIButton *)shoucangBtn {
     if (!_shoucangBtn) {
         _shoucangBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+         _shoucangBtn.frame = CGRectMake(0, 0, 30, 30);
         [_shoucangBtn setImage:[UIImage imageNamed:@"收藏"] forState:UIControlStateNormal];
         [_shoucangBtn addTarget:self action:@selector(shoucangButtonOnClick) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -50,17 +52,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.viewModel.title = @"xiangqing";
+//    self.viewModel.title = @"xiangqing";
+    
+    NSString *courseId =self.params[@"ka_course_id"];
+    if (courseId==nil) {
+        courseId =self.params[@"ka_course_id"];
+    }
+    if (courseId) {
+        self.ka_course_id = courseId;
+    }
+    
     self.viewModel.ka_course_id = self.ka_course_id;
     
     UIBarButtonItem *voteBarBtnItem = [[UIBarButtonItem alloc] initWithCustomView:self.voteNavView];
     [self.voteBtn setImage:[UIImage imageNamed:@"投票箱白色"] forState:UIControlStateNormal];
 
-    UIBarButtonItem *foc0 = [[UIBarButtonItem alloc] initWithCustomView:[[UIView alloc] initWithFrame:CGRectMake(0, 0, 8, 30)]];
+    UIBarButtonItem *foc0 = [[UIBarButtonItem alloc] initWithCustomView:[[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 30)]];
     
     
     UIBarButtonItem *shareBarBtnItem = [[UIBarButtonItem alloc] initWithCustomView:self.shareBtn];
-    UIBarButtonItem *foc1 = [[UIBarButtonItem alloc] initWithCustomView:[[UIView alloc] initWithFrame:CGRectMake(0, 0, 8, 30)]];
+    UIBarButtonItem *foc1 = [[UIBarButtonItem alloc] initWithCustomView:[[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 30)]];
     
     UIBarButtonItem *shoucangBarBtnItem = [[UIBarButtonItem alloc] initWithCustomView:self.shoucangBtn];
 
@@ -78,24 +89,25 @@
     [headerView addSubview:_mineHeadView];
     [headerView addSubview:_tipView];
     self.tableView.tableHeaderView=headerView;
-    [self.mineHeadView setImageWithURLString:self.headViewUrl placeholderImage:nil];
+    [self.mineHeadView setImageWithURLString:[self.headViewUrl ClipImageUrl:[NSString stringWithFormat:@"%f",ScreenWidth*0.7*[UIScreen mainScreen].scale]] placeholderImage:nil];
     
     [self.view addSubview:self.FootView];
      self.navigationController.navigationBar.titleTextAttributes=@{NSForegroundColorAttributeName:[UIColor blackColor]};
+    
 }
-
 #pragma shengmingzhouqi
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    UIView *view = [self.navigationController.navigationBar viewWithTag:20];
-    [view removeFromSuperview];
+//    UIView *view = [self.navigationController.navigationBar viewWithTag:20];
+//    [view removeFromSuperview];
     self.navigationController.navigationBar.translucent = YES;
     [self.navigationController.navigationBar setBackgroundImageAlpha:self.lastAlphaNavigationBar];
     [self reloadCntLabel];
-    [self.viewModel first];
-
+//    [self.viewModel first];
+    
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -103,7 +115,7 @@
     
     [super viewWillDisappear:animated];
     self.navigationController.navigationBar.translucent = NO;
-    [self.navigationController.navigationBar setBackgroundImageAlpha:1.0f];
+//    [self.navigationController.navigationBar setBackgroundImageAlpha:1.0f];
     self.tabBarController.tabBar.hidden =YES;
 }
 #pragma jichengfnagfa
@@ -115,8 +127,12 @@
     [RACObserve(self.viewModel, info) subscribeNext:^(NSDictionary *info) {
         @strongify(self);
         
-        [self.mineHeadView setImageWithURLString:info[@"course_cover"] placeholderImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[self.headViewUrl masterFullImageUrl]]]]];
-//        self.mineHeadView.contentMode = UIViewContentModeScaleAspectFill;
+        if (self.params[@"ka_course_id"]) {
+            
+          [self.mineHeadView setImageWithURLString:[info[@"course_cover"] ClipImageUrl:[NSString stringWithFormat:@"%f",ScreenWidth*0.7*[UIScreen mainScreen].scale]] placeholderImage:nil];
+        }
+//        [self.mineHeadView setImageWithURLString:info[@"course_cover"] placeholderImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[self.headViewUrl masterFullImageUrl]]]]];
+
         [self createTags:info[@"tags_name"]];
         
         if([info[@"is_like"] isEqual:@"0"]||info == nil){
@@ -258,10 +274,10 @@
         }
         
         self.navigationItem.leftBarButtonItem.tintColor = [UIColor blackColor];
-        self.title=self.viewModel.info[@"course_title"];
+//        self.title=self.viewModel.info[@"course_title"];
 //        self.navigationController.navigationBar.titleTextAttributes=@{NSForegroundColorAttributeName:[UIColor blackColor]};
     }else{
-        self.title=@"";
+//        self.title=@"";
          [self.voteBtn setImage:[UIImage imageNamed:@"投票箱白色"] forState:UIControlStateNormal];
         [self.shareBtn setImage:[UIImage imageNamed:@"分享白色"] forState:UIControlStateNormal];
         if([self.viewModel.info[@"is_like"] isEqual:@"0"]){
@@ -272,13 +288,13 @@
 }
 
 - (void)dingzhi:(UIButton *)sender {
-    
+    if([self doLogin]){
     UIStoryboard *story = [UIStoryboard storyboardWithName:@"KA" bundle:[NSBundle mainBundle]];
     KACustomViewController *myView = [story instantiateViewControllerWithIdentifier:@"KACustomViewController"];
     myView.courseID = self.ka_course_id;
     myView.courseTitle = self.viewModel.info[@"course_title"];
     [self pushViewController:myView animated:YES];
-    
+    }
 }
 #pragma lanjiazai
 
@@ -319,7 +335,7 @@
     // Dispose of any resources that can be recreated.
 }
 - (void)shareButtonOnClick {
-    [self shareContentOfApp:nil];
+    [self shareContentOfApp:self.viewModel.info[@"share_data"]];
 }
 - (void)shoucangButtonOnClick {
     if ([self doLogin]) {

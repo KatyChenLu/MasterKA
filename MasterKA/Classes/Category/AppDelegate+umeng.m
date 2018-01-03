@@ -13,8 +13,8 @@
 //#import "UMSocial.h"
 #import "UMSocialWechatHandler.h"
 //#import "UMSocialSinaSSOHandler.h"
-#import "UMSocialSinaHandler.h"
-#import "UMSocialQQHandler.h"
+//#import "UMSocialSinaHandler.h"
+//#import "UMSocialQQHandler.h"
 
 @implementation AppDelegate (umeng)
 - (void)initUmnegSDK{

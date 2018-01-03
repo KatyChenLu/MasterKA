@@ -24,6 +24,8 @@
 
 #define LoginViewShowHideAniTime 0.4
 
+#define FilterOverFlow 10
+
 
 #define APP_DeviceToken_Key @"app_deviceToken_key"
 #define APP_GetuiToken_Key @"app_getuiToken_Key"
@@ -47,9 +49,9 @@
 
 //微信以
 //#define WeixinScheme @"wx00d2ac16fd629e08"
-#define WeixinScheme @"wxa094413f8976fb27"
+#define WeixinScheme @"wx8c8de273589fc77b"
 //#define Weixin_APPSECRET @"f7ac824dce38e6936ef4579beb0eb81e"
-#define Weixin_APPSECRET @"ef9ffdbd2921a456ec1e67953ca3c331"
+#define Weixin_APPSECRET @"a6293c955acd364de452ec089a0a9940"
 //QQ分享
 #define QQShareScheme @"QQ41C44DB0"
 #define QQLoginScheme @"tencent1103383984"
@@ -77,6 +79,13 @@
 #define MasterDefaultColor [UIColor colorWithHex:0xFFE326]
 
 #define MasterBackgroundColer [UIColor colorWithHex:0xEFEFF4]
+
+
+//KA
+#define URL_KAHomeDetail @"master://nmteambuilding_detail"
+#define URL_KAPlaceDetail @"master://nmteambuilding_field_detail"
+#define URL_KAMomentDetail @"master://nmteambuilding_moment_detail"
+
 //自定义Url
 #define URL_MasterLoginRoot @"master://nmpublic_login"
 #define URL_MasterShareChild @"master://masterShareChild"
@@ -124,6 +133,8 @@
 #define ScreenWidth [UIScreen mainScreen].bounds.size.width
 #define ScreenHeight [UIScreen mainScreen].bounds.size.height
 
+#define ScreenScale [UIScreen mainScreen].scale
+
 #define IS_IOS_11 @available(iOS 11.0, *)
 #define IsPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? [[UIScreen mainScreen] currentMode].size.height == 2436.0 : NO)
 #define MasterNavberHeight (([[[UIDevice currentDevice] localizedModel] isEqualToString:@"iPhone10,5"])?(88):(64))
@@ -142,16 +153,16 @@
 #define RatioBase6s(x) 1.0f*ScreenWidth*x/414
 
 
-////com.shishiTec.MasterKA
-//#define API_DOMAIN @"https://rest3.gomaster.cn/index.php"
-//#define WEB_DOMAIN @"https://www.gomaster.cn"
-//#define IMAGE_DOMAIN @"https://resx.gomaster.cn/attms"
+//com.shishiTec.MasterKA
+#define API_DOMAIN @"https://rest3.gomaster.cn/index.php"
+#define WEB_DOMAIN @"https://www.gomaster.cn"
+#define IMAGE_DOMAIN @"https://resx.gomaster.cn/attms"
 
 
-////com.shishiTec.lulDev
-#define API_DOMAIN @"https://kaifa.gomaster.cn/rest/index.php"
-#define WEB_DOMAIN @"https://kaifa.gomaster.cn"
-#define IMAGE_DOMAIN @"https://kaifa.gomaster.cn/attms"
+//////com.shishiTec.lulDev
+//#define API_DOMAIN @"https://kaifa.gomaster.cn/rest/index.php"
+//#define WEB_DOMAIN @"https://kaifa.gomaster.cn"
+//#define IMAGE_DOMAIN @"https://kaifa.gomaster.cn/attms"
 
 //百度key_lul_debug
 //#define BaiduMapKey         @"EA9P2ggohqd2Xe0DeGVD5gyY45fQ36S7"
@@ -160,7 +171,7 @@
 
 #define Rest_Version @"3.0"
 
-#define MasterAppId @"925646944"
+#define MasterAppId @"925643712"
 #define MasterUpdateAppType  [NSString stringWithFormat:@"updateAppKey_%@",App_Version]
 
 

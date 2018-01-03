@@ -26,6 +26,22 @@
     
     return [self doRacPost:@"c=ika&a=order_lists" parameters:params resultClass:resultClass];
 }
+-(RACSignal *)getKAOrderDetailWithOid:(NSString *)oid orderStatus:(NSString *)order_status resultClass:(Class)resultClass {
+    NSMutableDictionary *params = [NSMutableDictionary new];
+    
+    [params setObjectNotNull:oid forKey:@"oid"];
+    [params setObjectNotNull:order_status forKey:@"order_status"];
+    
+    return [self doRacPost:@"c=ika&a=order_detail" parameters:params resultClass:resultClass];
+}
+-(RACSignal *)getActivityInviteWithOid:(NSString *)oid orderStatus:(NSString *)order_status resultClass:(Class)resultClass {
+    NSMutableDictionary *params = [NSMutableDictionary new];
+    
+    [params setObjectNotNull:oid forKey:@"oid"];
+    [params setObjectNotNull:order_status forKey:@"order_status"];
+    
+    return [self doRacPost:@"c=ika&a=activity_invite" parameters:params resultClass:resultClass];
+}
 - (RACSignal*)queryKAUserCenterWith:(Class)resultClass {
     
     NSMutableDictionary *params = [NSMutableDictionary new];

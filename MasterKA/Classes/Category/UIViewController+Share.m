@@ -85,22 +85,57 @@
     }];
     
     NSLog(@"shareInfo  %@",shareInfo);
-//    [self shareContentOfApp:shareInfo[@"title"] content:shareInfo[@"desc"] imageUrl:shareInfo[@"imgUrl"] linkUrl:shareInfo[@"link"] shareToPlatform:UMSocialPlatformType_WechatSession];
 }
+- (void)shareContentOfApp:(NSDictionary *)shareInfo cancelVoteArr:(NSArray *)cancelArr {
+    self.shareView = [[ThirdShareView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
+    
+    
+    
+    [[UIApplication sharedApplication].keyWindow addSubview:self.shareView];
+    
+    [self.shareView.shareBtns enumerateObjectsUsingBlock:^( ShopTopImageBtn * btn, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        btn.data = shareInfo;
+        btn.model = cancelArr;
+        
+        [btn addTarget: self action:@selector(shareClick:) forControlEvents:UIControlEventTouchUpInside];
+        
+    }];
+    
+    NSLog(@"shareInfo  %@",shareInfo);
+}
+
 //朋友圈
--(void)shareWbFCWithModel:(NSDictionary*)shareInfo {
+-(void)shareWbFCWithModel:(NSDictionary*)shareInfo{
     
     
     [[ShareTool defaultShare] thirdShareWithPlatformType:UMSocialPlatformType_WechatTimeLine title:shareInfo[@"title"] descr:shareInfo[@"desc"] imageUrl:shareInfo[@"imgUrl"] linkUrl:shareInfo[@"link"]  succcess:^(id data) {
-//      [self hud]
+        
+//        if (arr.count) {
+//            for (NSString *kaid in arr) {
+//                [[NSNotificationCenter defaultCenter] postNotificationName:@"cancelVote" object:@{@"ka_course_id":kaid}];
+//                 [[NSNotificationCenter defaultCenter] postNotificationName:@"cancelShare" object:nil];
+        
+//            }
+//        }
+        
+        
     } fail:^(NSError *error) {
         
     }];
 }
--(void)shareWeChatWithModel:(NSDictionary*)shareInfo {
+-(void)shareWeChatWithModel:(NSDictionary*)shareInfo{
     
     
     [[ShareTool defaultShare] thirdShareWithPlatformType:UMSocialPlatformType_WechatSession title:shareInfo[@"title"] descr:shareInfo[@"desc"] imageUrl:shareInfo[@"imgUrl"] linkUrl:shareInfo[@"link"]  succcess:^(id data) {
+        
+//        if (arr.count) {
+//            for (NSString *kaid in arr) {
+//                [[NSNotificationCenter defaultCenter] postNotificationName:@"cancelVote" object:@{@"ka_course_id":kaid}];
+//                 [[NSNotificationCenter defaultCenter] postNotificationName:@"cancelShare" object:nil];
+//            }
+//        }
+        
         
     } fail:^(NSError *error) {
         
@@ -134,29 +169,18 @@
     switch (sender.tag) {
         case 0://微信
             
-            [self shareWeChatWithModel:sender.data];
+            [self shareWeChatWithModel:sender.data ];
             
             
             break;
             
         case 1://朋友圈
             
-            [self shareWbFCWithModel:sender.data];
+            [self shareWbFCWithModel:sender.data ];
             
             break;
             
-        case 2://微博
-            
-            [self shareSinaWithModel:sender.data];
-            
-            break;
-            
-        case 3://QQ
-            
-            [self shareQQWithModel:sender.data];
-            
-            
-            break;
+
             
         default:
             break;
@@ -168,7 +192,7 @@
     
     [self.shareView removeFromSuperview];
     
-    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"cancelShare" object:nil];
     NSLog(@"share");
     
 }

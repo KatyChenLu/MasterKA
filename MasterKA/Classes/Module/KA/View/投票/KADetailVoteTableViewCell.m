@@ -20,10 +20,13 @@
     [UILabel changeSpaceForLabel:self.KAtitleLabel withLineSpace:2 WordSpace:0.2];
     
     self.KAtitleLabel.text = dic[@"course_title"];
+      self.KAtitleLabel.font = [UIFont fontWithName:@"PingFangSC-Medium" size:18];
     self.KAPrice.text = dic[@"course_price"];
-    [self.KAimgV setImageWithURLString:dic[@"course_cover"] placeholderImage:nil];
+      self.KAPrice.font = [UIFont fontWithName:@"PingFangSC-Medium" size:18];
+//    [self.KAimgV setImageWithURLString:dic[@"course_cover"] placeholderImage:nil];
+    [self.KAimgV setImageFadeInWithURLString:[dic[@"course_cover"] ClipImageUrl:[NSString stringWithFormat:@"%f",96*0.75*ScreenScale]] placeholderImage:nil];
     self.KAtime.text = dic[@"course_time"];
-    self.KApeopleNum.text = dic[@"people_num"];
+    self.KApeopleNum.text = [NSString stringWithFormat:@"%@人起",dic[@"people_num"]];
     self.ka_course_id = dic[@"ka_course_id"];
   
     self.item_id = dic[@"item_id"];
@@ -86,7 +89,7 @@
     [self.superViewController.navigationController pushViewController:myView animated:YES];
 }
 - (void)shoeVotePeople {
-    self.showVotePeople(self.item_id);
+    self.showVotePeople(self.item_id,self.KAtitleLabel.text);
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

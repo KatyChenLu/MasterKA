@@ -10,4 +10,9 @@
 
 @interface KACollectViewModel : TableViewModel
 @property (nonatomic, strong)NSMutableArray *info;
+
+@property (nonatomic, strong)NSMutableArray *addVoteKAID;
+@property (nonatomic, strong)NSMutableArray *cancelVoteKAID;
+@property (nonatomic, strong)NSTimer *myTimer;
+@property (nonatomic, assign)BOOL isShowCusBtn;
 @end

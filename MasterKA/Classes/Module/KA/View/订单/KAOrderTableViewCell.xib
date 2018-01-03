@@ -29,7 +29,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_fancy" translatesAutoresizingMaskIntoConstraints="NO" id="qCZ-K2-OYp">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_fancy" translatesAutoresizingMaskIntoConstraints="NO" id="qCZ-K2-OYp">
                         <rect key="frame" x="12" y="10" width="96" height="96"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="96" id="yGo-Ov-DUZ"/>
@@ -56,11 +56,11 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPq-hx-RKQ">
                         <rect key="frame" x="118" y="84" width="30" height="21.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                        <color key="textColor" red="0.96078431369999995" green="0.30980392159999998" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.99607843137254903" green="0.21176470588235294" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="起" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6K-cz-4Jy">
-                        <rect key="frame" x="150" y="91" width="12.5" height="14.5"/>
+                        <rect key="frame" x="150" y="89" width="12.5" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -99,6 +99,9 @@
                             <constraint firstAttribute="width" constant="25" id="Vnd-KP-go5"/>
                         </constraints>
                         <state key="normal" image="通知"/>
+                        <connections>
+                            <action selector="tongzhiAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Ph4-5W-Ich"/>
+                        </connections>
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JDm-h5-NIm">
                         <rect key="frame" x="12" y="120" width="226" height="38"/>
@@ -127,7 +130,7 @@
                     <constraint firstItem="TOb-gi-MWT" firstAttribute="top" secondItem="qCZ-K2-OYp" secondAttribute="top" id="9Qd-E1-mHR"/>
                     <constraint firstAttribute="trailing" secondItem="Ywv-95-RHu" secondAttribute="trailing" constant="16" id="Dvs-aR-X2j"/>
                     <constraint firstItem="mcE-Jx-GZb" firstAttribute="leading" secondItem="fns-CH-akR" secondAttribute="leading" id="IOf-bW-DET"/>
-                    <constraint firstItem="wPq-hx-RKQ" firstAttribute="bottom" secondItem="z6K-cz-4Jy" secondAttribute="bottom" id="Kab-lf-Xc7"/>
+                    <constraint firstItem="wPq-hx-RKQ" firstAttribute="bottom" secondItem="z6K-cz-4Jy" secondAttribute="bottom" constant="2" id="Kab-lf-Xc7"/>
                     <constraint firstAttribute="bottom" secondItem="IVj-MC-ABj" secondAttribute="bottom" constant="38" id="LH2-LQ-MwG"/>
                     <constraint firstAttribute="bottom" secondItem="Ywv-95-RHu" secondAttribute="bottom" constant="24" id="Lfc-ZE-bJZ"/>
                     <constraint firstItem="qCZ-K2-OYp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Msb-Zc-cn4"/>

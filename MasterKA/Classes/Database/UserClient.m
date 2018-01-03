@@ -412,20 +412,28 @@ _userId = @"0";
         self.course_time = conf.course_time;
         self.requirement = conf.requirement;
         self.sence = conf.sence;
+        self.server_number = conf.server_number;
         
-        
-//        self.order_refund_msg = conf.order_refund_msg;
-//        self.enterprise_course_url = conf.enterprise_course_url;
-//        self.master_enter_url = conf.master_enter_url;
-//        self.financial_data_url = conf.financial_data_url;
-//
-//        self.about_card_url = conf.about_card_url;
-//
-//        self.activity_url = conf.activity_url;
         
     }
 }
-
+- (void)setAppConfigUrlFormDic:(NSDictionary*)conf{
+    if(conf){
+        self.about_us_url = conf[@"about_us_url"];
+        self.agree_url = conf[@"agree_url"];
+        
+        self.course_price_min = conf[@"course_price_min"];
+        self.course_price_max = conf[@"course_price_max"];
+        self.people_num_min = conf[@"people_num_min"];
+        self.people_num_max = conf[@"people_num_max"];
+        self.course_time = conf[@"course_time"];
+        self.requirement = conf[@"requirement"];
+        self.sence = conf[@"sence"];
+        self.server_number = conf[@"server_number"];
+        
+        
+    }
+}
 
 
 @end

@@ -41,6 +41,8 @@
     if (!_viewModel) {
         _viewModel = [[KAOrderDetailViewModel alloc] initWithViewController:self
                       ];
+        _viewModel.oid = self.oid;
+        _viewModel.orderStatus =self.orderStatus;
         
     }
     return _viewModel;

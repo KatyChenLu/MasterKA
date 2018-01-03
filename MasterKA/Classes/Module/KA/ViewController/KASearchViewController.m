@@ -8,6 +8,7 @@
 
 #import "KASearchViewController.h"
 #import "KASearchTableView.h"
+#import "HomeTextField.h"
 
 @interface KASearchViewController ()<UITextFieldDelegate>
 //@property(nonatomic ,copy)NSString * search_world;
@@ -34,19 +35,15 @@
     self.page_size = @"10";
     self.searchTitleView.delegate = self;
     
-    [self.searchTitleView becomeFirstResponder];
+//    [self.searchTitleView becomeFirstResponder];
     
     self.navigationItem.titleView = self.searchTitleView;
-    
-//    UIBarButtonItem *cancleItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(gotoBack)];
-    
-//    [self.navigationItem addRightBarButtonItem:cancleItem animated:YES];
     
     [self.view addSubview:self.mTableView];
     
     self.mTableView.baseVC = self;
     
-//    [self requestKAHomeData:self.page pageId:self.page_size];
+    
     UIBarButtonItem *fetchItem = [[UIBarButtonItem alloc] initWithCustomView:self.voteNavView];
     
    [self.navigationItem addRightBarButtonItem:fetchItem animated:YES];
@@ -87,9 +84,6 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    
-//    [self.navigationItem setLeftBarButtonItems:nil];
-//    [self.navigationItem setHidesBackButton:YES animated:YES];
     [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
     
     [self reloadCntLabel];
@@ -97,7 +91,7 @@
 - (void)viewDidAppear:(BOOL)animated{
     
     [super viewDidAppear:animated];
-    
+    [self.searchTitleView becomeFirstResponder];
     
 }
 
@@ -123,17 +117,26 @@
         self.keywords = x;
           [self first];
     }];
-//    [[self.searchTitleView rac_signalForControlEvents:UIControlEventEditingChanged] subscribeNext:^(NSString *x){
+ 
+//    [[self.searchTitleView rac_signalForControlEvents:UIControlEventEditingChanged] subscribeNext:^(HomeTextField *x){
 //                @strongify(self);
-//                if (x==nil || x.length==0) {
+//                if (x.text==nil || x.text.length==0) {
 //                    [self showDefaultNoKeyWorkView:YES];
 //                }else{
 //                    [self showDefaultNoKeyWorkView:NO];
 //                }
 //
-//                self.keywords = x;
+//                self.keywords = x.text;
 //                  [self first];
 //    }];
+    [RACObserve(self.mTableView, kaHomeData) subscribeNext:^(NSMutableArray *kaData) {
+        @strongify(self);
+        if (!kaData.count) {
+            [self showDefaultNoKeyWorkView:YES];
+        }else{
+            [self showDefaultNoKeyWorkView:NO];
+        }
+    }];
 }
 
 #pragma mark - fangfa -
@@ -169,7 +172,7 @@
     
     [textField resignFirstResponder];
     
-    [self showDefaultNoKeyWorkView:NO];
+//    [self showDefaultNoKeyWorkView:NO];
     
     self.keywords =  textField.text ;
     
@@ -198,11 +201,19 @@
             make.edges.equalTo(self.view);
         }];
         UIImageView *imageView = [[UIImageView alloc] init];
-        imageView.image = [UIImage imageNamed:@"search_defaut"];
+        imageView.image = [UIImage imageNamed:@"placeholder_fancy"];
         [_defaultNoKeyWorkView addSubview:imageView];
         [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(_defaultNoKeyWorkView);
-            make.top.equalTo(_defaultNoKeyWorkView).with.offset(75);
+            make.centerY.equalTo(_defaultNoKeyWorkView).offset(-20);
+        }];
+        UILabel * defaulabel = [[UILabel alloc] init];
+        defaulabel.text = @"什么也没找到~换个关键词试试~";
+        defaulabel.textColor = RGBFromHexadecimal(0x7f7f7f);
+        [_defaultNoKeyWorkView addSubview:defaulabel];
+        [defaulabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(_defaultNoKeyWorkView);
+            make.centerY.equalTo(imageView.mas_bottom).offset(20);
         }];
         _defaultNoKeyWorkView.hidden = YES;
     }

@@ -25,11 +25,11 @@
 #import "UITextField+Master.h"
 #import "ForgetPwdView.h"
 
-#import <UMSocialQQHandler.h>
+
 #import <WXApi.h>
 //#import <WeiboSDK.h>
-#import <UMSocialSinaHandler.h>
-
+//#import <UMSocialSinaHandler.h>
+#import <UMSocialCore/UMSocialCore.h>
 @interface LoginView()<registerDelegate,UITextFieldDelegate,ForgetPwdViewDelegate>
 {
     AppDelegate* appdelegate;
@@ -389,7 +389,7 @@
         platformName= UMSocialPlatformType_Sina;
         
     }
-     [UMSocialGlobal shareInstance].isClearCacheWhenGetUserInfo = YES;
+    
     
     [[UMSocialManager defaultManager] getUserInfoWithPlatform:platformName currentViewController:nil completion:^(id result, NSError *error) {
           //           获取微博用户名、uid、token、第三方的原始用户信息thirdPlatformUserProfile等
@@ -414,7 +414,7 @@
                     
                     [[UserClient sharedUserClient] setUserInfo:model.data];
                     [vc hiddenHUDWithString:@"登录成功" error:NO];
-                    
+                     [UMSocialGlobal shareInstance].isClearCacheWhenGetUserInfo = NO;
                     [self.loginSuccessCommand execute:nil];
                     [[NSNotificationCenter defaultCenter] postNotificationName:@"RefurbishMyInfo" object:nil];
                
@@ -765,7 +765,11 @@
     }];
     
 }
-
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+    [_phoneTextField resignFirstResponder];
+    [_pwdTextField resignFirstResponder];
+}
 /*
  // Only override drawRect: if you perform custom drawing.
  // An empty implementation adversely affects performance during animation.

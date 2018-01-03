@@ -9,5 +9,6 @@
 #import "BaseViewController.h"
 
 @interface KAOrderDetailViewController : BaseViewController
-
+@property (nonatomic, strong)NSString *oid;
+@property (nonatomic, strong)NSString *orderStatus;
 @end

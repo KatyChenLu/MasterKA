@@ -60,10 +60,10 @@
       [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cancelShare) name:@"cancelShare" object:nil];
 }
 - (void)cancelShare {
-      [self reload];
+    
     [self setSelectViewPageIndex:1];
     self.segmentedControl.selectedSegmentIndex = 1;
-     [self reload];
+
     
 }
 - (void)didReceiveMemoryWarning {

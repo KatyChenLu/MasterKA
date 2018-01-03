@@ -34,7 +34,7 @@
                     range:NSMakeRange(7, endStr.length - 7)];
     self.timeLabel.attributedText = attrStr;
     
-    self.endTime.text = [NSString timestampSwitchTime:[dic[@"end_time"] doubleValue] andFormatter:@"YYYY-MM-dd"];
+    self.endTime.text = [NSString stringWithFormat:@"发起时间: %@",[NSString timestampSwitchTime:[dic[@"end_time"] doubleValue] andFormatter:@"YYYY-MM-dd"]];
     self.peopleNum.text = [NSString stringWithFormat:@"%@人",dic[@"vote_count"]];
     if ([dic[@"is_end"] isEqualToString:@"1"]) {
         self.contentView.alpha = 0.3;

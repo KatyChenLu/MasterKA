@@ -99,7 +99,7 @@
         _titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(65, 0, ScreenWidth - 130, kTopViewHeight)];
         _titleLabel.backgroundColor = [UIColor clearColor];
         _titleLabel.font = [UIFont systemFontOfSize:14.0f];
-        _titleLabel.textColor = MasterDefaultColor;
+        _titleLabel.textColor = [UIColor blackColor];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
     }
     return _titleLabel;

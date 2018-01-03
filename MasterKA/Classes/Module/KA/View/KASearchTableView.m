@@ -74,7 +74,7 @@
     KAHomeTableViewCell *kaHomeCell =[tableView dequeueReusableCellWithIdentifier:@"KAHomeTableViewCell" forIndexPath:indexPath];
     kaHomeCell.kaHomeModel = self.kaHomeData[indexPath.row];
     
-    
+    kaHomeCell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     @weakify(self);
     

@@ -14,7 +14,7 @@
 #import "IQKeyboardManager.h"
 #import "LoginView.h"
 
-@interface BaseViewController : UIViewController<SlideNavigationControllerDelegate>
+@interface BaseViewController : UIViewController
 
 @property (nonatomic,strong)LoginView* myLoadView;
 @property (nonatomic,strong)UIView* loginBackView;

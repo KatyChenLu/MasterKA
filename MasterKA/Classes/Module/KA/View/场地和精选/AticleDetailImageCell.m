@@ -51,7 +51,7 @@
     
     CGFloat widthNum = [width floatValue];
     
-    CGFloat num = [height floatValue]*[UIScreen mainScreen].bounds.size.width*[UIScreen mainScreen].scale/widthNum;
+    CGFloat num = [height floatValue]*(ScreenWidth - 16*2)*[UIScreen mainScreen].scale/widthNum;
     
     num = num / [UIScreen mainScreen].scale;
     
@@ -67,7 +67,7 @@
  
     }];
     
-    NSString *trueWidth = [NSString stringWithFormat:@"%f",ScreenWidth-32];
+    NSString *trueWidth = [NSString stringWithFormat:@"%f",(ScreenWidth-32)*[UIScreen mainScreen].scale];
     [self.detailImage setImageFadeInWithURLString:[dic[@"content"] ClipImageUrl:trueWidth] placeholderImage:nil];
     
 }

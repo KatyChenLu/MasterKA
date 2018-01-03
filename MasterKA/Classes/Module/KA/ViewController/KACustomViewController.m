@@ -13,6 +13,7 @@
 #import "MStringPickerView.h"
 #import "NSDate+BRAdd.h"
 #import "KAOrdersViewController.h"
+#import "UITextField+EnlargeTouchArea.h"
 
 @interface KACustomViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,UITextViewDelegate>
 /**团建时间*/
@@ -47,10 +48,15 @@
     [self.addVoteBtn setBackgroundImage:[UIImage imageWithColor:MasterDefaultColor] forState:UIControlStateNormal];
     [self.addVoteBtn setBackgroundImage:[UIImage imageWithColor:RGBFromHexadecimal(0xcdcdcd)] forState:UIControlStateDisabled];
     self.addVoteBtn.enabled = NO;
+    self.mTableView.canCancelContentTouches = NO;
+    self.mTableView.separatorInset = UIEdgeInsetsMake(0, 12, 0, 12);
+    self.mTableView.separatorColor = RGBFromHexadecimal(0xeaeaea);
 
 }
 - (IBAction)pushVoteAction:(id)sender {
+    self.addVoteBtn.enabled = NO;
     BaseTableViewCell *cell = [_mTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:7 inSection:0] ];
+
     UITextView *textview = [cell viewWithTag:100];
     self.customText = textview.text;
   
@@ -67,6 +73,8 @@
                 kaPlaceVC.isFromCustom = YES;
                 [self pushViewController:kaPlaceVC animated:YES];
             });
+        }else{
+            [self toastWithString:model.message error:NO];
         }
         
     }completed:^{
@@ -77,6 +85,8 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     BaseTableViewCell *cell = (BaseTableViewCell*)[tableView dequeueReusableCellWithIdentifier: [NSString stringWithFormat:@"MyMsgCell%ld",indexPath.row]];
+    cell.showTopLineView = NO;
+    cell.showCustomLineView =NO;
     switch (indexPath.row) {
         case 0:{
             if (self.courseID.length) {
@@ -132,6 +142,7 @@
             break;
         case 7:{
             UITextView *textview = [cell viewWithTag:100];
+            textview.delegate = self;
             self.customText = textview.text;
         }
             break;
@@ -141,7 +152,6 @@
     }
     
     
-    cell.showCustomLineView = YES;
     return cell;
 }
 
@@ -172,6 +182,7 @@
     textField.textAlignment = NSTextAlignmentRight;
     textField.textColor = RGBFromHexadecimal(0x666666);
     textField.delegate = self;
+//    [textField setEnlargeEdgeWithTop:10 right:50 bottom:10 left:10];
     [cell.contentView addSubview:textField];
     return textField;
 }
@@ -193,7 +204,7 @@
         @weakify(self);
         _dataTF.tapActionBlock = ^{
             @strongify(self);
-            [MDatePickerView showDatePickerWithTitle:@"" dateType:UIDatePickerModeDate defaultSelValue:self.dataTF.text minDateStr:[NSDate currentDateString] maxDateStr:@"2050-01-01 00:00:00" isAutoSelect:YES resultBlock:^(NSString *selectValue) {
+            [MDatePickerView showDatePickerWithTitle:@"" dateType:UIDatePickerModeDate defaultSelValue:self.dataTF.text minDateStr:[NSDate currentDateString] maxDateStr:@"2020-01-01 00:00:00" isAutoSelect:YES resultBlock:^(NSString *selectValue) {
                 self.dataTF.text = selectValue;
                 [self reloadVoteBtnStatus];
             }];
@@ -279,6 +290,21 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if (textField.tag == 0 || textField.tag == 4) {
         [textField resignFirstResponder];
+    }
+    return YES;
+}
+//-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+//    [self.teleTF resignFirstResponder];
+//    NSIndexPath *indexPath = [NSIndexPath indexPathWithIndex:7];
+//    BaseTableViewCell *cell = [self.mTableView cellForRowAtIndexPath:indexPath];
+//    UITextView *textview = [cell viewWithTag:100];
+//    [textview resignFirstResponder];
+//}
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString*)text
+{
+    if ([text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        return NO;
     }
     return YES;
 }

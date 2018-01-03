@@ -37,9 +37,32 @@ NSString *const SERVICE = @"com.shishiTec.MasterKA";
 - (NSString*)ClipImageUrl:(NSString *)wide {
     NSString *url = self;
     NSString *clipStr = self;
-    if ([url containsString:@"."]) {
-       clipStr = [NSString stringWithFormat:@"%@_%@.%@",[[url componentsSeparatedByString:@"."] firstObject],wide,[[url componentsSeparatedByString:@"."] lastObject]];
+    if ([url containsString:@".png"]) {
+       clipStr = [NSString stringWithFormat:@"%@_%@.png",[[url componentsSeparatedByString:@".png"] firstObject],wide];
+    }else if ([url containsString:@".jpg"]) {
+        clipStr = [NSString stringWithFormat:@"%@_%@.jpg",[[url componentsSeparatedByString:@".jpg"] firstObject],wide];
+    }else if ([url containsString:@".JPG"]) {
+        clipStr = [NSString stringWithFormat:@"%@_%@.JPG",[[url componentsSeparatedByString:@".JPG"] firstObject],wide];
+    }else if ([url containsString:@".PNG"]) {
+        clipStr = [NSString stringWithFormat:@"%@_%@.PNG",[[url componentsSeparatedByString:@".PNG"] firstObject],wide];
     }
+//    else if ([url containsString:@".gif"]) {
+//        clipStr = [NSString stringWithFormat:@"%@_%@.png",[[url componentsSeparatedByString:@".gif"] firstObject],wide];
+//    }else if ([url containsString:@".GIF"]) {
+//        clipStr = [NSString stringWithFormat:@"%@_%@.png",[[url componentsSeparatedByString:@".GIF"] firstObject],wide];
+//    }
+    else if ([url containsString:@".bmp"]) {
+        clipStr = [NSString stringWithFormat:@"%@_%@.bmp",[[url componentsSeparatedByString:@".bmp"] firstObject],wide];
+    }else if ([url containsString:@".BMP"]) {
+        clipStr = [NSString stringWithFormat:@"%@_%@.BMP",[[url componentsSeparatedByString:@".BMP"] firstObject],wide];
+    }else if ([url containsString:@".jpeg"]) {
+        clipStr = [NSString stringWithFormat:@"%@_%@.jpeg",[[url componentsSeparatedByString:@".jpeg"] firstObject],wide];
+    }else if ([url containsString:@".JPEG"]) {
+        clipStr = [NSString stringWithFormat:@"%@_%@.JPEG",[[url componentsSeparatedByString:@".JPEG"] firstObject],wide];
+    }else{
+        clipStr = self;
+    }
+    
     return clipStr;
 }
 #pragma mark -- base64  加密解密

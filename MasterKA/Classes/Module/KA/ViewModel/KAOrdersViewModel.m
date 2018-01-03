@@ -75,8 +75,10 @@
 
 #pragma mark --
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-//    KAOrderDetailViewController *vc = [[KAOrderDetailViewController alloc] init];
-//    [self.viewController pushViewController:vc animated:YES];
+    NSDictionary *votePeopleData =  self.dataSource[indexPath.section][indexPath.row];
+    KAOrderDetailViewController *vc = [[KAOrderDetailViewController alloc] init];
+    vc.oid = votePeopleData[@"oid"];
+    vc.orderStatus = votePeopleData[@"order_status"];
+    [self.viewController pushViewController:vc animated:YES];
 }
 @end

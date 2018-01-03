@@ -19,27 +19,54 @@
 @implementation YHSlider
 - (instancetype)initWithFrame:(CGRect)frame
 {
-    if (self = [super initWithFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, 30)])
+    if (self = [super initWithFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, 62)])
     {
         self.backgroundColor = [UIColor clearColor];
         [self first];
         [self second];
         
         
-        self.valueLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 12)];
-        self.valueLabel.text = [NSString stringWithFormat:@"%.f~%.f",self.firstValue,self.secondValue];
+        self.valueLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, -10, ScreenWidth-38*2, 15)];
+        self.valueLabel.font = [UIFont fontWithName:@"PingFangSC-Regular" size:13];
+        
+        self.valueLabel.text = [NSString stringWithFormat:@"%.f ~ %.f",self.firstValue,self.secondValue];
+        if (self.unit) {
+            self.valueLabel.text = [NSString stringWithFormat:@"%@%.f ~ %@%.f",_unit,_firstValue,_unit,_secondValue];
+        }
+        
         if (self.sliderArr) {
             NSInteger  firstInt =  self.firstValue/10;
             NSInteger secondInt = self.secondValue/10;
             self.valueLabel.text = [NSString stringWithFormat:@"%@~%@",self.sliderArr[firstInt],self.sliderArr[secondInt]];
+            if (self.unit) {
+                self.valueLabel.text = [NSString stringWithFormat:@"%@%@ ~ %@%@",_unit,self.sliderArr[firstInt],_unit,self.sliderArr[secondInt]];
+            }
         }
-        self.valueLabel.backgroundColor =[UIColor redColor];
+        self.valueLabel.backgroundColor =[UIColor whiteColor];
         self.valueLabel.textAlignment = NSTextAlignmentCenter;
         
         [self addSubview:self.valueLabel];
     }
     return self;
 }
+// 在自定义UITabBar中重写以下方法，其中self.button就是那个希望被触发点击事件的按钮
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    UIView *view = [super hitTest:point withEvent:event];
+    if (view == nil) {
+        // 转换坐标系
+        CGPoint newPoint = [self.first convertPoint:point fromView:self];
+        
+        CGPoint newPoint1 = [self.second convertPoint:point fromView:self];
+        
+        if (CGRectContainsPoint(self.first.bounds, newPoint)) {
+            view = self.first;
+        }else if (CGRectContainsPoint(self.second.bounds, newPoint1)){
+            view = self.second;
+        }
+    }
+    return view;
+}
+
 - (void)drawRect:(CGRect)rect
 {
     
@@ -86,12 +113,39 @@
     self.firstValue = (_first.center.x/self.frame.size.width) * (self.maxmumValue - self.minmumValue) + self.minmumValue;
     self.secondValue = (_second.center.x/ self.frame.size.width) *(self.maxmumValue - self.minmumValue) + self.minmumValue;
     NSLog(@"%f...........%f",self.firstValue,self.secondValue);
-    self.valueLabel.text = [NSString stringWithFormat:@"%.f~%.f",self.firstValue,self.secondValue];
-    if (_sliderArr) {
-        NSInteger  firstInt =  self.firstValue/10;
-        NSInteger secondInt = self.secondValue/10;
-        self.valueLabel.text = [NSString stringWithFormat:@"%@~%@",_sliderArr[firstInt],_sliderArr[secondInt]];
+    if ( _secondValue > _maxmumValue-FilterOverFlow +1 ) {
+        self.valueLabel.text = [NSString stringWithFormat:@"%.f ~ %@",self.firstValue,@"不限"];
+        if (self.unit) {
+            self.valueLabel.text = [NSString stringWithFormat:@"%@%.f ~ %@",_unit,_firstValue,@"不限"];
+        }
+        if (_sliderArr) {
+            NSInteger  firstInt =  self.firstValue/10;
+            NSInteger secondInt = self.secondValue/10;
+            self.valueLabel.text = [NSString stringWithFormat:@"%@~%@",_sliderArr[firstInt],_sliderArr[secondInt]];
+            if (_unit) {
+                self.valueLabel.text = [NSString stringWithFormat:@"%@%@ ~ %@%@",_unit,_sliderArr[firstInt],_unit,_sliderArr[secondInt]];
+                
+            }
+        }
+    }else{
+        self.valueLabel.text = [NSString stringWithFormat:@"%.f ~ %.f",self.firstValue,self.secondValue];
+        if (self.unit) {
+            self.valueLabel.text = [NSString stringWithFormat:@"%@%.f ~ %@%.f",_unit,_firstValue,_unit,_secondValue];
+        }
+        if (_sliderArr) {
+            NSInteger  firstInt =  self.firstValue/10;
+            NSInteger secondInt = self.secondValue/10;
+            self.valueLabel.text = [NSString stringWithFormat:@"%@~%@",_sliderArr[firstInt],_sliderArr[secondInt]];
+            if (_unit) {
+                self.valueLabel.text = [NSString stringWithFormat:@"%@%@ ~ %@%@",_unit,_sliderArr[firstInt],_unit,_sliderArr[secondInt]];
+                
+            }
+        }
     }
+    
+    
+    
+    
     [self setNeedsDisplay];
 }
 #pragma mark - getter
@@ -124,10 +178,9 @@
     {
         _first = [[UIImageView alloc] init];
         _first.userInteractionEnabled = YES;
-        _first.bounds = CGRectMake(0, 10, 25, 25);
+        _first.bounds = CGRectMake(0, 10, 50, 50);
         _first.center = CGPointMake(0, 15);
-//        _first.layer.cornerRadius = 25.f/2.f;
-        _first.backgroundColor = [UIColor whiteColor];
+        _first.contentMode = UIViewContentModeCenter;
         [self addSubview:_first];
         [_first addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panHappen:)]];
         [self setFirstSliderImg:nil];
@@ -140,9 +193,8 @@
     {
         _second = [[UIImageView alloc] init];
         _second.userInteractionEnabled = YES;
-        _second.frame = CGRectMake(0, 10, 25, 25);
-//        _second.layer.cornerRadius = 25.f/2.f;
-//        _second.backgroundColor = [UIColor whiteColor];
+        _second.frame = CGRectMake(0, 10, 50, 50);
+        _second.contentMode = UIViewContentModeCenter;
         _second.center = CGPointMake(self.frame.size.width, 15);
         [_second addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panHappen:)]];
         [self addSubview:_second];
@@ -160,14 +212,15 @@
     }
     if (_firstSliderImg == nil)
     {
-//        self.first.layer.shadowColor =  [UIColor colorWithWhite:0.3 alpha:1].CGColor;
-//        self.first.layer.shadowRadius = 3;
-//        self.first.layer.shadowOffset = CGSizeMake(0, 2);
-//        self.first.layer.shadowOpacity = 0.6;
+        //        self.first.layer.shadowColor =  [UIColor colorWithWhite:0.3 alpha:1].CGColor;
+        //        self.first.layer.shadowRadius = 3;
+        //        self.first.layer.shadowOffset = CGSizeMake(0, 2);
+        //        self.first.layer.shadowOpacity = 0.6;
     }
     else
     {
         self.first.image = firstSliderImg;
+        //        self.first.
     }
 }
 - (void)setSecondSliderImg:(UIImage *)secondSliderImg
@@ -178,10 +231,10 @@
     }
     if (_secondSliderImg == nil)
     {
-//        self.second.layer.shadowColor = [UIColor colorWithWhite:0.3 alpha:1].CGColor;
-//        self.second.layer.shadowRadius = 3;
-//        self.second.layer.shadowOffset = CGSizeMake(0, 2);
-//        self.second.layer.shadowOpacity = 0.6;
+        //        self.second.layer.shadowColor = [UIColor colorWithWhite:0.3 alpha:1].CGColor;
+        //        self.second.layer.shadowRadius = 3;
+        //        self.second.layer.shadowOffset = CGSizeMake(0, 2);
+        //        self.second.layer.shadowOpacity = 0.6;
     }
     else
     {
@@ -192,30 +245,80 @@
 {
     _firstValue = firstValue;
     [self setNeedsDisplay];
-     self.valueLabel.text = [NSString stringWithFormat:@"%.f~%.f",_firstValue,_secondValue];
+    self.valueLabel.text = [NSString stringWithFormat:@"%.f ~ %.f",_firstValue,_secondValue];
     if (_sliderArr) {
         NSInteger  firstInt =  self.firstValue/10;
         NSInteger secondInt = self.secondValue/10;
         self.valueLabel.text = [NSString stringWithFormat:@"%@~%@",_sliderArr[firstInt],_sliderArr[secondInt]];
+        if (_unit) {
+            self.valueLabel.text = [NSString stringWithFormat:@"%@%@ ~ %@%@",_unit,_sliderArr[firstInt],_unit,_sliderArr[secondInt]];
+            
+        }
+    }
+    if (_unit.length) {
+        self.valueLabel.text = [NSString stringWithFormat:@"%@%.f ~ %@%.f",_unit,_firstValue,_unit,_secondValue];
     }
 }
 - (void)setSecondValue:(float)secondValue
 {
     _secondValue = secondValue;
+    
+    
     [self setNeedsDisplay];
-     self.valueLabel.text = [NSString stringWithFormat:@"%.f~%.f",_firstValue,_secondValue];
-    if (_sliderArr) {
-        NSInteger  firstInt =  self.firstValue/10;
-        NSInteger secondInt = self.secondValue/10;
-        self.valueLabel.text = [NSString stringWithFormat:@"%@~%@",_sliderArr[firstInt],_sliderArr[secondInt]];
+    if (_secondValue > _maxmumValue-FilterOverFlow+1) {
+        self.valueLabel.text = [NSString stringWithFormat:@"%.f ~ %@",_firstValue,@"不限"];
+        if (_sliderArr) {
+            NSInteger  firstInt =  self.firstValue/10;
+            NSInteger secondInt = self.secondValue/10;
+            self.valueLabel.text = [NSString stringWithFormat:@"%@~%@",_sliderArr[firstInt],_sliderArr[secondInt]];
+            if (_unit) {
+                self.valueLabel.text = [NSString stringWithFormat:@"%@%@ ~ %@",_unit,_sliderArr[firstInt],@"不限"];
+                
+            }
+        }
+        if (_unit.length) {
+            self.valueLabel.text = [NSString stringWithFormat:@"%@%.f ~ %@",_unit,_firstValue,@"不限"];
+        }
+    }else{
+        self.valueLabel.text = [NSString stringWithFormat:@"%.f ~ %.f",_firstValue,_secondValue];
+        if (_sliderArr) {
+            NSInteger  firstInt =  self.firstValue/10;
+            NSInteger secondInt = self.secondValue/10;
+            self.valueLabel.text = [NSString stringWithFormat:@"%@~%@",_sliderArr[firstInt],_sliderArr[secondInt]];
+            if (_unit) {
+                self.valueLabel.text = [NSString stringWithFormat:@"%@%@ ~ %@%@",_unit,_sliderArr[firstInt],_unit,_sliderArr[secondInt]];
+                
+            }
+        }
+        if (_unit.length) {
+            self.valueLabel.text = [NSString stringWithFormat:@"%@%.f ~ %@%.f",_unit,_firstValue,_unit,_secondValue];
+        }
     }
+    
 }
 - (void)setSliderArr:(NSArray *)sliderArr {
     _sliderArr = sliderArr;
     if (_sliderArr) {
         NSInteger  firstInt =  self.firstValue/10;
         NSInteger secondInt = self.secondValue/10;
-        self.valueLabel.text = [NSString stringWithFormat:@"%@~%@",_sliderArr[firstInt],_sliderArr[secondInt]];
+        self.valueLabel.text = [NSString stringWithFormat:@"%@ ~ %@",_sliderArr[firstInt],_sliderArr[secondInt]];
+        if (_unit) {
+            self.valueLabel.text = [NSString stringWithFormat:@"%@%@ ~ %@%@",_unit,_sliderArr[firstInt],_unit,_sliderArr[secondInt]];
+            
+        }
+    }
+}
+- (void)setUnit:(NSString *)unit {
+    _unit = unit;
+    if (_unit.length) {
+        self.valueLabel.text = [NSString stringWithFormat:@"%@%.f ~ %@%.f",_unit,_firstValue,_unit,_secondValue];
+        
+        if (_sliderArr) {
+            NSInteger  firstInt =  self.firstValue/10;
+            NSInteger secondInt = self.secondValue/10;
+            self.valueLabel.text = [NSString stringWithFormat:@"%@%@ ~ %@%@",_unit,_sliderArr[firstInt],_unit,_sliderArr[secondInt]];
+        }
+        
     }
 }
 - (void)setMinmumValue:(float)minmumValue

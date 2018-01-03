@@ -15,6 +15,8 @@
     // Initialization code
 }
 - (void)showOrderDetail:(NSDictionary *)dic {
+    self.stateLabel.text = dic[@"text"];
+    self.timeLabel.text = dic[@"time"];
     
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

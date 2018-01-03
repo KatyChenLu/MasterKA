@@ -9,6 +9,7 @@
 #import "BaseTableViewCell.h"
 
 @interface KAPreVoteTableViewCell : BaseTableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *isVoteImg;
 @property (weak, nonatomic) IBOutlet UILabel *KAtitleLabel;
 @property (weak, nonatomic) IBOutlet UIButton *KApreVoteBtn;
 @property (weak, nonatomic) IBOutlet UIImageView *KAimgV;
@@ -27,5 +28,5 @@
 
 @property (nonatomic, copy) void(^selectClick)(NSString *kaid);
 @property (nonatomic, copy) void(^disselectClick)(NSString *kaid);
-- (void)showKAPreVoteDetail:(NSDictionary *)dic;
+//- (void)showKAPreVoteDetail:(NSDictionary *)dic;
 @end

@@ -25,6 +25,7 @@
 @property(nullable, nonatomic,strong) UIColor *thumbTintColor ;
 
 @property (nonatomic, strong)NSArray *sliderArr;
+@property (nonatomic, strong)NSString *unit;
 
 //set the width is available,set the height is nonsense
 //- (instancetype)initWithFrame:(CGRect)frame;

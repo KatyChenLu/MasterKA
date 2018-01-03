@@ -413,7 +413,7 @@
 }
 -(void)sendClicked{
     
-    
+    sendBtn.enabled = NO;
     
     [[self.httpService sendPhoneCode:phonestr codeType:@"2" resultClass:nil] subscribeNext:^(BaseModel *model) {
         
@@ -445,8 +445,9 @@
         [self stopTimer];
     }else{
         [sendBtn setTitle:[NSString stringWithFormat:@"发送验证码(%@)",self.littleTime] forState:UIControlStateNormal];
-//        sendBtn.enabled = NO;
-//        sendBtn.backgroundColor = RGBFromHexadecimal(0xC1C1C1);
+        
+        sendBtn.enabled = NO;
+        sendBtn.backgroundColor = RGBFromHexadecimal(0xC1C1C1);
     }
 }
 
@@ -529,7 +530,12 @@
     }
     return hud;
 }
-
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+    [phoneField resignFirstResponder];
+    [passwordField resignFirstResponder];
+    [testField resignFirstResponder];
+}
 
 /*
  // Only override drawRect: if you perform custom drawing.

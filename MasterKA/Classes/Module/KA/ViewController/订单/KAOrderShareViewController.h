@@ -8,10 +8,12 @@
 
 #import "BaseViewController.h"
 
-@interface KAOrderShareViewController : BaseViewController
+@interface KAOrderShareViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *shareImgView;
 @property (weak, nonatomic) IBOutlet UILabel *shareTitleLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *erweimaImgView;
 @property (weak, nonatomic) IBOutlet UILabel *conLabel;
 - (void)showShareOrder:(NSDictionary *)dic;
+@property (nonatomic, strong)NSString *oid;
+@property (nonatomic, strong)NSString *orderStatus;
 @end

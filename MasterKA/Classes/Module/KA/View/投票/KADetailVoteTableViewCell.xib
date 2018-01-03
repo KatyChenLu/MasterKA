@@ -10,7 +10,6 @@
     </dependencies>
     <customFonts key="customFonts">
         <array key="PingFang.ttc">
-            <string>PingFangSC-Medium</string>
             <string>PingFangSC-Regular</string>
         </array>
     </customFonts>
@@ -30,12 +29,16 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_fancy" translatesAutoresizingMaskIntoConstraints="NO" id="ygl-5E-shS">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_fancy" translatesAutoresizingMaskIntoConstraints="NO" id="ygl-5E-shS">
                         <rect key="frame" x="10" y="12" width="96" height="96"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="96" id="HWc-Y3-FqD"/>
                             <constraint firstAttribute="height" constant="96" id="Pdj-Na-FXc"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="3"/>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2个小时" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9l-JN-OAk">
                         <rect key="frame" x="132" y="40.5" width="37" height="12"/>
@@ -51,13 +54,13 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ld-x4-Qj0">
-                        <rect key="frame" x="116" y="86" width="30" height="21.5"/>
+                        <rect key="frame" x="116" y="88.5" width="30" height="21.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                        <color key="textColor" red="0.80784313730000001" green="0.0" blue="0.074509803920000006" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.99607843137254903" green="0.21176470588235294" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="起" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdO-TI-KUS">
-                        <rect key="frame" x="148" y="93" width="12.5" height="14.5"/>
+                        <rect key="frame" x="148" y="93.5" width="12.5" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -75,11 +78,11 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfH-wF-Qsy">
-                        <rect key="frame" x="343" y="46" width="80" height="28"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfH-wF-Qsy">
+                        <rect key="frame" x="343" y="45" width="80" height="30"/>
                         <color key="backgroundColor" red="1" green="0.8901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="28" id="7JR-dZ-SdO">
+                            <constraint firstAttribute="height" constant="30" id="7JR-dZ-SdO">
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
@@ -87,7 +90,7 @@
                             </constraint>
                             <constraint firstAttribute="width" constant="80" id="E3g-fZ-8Hr"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="PingFangSC-Medium" family="PingFang SC" pointSize="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <state key="normal" title="立即定制">
                             <color key="titleColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
@@ -107,8 +110,8 @@
                     <constraint firstAttribute="trailing" secondItem="pfH-wF-Qsy" secondAttribute="trailing" constant="12" id="MEI-pb-3ik"/>
                     <constraint firstItem="a9l-JN-OAk" firstAttribute="leading" secondItem="dCI-Uf-N1D" secondAttribute="trailing" constant="4" id="NCd-vv-HaJ"/>
                     <constraint firstItem="imy-D3-Suz" firstAttribute="leading" secondItem="KVB-It-nrp" secondAttribute="trailing" constant="4" id="Q1u-Nx-eJ2"/>
-                    <constraint firstItem="7ld-x4-Qj0" firstAttribute="bottom" secondItem="wdO-TI-KUS" secondAttribute="bottom" id="R6O-cj-foU"/>
                     <constraint firstItem="imy-D3-Suz" firstAttribute="top" secondItem="a9l-JN-OAk" secondAttribute="bottom" constant="4" id="Rbi-cc-Ufn"/>
+                    <constraint firstItem="wdO-TI-KUS" firstAttribute="bottom" secondItem="ygl-5E-shS" secondAttribute="bottom" id="SCn-u1-51C"/>
                     <constraint firstItem="a9l-JN-OAk" firstAttribute="top" secondItem="2bM-9U-Jos" secondAttribute="bottom" constant="6" id="UYo-Kx-CsL"/>
                     <constraint firstAttribute="bottom" secondItem="ygl-5E-shS" secondAttribute="bottom" constant="33.5" id="ZBJ-nn-kMF"/>
                     <constraint firstItem="imy-D3-Suz" firstAttribute="centerY" secondItem="KVB-It-nrp" secondAttribute="centerY" id="Zeg-kt-Ow4"/>
@@ -119,7 +122,7 @@
                     <constraint firstItem="2bM-9U-Jos" firstAttribute="top" secondItem="ygl-5E-shS" secondAttribute="top" id="qN0-Yp-zmS"/>
                     <constraint firstItem="pfH-wF-Qsy" firstAttribute="centerY" secondItem="ygl-5E-shS" secondAttribute="centerY" id="tLj-gX-VnM"/>
                     <constraint firstItem="dCI-Uf-N1D" firstAttribute="leading" secondItem="2bM-9U-Jos" secondAttribute="leading" constant="2" id="vhr-wH-0Zz"/>
-                    <constraint firstItem="7ld-x4-Qj0" firstAttribute="bottom" secondItem="ygl-5E-shS" secondAttribute="bottom" id="wGd-1m-Y2W"/>
+                    <constraint firstItem="7ld-x4-Qj0" firstAttribute="bottom" secondItem="ygl-5E-shS" secondAttribute="bottom" constant="2" id="wGd-1m-Y2W"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

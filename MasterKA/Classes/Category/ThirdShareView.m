@@ -15,7 +15,7 @@
 #import "ShareBtn.h"
 #import <WXApi.h>
 
-#import <UMSocialQQHandler.h>
+//#import <UMSocialQQHandler.h>
 
 @implementation ThirdShareView
 {

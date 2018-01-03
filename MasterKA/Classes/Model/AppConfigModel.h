@@ -19,7 +19,7 @@
 @property (nonatomic,strong)NSString *about_us_url;
 @property (nonatomic,strong)NSString *agree_url;
 @property (nonatomic,strong)NSDictionary *requirement;
-
+@property (nonatomic,strong)NSString *server_number;
 
 
 

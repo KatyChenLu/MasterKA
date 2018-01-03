@@ -10,4 +10,5 @@
 
 @interface KADetailVoteViewModel : TableViewModel
 @property (nonatomic, strong)NSString *vote_id;
+@property (nonatomic, strong)NSDictionary *info;
 @end

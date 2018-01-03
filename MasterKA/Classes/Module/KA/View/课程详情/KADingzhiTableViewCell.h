@@ -10,5 +10,6 @@
 
 @interface KADingzhiTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
 - (void)showDingzhiDetail:(NSDictionary *)dic ;
 @end

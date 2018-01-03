@@ -31,7 +31,6 @@ PODS:
   - Masonry (1.0.2)
   - MBProgressHUD (1.0.0)
   - MJExtension (3.0.13)
-  - NMRangeSlider (1.2.1)
   - pop (1.0.9)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
@@ -53,16 +52,12 @@ PODS:
     - FLAnimatedImage (~> 1.0)
     - SDWebImage/Core
   - UITableView+FDTemplateLayoutCell (1.6.beta)
-  - UMengUShare/Core (6.4.2):
+  - UMengUShare/Core (6.4.7):
     - UMengUShare/Network
-  - UMengUShare/Network (6.4.2)
-  - UMengUShare/Social/ReducedQQ (6.4.2):
+  - UMengUShare/Network (6.4.7)
+  - UMengUShare/Social/ReducedWeChat (6.4.7):
     - UMengUShare/Core
-  - UMengUShare/Social/ReducedSina (6.4.2):
-    - UMengUShare/Core
-  - UMengUShare/Social/ReducedWeChat (6.4.2):
-    - UMengUShare/Core
-  - UMengUShare/Social/WeChat (6.4.2):
+  - UMengUShare/Social/WeChat (6.4.7):
     - UMengUShare/Core
     - UMengUShare/Social/ReducedWeChat
   - WebViewJavascriptBridge (6.0.2)
@@ -78,7 +73,6 @@ DEPENDENCIES:
   - Masonry
   - MBProgressHUD (~> 1.0.0)
   - MJExtension
-  - NMRangeSlider
   - pop
   - ReactiveCocoa (~> 2.5)
   - Realm
@@ -86,8 +80,6 @@ DEPENDENCIES:
   - SDCycleScrollView (~> 1.73)
   - SDWebImage/GIF
   - UITableView+FDTemplateLayoutCell (~> 1.6.beta)
-  - UMengUShare/Social/ReducedQQ
-  - UMengUShare/Social/ReducedSina
   - UMengUShare/Social/WeChat
   - WebViewJavascriptBridge (~> 6.0.2)
 
@@ -102,7 +94,6 @@ SPEC CHECKSUMS:
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
-  NMRangeSlider: 317ded652431eb90501c8421d9cddc3930d891e6
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   Realm: 0e293bb62999730599efc3048896bbd4f2e43bcd
@@ -110,9 +101,9 @@ SPEC CHECKSUMS:
   SDCycleScrollView: f821215226f6146a35470721a9d6e83ec5cfb04b
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   UITableView+FDTemplateLayoutCell: 3c326d8535802396c443e2972d990719a211bbed
-  UMengUShare: 740664d1dd5cc2fb2cc3325d61e4b35539aa9c78
+  UMengUShare: 5055d0e01c844379e173bdca0840fc9fa9297d88
   WebViewJavascriptBridge: 791ee0e26d1bf15efe5fb7fb9666a71a19b89d77
 
-PODFILE CHECKSUM: 7cbc4bfd6b24e8329c9cdf94842a075269626f47
+PODFILE CHECKSUM: 535ad40cf62ac7afddcb501670b40e76ab384dcd
 
 COCOAPODS: 1.2.0

@@ -11,4 +11,5 @@
 @interface KADetailEndView : UIView
 @property (weak, nonatomic) IBOutlet UILabel *endLabel;
 + (instancetype)endView;
+
 @end

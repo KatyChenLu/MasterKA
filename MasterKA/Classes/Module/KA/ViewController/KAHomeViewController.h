@@ -8,6 +8,6 @@
 
 #import "BaseViewController.h"
 #import "SlideNavigationController.h"
-@interface KAHomeViewController : BaseViewController<SlideNavigationControllerDelegate>
-
+@interface KAHomeViewController : BaseViewController
+- (void)showCusBtn:(BOOL)show;
 @end
